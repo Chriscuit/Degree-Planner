@@ -23,7 +23,7 @@ def main():
 	for line in in_file:
 	    line = line.strip()
 	    line = line.split(", ")
-	    name = Course(line[0], line[1], line[2], line[3])
+	    name = Course(line[0], int(line[1]), int(line[2]), int(line[3]))
 	    print(name)
 
         in_file.close()
