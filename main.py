@@ -1,16 +1,15 @@
 #This will be the main part of the program that actually builds the schedule
 class Course(object):
-	all_instances = []
 
 	def __init__(self, name, hours, diff_rate, time_consump):
-		self.name = name
-		self.hours = hours
-		self.diff_rate = diff_rate
-		self.time_consump = time_consump
+	    self.name = name
+	    self.hours = hours
+	    self.diff_rate = diff_rate
+	    self.time_consump = time_consump
 
 	#Returns string of info for each class so we can print them
 	def __repr__(self):
-		return "%s, %s, %s, %s" %(self.name, self.hours, self.diff_rate, self.time_consump)
+	    return "%s, %s, %s, %s" %(self.name, self.hours, self.diff_rate, self.time_consump)
 
 def main():
 	#Open file
@@ -18,12 +17,14 @@ def main():
 
 	#Get rid of headers
 	for i in range(4):
-		header = in_file.readline()
+	    in_file.readline()
 
 	#Parses through file and creates instances of Course class
 	for line in in_file:
-		line = line.strip()
-		line = line.split(", ")
-		name = Course(line[0], line[1], line[2],line[3])
-		print(name)
+	    line = line.strip()
+	    line = line.split(", ")
+	    name = Course(line[0], line[1], line[2], line[3])
+	    print(name)
+
+        in_file.close()
 main()
