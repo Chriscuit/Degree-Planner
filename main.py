@@ -2,7 +2,7 @@
 class Course(object):
 
 	def __init__(self, name, hours,
-                     diff_rate, time_consump):
+                 diff_rate, time_consump):
 	    self.name = name
 	    self.hours = hours
 	    self.diff_rate = diff_rate
@@ -11,8 +11,8 @@ class Course(object):
 	#Returns string of info for each class so we can print them
 	def __repr__(self):
 	    return "%s, %s, %s, %s" %(self.name, self.hours,
-                                      self.diff_rate,
-                                      self.time_consump)
+                                  self.diff_rate,
+                                  self.time_consump)
 
 def main():
 	#Open file
@@ -27,7 +27,7 @@ def main():
 	    line = line.strip()
 	    line = line.split(", ")
 	    name = Course(line[0], int(line[1]),
-                          int(line[2]), int(line[3]))
+                      int(line[2]), int(line[3]))
 	    print(name)
 
         in_file.close()
