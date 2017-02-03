@@ -1,6 +1,8 @@
-#This will be the main part of the program that actually builds the schedule
+#This will be the main part of the program
+#that actually builds the schedule
 class Course(object):
 
+        #Initialize object
 	def __init__(self, name, hours,
                      diff_rate, time_consump):
 	    self.name = name
@@ -30,5 +32,8 @@ def main():
                           int(line[2]), int(line[3]))
 	    print(name)
 
+        #Close file
         in_file.close()
 main()
+
+#test
