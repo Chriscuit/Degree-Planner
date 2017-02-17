@@ -52,21 +52,19 @@ def main():
     for i in range(num_semesters):
         plan[i + 1] = []
 
-    print(plan)
-    '''
-    j = 0
-    for i in range(len(lst)):
-        plan[j + 1].append(lst[i])
-        if j <= num_semesters:
-            j += 1
-        else:
-            j = 0
+    i, j = 0, 1
+    while i < len(lst):
+        plan[j].append(lst[i])
+        j += 1
+        i += 1
+        if j == num_semesters + 1:
+            j = 1
 
-    '''
-
-
-
-
+    for key in plan:
+        print(key,':', end = ' ')
+        for x in plan[key]:
+            print(x, end = " ")
+        print()
 
 
 main()
