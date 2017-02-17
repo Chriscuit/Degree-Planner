@@ -52,6 +52,8 @@ def main():
     for i in range(num_semesters):
         plan[i + 1] = []
 
+    print(plan)
+    '''
     j = 0
     for i in range(len(lst)):
         plan[j + 1].append(lst[i])
@@ -60,7 +62,7 @@ def main():
         else:
             j = 0
 
-
+    '''
 
 
 
