@@ -1,7 +1,7 @@
 
 # This will be the main part of the program
 # that actually builds the schedule
-class Course(object):
+class Course:
 
     # Initialize object
     def __init__(self, name, hours, diff_rate, time_consump, rating, pre_reqs):
@@ -20,7 +20,7 @@ class Course(object):
         # return "%s, %s, %s, %s" %(self.name, self.hours, self.diff_rate, self.time_consump)
         return str(self.name)
 
-class Semester(object):
+class Semester:
 
     def __init__(self, number):
         self.number = number
@@ -31,7 +31,7 @@ class Semester(object):
         # return "%s, %s, %s, %s" %(self.name, self.hours, self.diff_rate, self.time_consump)
         return str(self.number + 1)
 
-def main():
+def read_courses():
     import csv
 
     lst = []    # List of courses
@@ -59,6 +59,11 @@ def main():
     for item in lst:
         print(item, item.rating)
 
+    return lst
+
+def sort(lst):
+
+    from copy import deepcopy
     # Inputing number of semesters and initializing plan of Semesters
     num_semesters = int(input("enter # of semesters: "))
     plan = []
@@ -67,19 +72,16 @@ def main():
         plan.append(Semester(i))
 
     # Adding classes to semesters to minimize differences in difficulty
-    classes_taken = []
+    plan_in_order = deepcopy(plan)
     i = 0
     while i < len(lst):
         plan = sorted(plan, key=lambda Semester: Semester.total_rating)
         #lst = sorted(lst, key=lambda course:course.rating, reverse=True)
-        while not all(x in classes_taken for x in lst[0].pre_reqs):
-            #print(lst[0].pre_reqs)
+        while not pre_req_helper(plan_in_order, plan, lst[0]):
             lst = lst[1:] + lst[:1]
-            #print(lst)
-            #input('Paused')
         plan[0].class_lst.append(lst[i])
         plan[0].total_rating += lst[i].rating
-        classes_taken.append(lst[i].name)
+        plan_in_order = sorted(plan, key=lambda Semester:Semester.number)
         i += 1
 
     plan = sorted(plan, key=lambda Semester: Semester.number)
@@ -91,15 +93,35 @@ def main():
             print(x, end = " ")
         print()
 
+    return plan
 
-    '''
-    1) add algorithm for handling prerequisits
-    2) algo for handling hardcoded class placements
-    3) algo for handling semester availabilities
-    4) conflicting classes
-    5) change input to excel sheet
-    '''
+# Checks if you have taken pre-reqs, returns bool
+def pre_req_helper(plan_in_order, plan, course):
+
+    current_sem = plan[0].number
+    classes_taken = []
+
+    for i in range(current_sem):
+        classes_taken += plan_in_order[i].class_lst
+
+    return all(x in classes_taken for x in course.pre_reqs)
 
 
+def main():
+
+    lst = read_courses()
+    sort(lst)
 
 main()
+
+'''
+1) add algorithm for handling prerequisits
+2) algo for handling hardcoded class placements
+3) algo for handling semester availabilities
+4) conflicting classes
+5) change input to excel sheet
+'''
+
+
+
+
