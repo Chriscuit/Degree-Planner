@@ -41,15 +41,14 @@ def read_courses():
     reader = csv.reader(in_file)
     header = next(reader)
     for line in reader:
-        name = Course(line[0],          # Name 
+        course = Course(line[0],          # Name
                       int(line[1]),     # Hours
                       int(line[2]),     # Difficulty rating
                       int(line[3]),     # Time consumption
                       (int(line[2]) + int(line[3])) / 2,    # Overall rating
                       line[4].split(', '))    # list of pre-reqs
-        print(name.pre_reqs)
 
-        lst.append(name)
+        lst.append(course)
     in_file.close()
 
     # Sorts to prioritize largest ratings so that small ones can be used for evening out
@@ -73,16 +72,10 @@ def sort(lst):
 
     # Adding classes to semesters to minimize differences in difficulty
     plan_in_order = deepcopy(plan)
-    i = 0
-    while i < len(lst):
+    for i in range(len(lst)):
         plan = sorted(plan, key=lambda Semester: Semester.total_rating)
-        #lst = sorted(lst, key=lambda course:course.rating, reverse=True)
-        while not pre_req_helper(plan_in_order, plan, lst[0]):
-            lst = lst[1:] + lst[:1]
         plan[0].class_lst.append(lst[i])
         plan[0].total_rating += lst[i].rating
-        plan_in_order = sorted(plan, key=lambda Semester:Semester.number)
-        i += 1
 
     plan = sorted(plan, key=lambda Semester: Semester.number)
 
@@ -96,15 +89,15 @@ def sort(lst):
     return plan
 
 # Checks if you have taken pre-reqs, returns bool
-def pre_req_helper(plan_in_order, plan, course):
-
-    current_sem = plan[0].number
-    classes_taken = []
-
-    for i in range(current_sem):
-        classes_taken += plan_in_order[i].class_lst
-
-    return all(x in classes_taken for x in course.pre_reqs)
+# def pre_req_helper(plan_in_order, plan, course):
+#
+#     current_sem = plan[0].number
+#     classes_taken = []
+#
+#     for i in range(current_sem):
+#         classes_taken += plan_in_order[i].class_lst
+#
+#     return all(x in classes_taken for x in course.pre_reqs)
 
 
 def main():
