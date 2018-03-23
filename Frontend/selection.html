@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Selection Page</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  	<style>
+  		#technicalCoreTable {
+			width: 50%;
+			margin: 0 auto;
+			margin-top: 30px;
+			/*border: 1px solid black;*/
+		}
+
+		/*these are the tech core dropdowns */
+		#primaryCore, #secondaryCore{
+			margin-bottom: 20px;
+		}
+
+		#coursesTable {
+			width: 75%;
+			margin-left: auto;
+			margin-right: auto;
+			/*border: 1px solid black;*/
+			margin-top:20px;
+		}
+
+		th, tr {
+			text-align: center;
+			/*border: 1px solid red;*/
+		}
+
+		#coursesTable th, tr {
+			width: 50%;
+		}
+	</style>
+</head>
+<body>
+	<table id="technicalCoreTable">
+		<tr>
+			<td style="padding-bottom: 5px">Choose Primary Technical Core</td>
+		</tr>
+		<tr>
+			<td><select class="form-control" id="primaryCore">
+				<option value="Comm nets">Communications, Signal Processing, Networks and Systems</option>
+				<option value="IC">Electronics and Integrated Circuits</option>
+				<option value="Energy">Energy Systems and Renewable Energy</option>
+				<option value="Fields">Fields, Waves and Electromagnetic Systems</option>
+				<option value="Nano">Nanoelectronics and Nanotechnology</option>
+				<option value="CompArch">Computer Architecture and Embedded Systems</option>
+				<option value="Software">Software Engineering and Design</option>
+				<option value="Data Science">Data Science and Information Processing</option>
+			</select></td>
+		</tr>
+		<tr>
+			<td style="padding-bottom: 5px">Choose Secondary Technical Core</td>
+		</tr>
+		<tr>
+			<td><select class="form-control" id="secondaryCore">
+				<option value="Comm nets">Communications, Signal Processing, Networks and Systems</option>
+				<option value="IC">Electronics and Integrated Circuits</option>
+				<option value="Energy">Energy Systems and Renewable Energy</option>
+				<option value="Fields">Fields, Waves and Electromagnetic Systems</option>
+				<option value="Nano">Nanoelectronics and Nanotechnology</option>
+				<option value="CompArch">Computer Architecture and Embedded Systems</option>
+				<option value="Software">Software Engineering and Design</option>
+				<option value="Data Science">Data Science and Information Processing</option>
+			</select></td>
+		</tr>
+		<tr>
+			<td><button type="button" class="btn" id="displayClassesButton">Next</button></td>
+		</tr>
+	</table>
+
+	<table class="table-bordered" id="coursesTable">
+		<tr>
+			<th>Primary</th>
+			<th>Secondary</th>
+		</tr>
+		<tr>
+			<td><select class="form-control" id="primaryCourses" multiple>
+				<option value="P1">P1</option>
+				<option value="P2">P2</option>
+				<option value="P3">P3</option>
+				<option value="P4">P4</option>
+			</select></td>
+			<td><select class="form-control" id="secondaryCourses" multiple>
+				<option value="S1">S1</option>
+				<option value="S2">S2</option>
+				<option value="S3">S3</option>
+				<option value="S4">S4</option>
+			</select></td>
+		</tr>
+	</table>
+
+
+	<script>
+		$(document).ready(function() {
+
+		$("#coursesTable").hide()
+
+		/*This should take in the technical core choices of the user,
+		set coursesTable to visible, and populate coursesTable with the electives for the chosen cores */
+		$("#displayClassesButton").on('click', function() {
+
+			/*Get the tech cores choices and populated the CoursesTable with the proper courses */
+			// var pCore = $('#primaryCore').val();
+			// var sCore = $('#secondaryCore').val();
+			// alert(pCore+","+sCore);
+
+			/*show the coursesTable */
+			$("#coursesTable").show();
+		});
+
+	});
+	</script>
+</body>
+</html>

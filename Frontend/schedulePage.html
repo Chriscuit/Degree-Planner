@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UT Course Scheduler</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+	<style>
+	.numOfSchedules h4 {
+		display: inline-block;
+	}
+
+	.scheduleOptions {
+		display: inline-block;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="numOfSchedules">
+		<h4>Number of Schedules to Generate: </h4>
+		<select id="dropdownlist">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+		</select>
+
+		<input type="button" value="Hello" id="scheduleButton">
+		<div class="scheduleOptions"></div>
+	</div>
+
+	<script>
+	$(document).ready(function() {
+
+		/*Gets number of schedules desired by user and creates the appropriate number of buttons */
+		$('#scheduleButton').on('click', function(event) {
+			$('.scheduleOptions').empty();
+			var x = document.getElementById("dropdownlist").value;
+			var scheduleOptions = $('.scheduleOptions');
+			for (var i = 0; i < x; i++) {
+				scheduleOptions.append('<input type="button" value="Random' + (i+1) + '"/>');
+			}
+		})
+
+	});
+
+
+
+	</script>
+</body>
+</html>
+
