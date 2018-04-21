@@ -34,9 +34,9 @@ class Semester:
 def read_courses():
     import csv
 
-    lst = []    # List of courses
+    lst = []    # List of list
 
-    # Parses through file and makes list of courses
+    # Parses through file and makes list of list
     in_file = open('test.csv', 'r')
     reader = csv.reader(in_file)
     header = next(reader)
