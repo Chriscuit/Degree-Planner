@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+		<head>
+			<!-- Required meta tags -->
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+			<!-- Bootstrap CSS -->
+			<!-- Latest compiled and minified CSS -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+			<!-- Optional theme -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">    
+			<!-- Bootstrap select -->
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
+			<link rel="stylesheet" href="bootstrap-slider.css">
+
+			<title>Previous Courses page</title>
+		</head>
+		<body>
+			<div class="container">
+				<div class="col-4">
+					<h4>Department</h4>
+						<select class="selectpicker" data-live-search="true" id="departmentPicker">
+								<option data-tokens="M">Mathematics</option>
+								<option data-tokens="EE" selected="selected">Electrical Engineering</option>
+								<option data-tokens="PHY">Physics</option>
+						</select>
+						<button id="departmentCoursesButton">View department courses</button>
+						<select id="coursePicker" class="selectpicker" multiple></select>
+						<button id="addCourse">Add Course</button>
+						<h4 id="selection">Courses Selected: </h4>
+						<button id="displayTimeDifficulty">Next</button>
+				</div>
+			</div>
+
+			<!-- Optional JavaScript -->
+			<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+			<script src="bootstrap-slider.js"></script>
+
+			<script>
+				$(document).ready(function() {
+					var math_courses = ['M1', 'M2', 'M3']
+					$("#departmentCoursesButton").on('click', function() {
+		    			var departmentPicker = document.getElementById("departmentPicker");
+		    			var department = departmentPicker.options[departmentPicker.selectedIndex].value
+		    			if (department==="Mathematics") {
+		    				$("#coursePicker").hide()
+		    				alert(5)
+		    				// $('#coursePicker').append('<option value="1">One</option>');
+		    			}
+					}) //end of department button on click function
+				}) //end of ready function
+			</script>
+		</body>
+</html>
