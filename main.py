@@ -4,16 +4,18 @@
 class Course:
 
     # Initialize object
-    def __init__(self, name, hours, diff_rate, time_consump, rating, pre_reqs):
+    def __init__(self, name, hours, diff_rate, time_consump, rating, pre_reqs, co_reqs):
         self.name = name
         self.hours = hours
         self.diff_rate = diff_rate
         self.time_consump = time_consump
         self.rating = rating
-        if pre_reqs == ['None']:
-            self.pre_reqs = []
-        else:
-            self.pre_reqs = pre_reqs
+        #if pre_reqs == ['None']:
+            #self.pre_reqs = []
+        #else:
+            #self.pre_reqs = pre_reqs
+        self.pre_reqs = pre_reqs
+        self.co_reqs = co_reqs
 
     # Returns string of info for each class so we can print them
     def __str__(self):
@@ -33,19 +35,30 @@ class Semester:
 
 def read_courses():
     import csv
+    import json
 
     lst = []    # List of list
+    with open('courseInfo.json') as courseInfo:
+        courses = json.load(courseInfo)
+        for(course in courses):
+            newCourse = Course(course,          #Name
+                            int(course['Hours']),   #Hours
+                            int(course['Difficulty']),  #Difficulty
+                            int(course['Time']),    #Time consumption
+                            (int(course['Difficulty']) + int(course['Time'])) /2,   #Overall rating
+                            course['prerequisites'],    #List of pre-reqs
+                            course['corequisites'])
+            lst.append(newCourse)
 
     # Parses through file and makes list of list
-    in_file = open('test.csv', 'r')
-    reader = csv.reader(in_file)
-    header = next(reader)
-    for line in reader:
-        course = Course(line[0],          # Name
-                      int(line[1]),     # Hours
-                      int(line[2]),     # Difficulty rating
-                      int(line[3]),     # Time consumption
-                      (int(line[2]) + int(line[3])) / 2,    # Overall rating
+    ##in_file = open('test.csv', 'r')
+    ##reader = csv.reader(in_file)
+    ##header = next(reader)
+    ##for line in reader:
+        ##course = Course(line[0],          # Name
+                     # ##
+                      #int(line[3]),     # Time consumption
+                      #(int(line[2]) + int(line[3])) / 2,    # Overall rating
                       line[4].split(', '))    # list of pre-reqs
 
         lst.append(course)
