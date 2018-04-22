@@ -28,9 +28,12 @@
 								<option data-tokens="PHY">Physics</option>
 						</select>
 						<button id="departmentCoursesButton">View department courses</button>
-						<select id="coursePicker" class="selectpicker" multiple></select>
+						<div id="test">
+							<select id="coursePicker" multiple class="selectpicker"></select>
+						</div>
 						<button id="addCourse">Add Course</button>
 						<h4 id="selection">Courses Selected: </h4>
+						<div id="selectedCourses"></div>
 						<button id="displayTimeDifficulty">Next</button>
 				</div>
 			</div>
@@ -45,15 +48,23 @@
 			<script>
 				$(document).ready(function() {
 					var math_courses = ['M1', 'M2', 'M3']
+					$("#test").hide()
 					$("#departmentCoursesButton").on('click', function() {
 		    			var departmentPicker = document.getElementById("departmentPicker");
 		    			var department = departmentPicker.options[departmentPicker.selectedIndex].value
 		    			if (department==="Mathematics") {
-		    				$("#coursePicker").hide()
-		    				alert(5)
-		    				// $('#coursePicker').append('<option value="1">One</option>');
+		    				$("#test").show()
+		    				var select = document.getElementById("coursePicker");
+		    				for(i=0; i < 10; i++){
+		    					select.options[select.options.length] = new Option('Text ' + i, 'Value ' + i)
+		    				}							
+		    				$('#coursePicker').selectpicker('refresh')
 		    			}
 					}) //end of department button on click function
+
+					$("#addCourse").on('click', function() {
+		    			
+					}) //end of add button on click function
 				}) //end of ready function
 			</script>
 		</body>
