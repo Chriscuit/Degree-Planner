@@ -8,32 +8,74 @@ var difficultySlider = $("#difficultySlider")
 	.data("slider");
 
 $(document).ready(function() {
-	var math_courses = ["M1", "M2", "M3"];
 	$("#test").hide();
+	for (i in M_courses) {
+		var select = $("#coursePicker");
+		course = M_courses[i];
+		opt = new Option(course, course);
+		opt.setAttribute("data-tokens", course);
+		select.append(opt);
+	}
+	for (i in EE_courses) {
+		var select = $("#coursePicker");
+		course = EE_courses[i];
+		opt = new Option(course, course);
+		opt.setAttribute("data-tokens", course);
+		select.append(opt);
+	}
+	for (i in PHY_courses) {
+		var select = $("#coursePicker");
+		course = PHY_courses[i];
+		opt = new Option(course, course);
+		opt.setAttribute("data-tokens", course);
+		select.append(opt);
+	}
 
-	$("#departmentCoursesButton").on("click", function() {
+	$("#departmentPicker").change(function() {
+		$("#coursePicker")
+			.children("option")
+			.hide();
+
+		$("#test").show();
 		var departmentPicker = document.getElementById("departmentPicker");
 		var department =
 			departmentPicker.options[departmentPicker.selectedIndex].value;
+		var select = $("#coursePicker");
 		if (department === "Mathematics") {
-			$("#test").show();
-			var select = document.getElementById("coursePicker");
-			for (i = 0; i < 10; i++) {
-				select.options[select.options.length] = new Option(
-					"Text " + i,
-					"Value " + i
-				);
-			}
+			$("#coursePicker option").each(function() {
+				if (
+					$(this)
+						.val()
+						.startsWith("M")
+				) {
+					$(this).show();
+				}
+			});
+			$("#coursePicker").selectpicker("refresh");
+		} else if (department === "Electrical Engineering") {
+			$("#coursePicker option").each(function() {
+				if (
+					$(this)
+						.val()
+						.startsWith("EE")
+				) {
+					$(this).show();
+				}
+			});
+			$("#coursePicker").selectpicker("refresh");
+		} else {
+			$("#coursePicker option").each(function() {
+				if (
+					$(this)
+						.val()
+						.startsWith("PHY")
+				) {
+					$(this).show();
+				}
+			});
 			$("#coursePicker").selectpicker("refresh");
 		}
-	}); //end of department button on click function
-
-	$("#addCourse").on("click", function() {
-		alert(selectedCourses.join(","));
-		// var span = document.createElement('span')
-		// span.innerText = ;
-		// $("#selectedCourses").add(span)
-	}); //end of add button on click function
+	});
 
 	$("#coursePicker").change(function() {
 		selectedCourses = [];

@@ -23,11 +23,9 @@
 					<option data-tokens="EE" selected="selected">Electrical Engineering</option>
 					<option data-tokens="PHY">Physics</option>
 				</select>
-				<button id="departmentCoursesButton">View department courses</button>
 				<div id="test">
-				<select id="coursePicker" multiple class="selectpicker"></select>
+				<select id="coursePicker" multiple class="selectpicker" data-live-search="true"></select>
 			</div>
-			<button id="addCourse">Add Course</button>
 			<h4 id="selection">Courses Selected: </h4>
 			<div id="selectedCourses"></div>
 			<button id="displayTimeDifficulty">Next</button>
@@ -53,5 +51,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
 	<script src="bootstrap-slider.js"></script>
 	<script type="text/javascript" src="previousCourses.js"></script>
+	<script type="text/javascript" src="courseList.js"></script>
 </body>
 </html>
