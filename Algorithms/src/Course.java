@@ -1,14 +1,8 @@
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.awt.font.NumericShaper;
 import java.util.List;
 import java.util.Objects;
 
 public class Course {
-
-    private static List<Course> courseList = new ArrayList<Course>();
-    private static int totalDifficulty;
-    private static int totalHours;
-    private static int numCourses;
 
     private String name;
     private int hours;
@@ -16,6 +10,14 @@ public class Course {
     private List<String> prereqs;
     private List<String> postCourses;
     private Boolean isLeaf;
+    private int maxDepth;
+
+    // TODO: implement these puppies for the algo to work
+    private int semesterPlacement;
+    private int lowerBound;
+    private int upperBound;
+    private int lastestPrereqPlacement;
+
 
     Course(String name, int hours, int difficulty, List<String> prereqs) {
         setName(name);
@@ -23,7 +25,14 @@ public class Course {
         setDifficulty(difficulty);
         setPrereqs(prereqs);
         setIsLeaf();
-        updateCourseList();
+    }
+
+    public void setMaxDepth(int depth) {
+        this.maxDepth = depth;
+    }
+
+    public int getMaxDepth() {
+        return maxDepth;
     }
 
     public String getName() {
@@ -61,50 +70,16 @@ public class Course {
         this.prereqs = prereqs;
     }
 
-    public void updateCourseList() {
-        this.courseList.add(this);
-        totalDifficulty += this.difficulty;
-        totalHours += this.hours;
-    }
-
-    public int getNumCourses() {
-        return courseList.size();
-    }
-
-    public static List<Course> getCourseList() {
-        return courseList;
-    }
-
     private void setIsLeaf() {
         this.isLeaf = this.prereqs.isEmpty();
     }
 
-    public Boolean isLeaf() {
-        return isLeaf;
+    public void setPostCourses(List<String> list) {
+        this.postCourses = list;
     }
 
-    public void caclulatePostCourses() {
-
-        HashMap<String, List<String>> map = new HashMap<>();
-
-        for (Course course : courseList) {
-            for (String prereq : course.getPrereqs()) {
-
-                List<String> postCourseStrings = new ArrayList<>();
-                if (map.containsKey(prereq)) {
-                    postCourseStrings = map.get(prereq);
-                    postCourseStrings.add(course.getName());
-                    map.put(prereq, postCourseStrings);
-                } else {
-                    postCourseStrings.add(course.getName());
-                    map.put(prereq, postCourseStrings);
-                }
-            }
-        }
-
-        for (Course course : courseList) {
-            course.postCourses = map.get(course.getName());
-        }
+    public Boolean isLeaf() {
+        return isLeaf;
     }
 
     @Override
