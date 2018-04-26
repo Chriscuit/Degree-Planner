@@ -12,21 +12,24 @@ $(document).ready(function() {
 	for (i in M_courses) {
 		var select = $("#coursePicker");
 		course = M_courses[i];
-		opt = new Option(course, course);
+		course_num = course.split(":")[0];
+		opt = new Option(course, course_num);
 		opt.setAttribute("data-tokens", course);
 		select.append(opt);
 	}
 	for (i in EE_courses) {
 		var select = $("#coursePicker");
 		course = EE_courses[i];
-		opt = new Option(course, course);
+		course_num = course.split(":")[0];
+		opt = new Option(course, course_num);
 		opt.setAttribute("data-tokens", course);
 		select.append(opt);
 	}
 	for (i in PHY_courses) {
 		var select = $("#coursePicker");
 		course = PHY_courses[i];
-		opt = new Option(course, course);
+		course_num = course.split(":")[0];
+		opt = new Option(course, course_num);
 		opt.setAttribute("data-tokens", course);
 		select.append(opt);
 	}
