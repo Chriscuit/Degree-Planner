@@ -1,340 +1,92 @@
 <!doctype html>
 <html lang="en">
     <head>
-    <!-- Required meta tags -->
+        <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
         <!-- Bootstrap CSS -->
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
         <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">    
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
         <!-- Bootstrap select -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
-
         <link rel="stylesheet" href="bootstrap-slider.css">
-
-
         <title>Hello, world!</title>
     </head>
     <body>
-        <div class="container">
-        <div class="row">
-            <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#home">1</a></li>
-                <li><a data-toggle="tab" href="#menu1">2</a></li>
-                <li><a data-toggle="tab" href="#menu2">3</a></li>
-                <li><a data-toggle="tab" href="#menu3">4</a></li>
-            </ul>
-
-        <!--Goes without saying: we need to refactor this -->
-            <div class="tab-content">
-                <div id="home" class="tab-pane fade in active">
-                    <table class="table table-bordered" id="schedule1">
-                    <thead>
-                        <tr>
-                            <th scope="col">Fall 2018</th>
-                            <th scope="col">Spring 2019</th>
-                            <th scope="col">Fall 2019</th>
-                            <th scope="col">Spring 2020</th>
-                            <th scope="col">Fall 2020</th>
-                            <th scope="col">Spring 2021</th>
-                            <th scope="col">Fall 2021</th>
-                            <th scope="col">Spring 2022</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td id="s1sem1c1"></th>
-                            <td id="s1sem2c1"></th>
-                            <td id="s1sem3c1"></th>
-                            <td id="s1sem4c1"></th>
-                            <td id="s1sem5c1"></th>
-                            <td id="s1sem6c1"></th>
-                            <td id="s1sem7c1"></th>
-                            <td id="s1sem8c1"></th>
-                        </tr>
-                        <tr>
-                            <td id="s1sem1c2"></th>
-                            <td id="s1sem2c2"></th>
-                            <td id="s1sem3c2"></th>
-                            <td id="s1sem4c2"></th>
-                            <td id="s1sem5c2"></th>
-                            <td id="s1sem6c2"></th>
-                            <td id="s1sem7c2"></th>
-                            <td id="s1sem8c2"></th>
-                        </tr>
-                        <tr>
-                            <td id="s1sem1c3"></th>
-                            <td id="s1sem2c3"></th>
-                            <td id="s1sem3c3"></th>
-                            <td id="s1sem4c3"></th>
-                            <td id="s1sem5c3"></th>
-                            <td id="s1sem6c3"></th>
-                            <td id="s1sem7c3"></th>
-                            <td id="s1sem8c3"></th>
-                        </tr>
-                        <tr>
-                            <td id="s1sem1c4"></th>
-                            <td id="s1sem2c4"></th>
-                            <td id="s1sem3c4"></th>
-                            <td id="s1sem4c4"></th>
-                            <td id="s1sem5c4"></th>
-                            <td id="s1sem6c4"></th>
-                            <td id="s1sem7c4"></th>
-                            <td id="s1sem8c4"></th>
-                        </tr>
-                        <tr>
-                            <td id="s1sem1c5"></th>
-                            <td id="s1sem2c5"></th>
-                            <td id="s1sem3c5"></th>
-                            <td id="s1sem4c5"></th>
-                            <td id="s1sem5c5"></th>
-                            <td id="s1sem6c5"></th>
-                            <td id="s1sem7c5"></th>
-                            <td id="s1sem8c5"></th>
-                        </tr>
-                    </tbody>
-                    </table>
-                </div>
-                <div id="menu1" class="tab-pane fade">
-                    <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th scope="col">Fall 2018</th>
-                            <th scope="col">Spring 2019</th>
-                            <th scope="col">Fall 2019</th>
-                            <th scope="col">Spring 2020</th>
-                            <th scope="col">Fall 2020</th>
-                            <th scope="col">Spring 2021</th>
-                            <th scope="col">Fall 2021</th>
-                            <th scope="col">Spring 2022</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td id="s2sem1c1"></th>
-                            <td id="s2sem2c1"></th>
-                            <td id="s2sem3c1"></th>
-                            <td id="s2sem4c1"></th>
-                            <td id="s2sem5c1"></th>
-                            <td id="s2sem6c1"></th>
-                            <td id="s2sem7c1"></th>
-                            <td id="s2sem8c1"></th>
-                        </tr>
-                        <tr>
-                            <td id="s2sem1c2"></th>
-                            <td id="s2sem2c2"></th>
-                            <td id="s2sem3c2"></th>
-                            <td id="s2sem4c2"></th>
-                            <td id="s2sem5c2"></th>
-                            <td id="s2sem6c2"></th>
-                            <td id="s2sem7c2"></th>
-                            <td id="s2sem8c2"></th>
-                        </tr>
-                        <tr>
-                            <td id="s2sem1c3"></th>
-                            <td id="s2sem2c3"></th>
-                            <td id="s2sem3c3"></th>
-                            <td id="s2sem4c3"></th>
-                            <td id="s2sem5c3"></th>
-                            <td id="s2sem6c3"></th>
-                            <td id="s2sem7c3"></th>
-                            <td id="s2sem8c3"></th>
-                        </tr>
-                        <tr>
-                            <td id="s2sem1c4"></th>
-                            <td id="s2sem2c4"></th>
-                            <td id="s2sem3c4"></th>
-                            <td id="s2sem4c4"></th>
-                            <td id="s2sem5c4"></th>
-                            <td id="s2sem6c4"></th>
-                            <td id="s2sem7c4"></th>
-                            <td id="s2sem8c4"></th>
-                        </tr>
-                        <tr>
-                            <td id="s2sem1c5"></th>
-                            <td id="s2sem2c5"></th>
-                            <td id="s2sem3c5"></th>
-                            <td id="s2sem4c5"></th>
-                            <td id="s2sem5c5"></th>
-                            <td id="s2sem6c5"></th>
-                            <td id="s2sem7c5"></th>
-                            <td id="s2sem8c5"></th>
-                        </tr>
-                    </tbody>
-                    </table>
-                </div>
-                <div id="menu2" class="tab-pane fade">
-                    <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th scope="col">Fall 2018</th>
-                            <th scope="col">Spring 2019</th>
-                            <th scope="col">Fall 2019</th>
-                            <th scope="col">Spring 2020</th>
-                            <th scope="col">Fall 2020</th>
-                            <th scope="col">Spring 2021</th>
-                            <th scope="col">Fall 2021</th>
-                            <th scope="col">Spring 2022</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td id="s3sem1c1"></th>
-                            <td id="s3sem2c1"></th>
-                            <td id="s3sem3c1"></th>
-                            <td id="s3sem4c1"></th>
-                            <td id="s3sem5c1"></th>
-                            <td id="s3sem6c1"></th>
-                            <td id="s3sem7c1"></th>
-                            <td id="s3sem8c1"></th>
-                        </tr>
-                        <tr>
-                            <td id="s3sem1c2"></th>
-                            <td id="s3sem2c2"></th>
-                            <td id="s3sem3c2"></th>
-                            <td id="s3sem4c2"></th>
-                            <td id="s3sem5c2"></th>
-                            <td id="s3sem6c2"></th>
-                            <td id="s3sem7c2"></th>
-                            <td id="s3sem8c2"></th>
-                        </tr>
-                        <tr>
-                            <td id="s3sem1c3"></th>
-                            <td id="s3sem2c3"></th>
-                            <td id="s3sem3c3"></th>
-                            <td id="s3sem4c3"></th>
-                            <td id="s3sem5c3"></th>
-                            <td id="s3sem6c3"></th>
-                            <td id="s3sem7c3"></th>
-                            <td id="s3sem8c3"></th>
-                        </tr>
-                        <tr>
-                            <td id="s3sem1c4"></th>
-                            <td id="s3sem2c4"></th>
-                            <td id="s3sem3c4"></th>
-                            <td id="s3sem4c4"></th>
-                            <td id="s3sem5c4"></th>
-                            <td id="s3sem6c4"></th>
-                            <td id="s3sem7c4"></th>
-                            <td id="s3sem8c4"></th>
-                        </tr>
-                        <tr>
-                            <td id="s3sem1c5"></th>
-                            <td id="s3sem2c5"></th>
-                            <td id="s3sem3c5"></th>
-                            <td id="s3sem4c5"></th>
-                            <td id="s3sem5c5"></th>
-                            <td id="s3sem6c5"></th>
-                            <td id="s3sem7c5"></th>
-                            <td id="s3sem8c5"></th>
-                        </tr>
-                    </tbody>
-                    </table>
-                </div>
-                <div id="menu3" class="tab-pane fade">
-                    <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th scope="col">Fall 2018</th>
-                            <th scope="col">Spring 2019</th>
-                            <th scope="col">Fall 2019</th>
-                            <th scope="col">Spring 2020</th>
-                            <th scope="col">Fall 2020</th>
-                            <th scope="col">Spring 2021</th>
-                            <th scope="col">Fall 2021</th>
-                            <th scope="col">Spring 2022</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td id="s4sem1c1"></th>
-                            <td id="s4sem2c1"></th>
-                            <td id="s4sem3c1"></th>
-                            <td id="s4sem4c1"></th>
-                            <td id="s4sem5c1"></th>
-                            <td id="s4sem6c1"></th>
-                            <td id="s4sem7c1"></th>
-                            <td id="s4sem8c1"></th>
-                        </tr>
-                        <tr>
-                            <td id="s4sem1c2"></th>
-                            <td id="s4sem2c2"></th>
-                            <td id="s4sem3c2"></th>
-                            <td id="s4sem4c2"></th>
-                            <td id="s4sem5c2"></th>
-                            <td id="s4sem6c2"></th>
-                            <td id="s4sem7c2"></th>
-                            <td id="s4sem8c2"></th>
-                        </tr>
-                        <tr>
-                            <td id="s4sem1c3"></th>
-                            <td id="s4sem2c3"></th>
-                            <td id="s4sem3c3"></th>
-                            <td id="s4sem4c3"></th>
-                            <td id="s4sem5c3"></th>
-                            <td id="s4sem6c3"></th>
-                            <td id="s4sem7c3"></th>
-                            <td id="s4sem8c3"></th>
-                        </tr>
-                        <tr>
-                            <td id="s4sem1c4"></th>
-                            <td id="s4sem2c4"></th>
-                            <td id="s4sem3c4"></th>
-                            <td id="s4sem4c4"></th>
-                            <td id="s4sem5c4"></th>
-                            <td id="s4sem6c4"></th>
-                            <td id="s4sem7c4"></th>
-                            <td id="s4sem8c4"></th>
-                        </tr>
-                        <tr>
-                            <td id="s4sem1c5"></th>
-                            <td id="s4sem2c5"></th>
-                            <td id="s4sem3c5"></th>
-                            <td id="s4sem4c5"></th>
-                            <td id="s4sem5c5"></th>
-                            <td id="s4sem6c5"></th>
-                            <td id="s4sem7c5"></th>
-                            <td id="s4sem8c5"></th>
-                        </tr>
-                    </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
-    <script src="bootstrap-slider.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            var num_of_schedules = 4;
-            //placeholder JSON object
-            var sem = '{ "semester" : 1, '+
-            '"courses": [' + 
-            '{ "courseName": "C1"}, {"courseName": "C2"}, {"courseName": "C3"}, {"courseName": "C4"}, {"courseName": "C5"} ]}';
-            var obj = JSON.parse(sem);
-
-            for (let schedule=1; schedule <= num_of_schedules; schedule++) { //for each schedule
-                for (let semester = 1; semester <= 8; semester++) { //for each semester in this schedule
-                    for (let coursenum = 1; coursenum <=5; coursenum++) { //we need to put correct text for each course
-
-                        var current_element = "s"+schedule+"sem"+semester+"c"+coursenum;
-                        $("#"+current_element).html(obj.courses[coursenum-1].courseName);
-                    }
-                }
-            }
-            })
-
-    </script>
-
-
-  </body>
+        <table class="table table-bordered" id="schedule1">
+            <thead>
+                <tr>
+                    <th scope="col">Fall 2018</th>
+                    <th scope="col">Spring 2019</th>
+                    <th scope="col">Fall 2019</th>
+                    <th scope="col">Spring 2020</th>
+                    <th scope="col">Fall 2020</th>
+                    <th scope="col">Spring 2021</th>
+                    <th scope="col">Fall 2021</th>
+                    <th scope="col">Spring 2022</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="s1sem1c1"></td>
+                    <td id="s1sem2c1"></td>
+                    <td id="s1sem3c1"></td>
+                    <td id="s1sem4c1"></td>
+                    <td id="s1sem5c1"></td>
+                    <td id="s1sem6c1"></td>
+                    <td id="s1sem7c1"></td>
+                    <td id="s1sem8c1"></td>
+                </tr>
+                <tr>
+                    <td id="s1sem1c2"></td>
+                    <td id="s1sem2c2"></td>
+                    <td id="s1sem3c2"></td>
+                    <td id="s1sem4c2"></td>
+                    <td id="s1sem5c2"></td>
+                    <td id="s1sem6c2"></td>
+                    <td id="s1sem7c2"></td>
+                    <td id="s1sem8c2"></td>
+                </tr>
+                <tr>
+                    <td id="s1sem1c3"></td>
+                    <td id="s1sem2c3"></td>
+                    <td id="s1sem3c3"></td>
+                    <td id="s1sem4c3"></td>
+                    <td id="s1sem5c3"></td>
+                    <td id="s1sem6c3"></td>
+                    <td id="s1sem7c3"></td>
+                    <td id="s1sem8c3"></td>
+                </tr>
+                <tr>
+                    <td id="s1sem1c4"></td>
+                    <td id="s1sem2c4"></td>
+                    <td id="s1sem3c4"></td>
+                    <td id="s1sem4c4"></td>
+                    <td id="s1sem5c4"></td>
+                    <td id="s1sem6c4"></td>
+                    <td id="s1sem7c4"></td>
+                    <td id="s1sem8c4"></td>
+                </tr>
+                <tr>
+                    <td id="s1sem1c5"></td>
+                    <td id="s1sem2c5"></td>
+                    <td id="s1sem3c5"></td>
+                    <td id="s1sem4c5"></td>
+                    <td id="s1sem5c5"></td>
+                    <td id="s1sem6c5"></td>
+                    <td id="s1sem7c5"></td>
+                    <td id="s1sem8c5"></td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+        <script src="bootstrap-slider.js"></script>
+        <script src="scheduleDisplay.js"></script>
+    </body>
 </html>
