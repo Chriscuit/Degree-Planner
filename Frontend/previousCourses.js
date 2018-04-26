@@ -8,7 +8,6 @@ var difficultySlider = $("#difficultySlider")
 	.data("slider");
 
 $(document).ready(function() {
-	$("#test").hide();
 	for (i in M_courses) {
 		var select = $("#coursePicker");
 		course = M_courses[i];
@@ -33,13 +32,25 @@ $(document).ready(function() {
 		opt.setAttribute("data-tokens", course);
 		select.append(opt);
 	}
+	$("#coursePicker")
+		.children("option")
+		.hide();
+	$("#coursePicker option").each(function() {
+		if (
+			$(this)
+				.val()
+				.startsWith("EE")
+		) {
+			$(this).show();
+		}
+	});
+	$("#coursePicker").selectpicker("refresh");
 
 	$("#departmentPicker").change(function() {
 		$("#coursePicker")
 			.children("option")
 			.hide();
 
-		$("#test").show();
 		var departmentPicker = document.getElementById("departmentPicker");
 		var department =
 			departmentPicker.options[departmentPicker.selectedIndex].value;
@@ -54,7 +65,6 @@ $(document).ready(function() {
 					$(this).show();
 				}
 			});
-			$("#coursePicker").selectpicker("refresh");
 		} else if (department === "Electrical Engineering") {
 			$("#coursePicker option").each(function() {
 				if (
@@ -65,7 +75,6 @@ $(document).ready(function() {
 					$(this).show();
 				}
 			});
-			$("#coursePicker").selectpicker("refresh");
 		} else {
 			$("#coursePicker option").each(function() {
 				if (
@@ -76,8 +85,8 @@ $(document).ready(function() {
 					$(this).show();
 				}
 			});
-			$("#coursePicker").selectpicker("refresh");
 		}
+		$("#coursePicker").selectpicker("refresh");
 	});
 
 	$("#coursePicker").change(function() {
