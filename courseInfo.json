@@ -1,62 +1,71 @@
-{
-  "EE302": {
+{"courses" :[
+  {
+    "title": "EE302",
     "prerequisites": [],
     "corequisites": [
       "M408C"
     ]
   },
-  "EE306": {
+  {
+    "title": "EE306",
     "prerequisites": [],
     "corequisites": [
       "M408C"
     ]
   },
-  "EE309S": {
+  {
+    "title": "EE309S",
     "prerequisites": [],
     "corequisites": []
   },
-  "EE312": {
+  {
+    "title": "EE312",
     "prerequisites": [
-      "EE306/BME303",
+      "EE306",
       "EE319K"
     ],
     "corequisites": []
   },
-  "EE313": {
+  {
+    "title": "EE313",
     "prerequisites": [
-      "BME311/EE411/EE331",
-      "M427J/M427K"
+      "EE411",
+      "M427J"
     ],
     "corequisites": [
       "M340L"
     ]
   },
-  "EE316": {
+  {
+    "title": "EE316",
     "prerequisites": [
-      "CS429/EE306"
+      "EE306"
     ],
     "corequisites": []
   },
-  "EE319K": {
+  {
+    "title": "EE319K",
     "prerequisites": [
-      "BME303/EE306"
+      "EE306"
     ],
     "corequisites": []
   },
-  "EE411": {
+  {
+    "title": "EE411",
     "prerequisites": [
       "EE302"
     ],
     "corequisites": [
-      "M427J/M427K",
+      "M427J",
       "PHY303L",
       "PHY103N"
     ]
   },
-  "EE325": {
+  {
+    "title": "EE325",
     "prerequisites": [
       "EE411",
-      "M427J/M427K",
+      "M427J",
       "PHY303L",
       "PHY103N"
     ],
@@ -64,13 +73,15 @@
       "M427L"
     ]
   },
-  "EE325K": {
+  {
+    "title": "EE325K",
     "prerequisites": [
       "EE325"
     ],
     "corequisites": []
   },
-  "EE333T": {
+  {
+    "title": "EE333T",
     "prerequisites": [
       "EE312/EE313",
       "E316L",
@@ -81,7 +92,8 @@
     ],
     "corequisites": []
   },
-  "EE334K": {
+  {
+    "title": "EE334K",
     "prerequisites": [
       "M427J",
       "PHY303L",
@@ -89,267 +101,305 @@
     ],
     "corequisites": []
   },
-  "EE338L": {
+  {
+    "title": "EE338L",
     "prerequisites": [
       "EE438"
     ],
     "corequisites": []
   },
-  "EE339": {
+  {
+    "title": "EE339",
     "prerequisites": [
-      "M427J/M427K",
+      "M427J",
       "PHY303L",
       "PHY103N"
     ],
     "corequisites": []
   },
-  "EE339S": {
+  {
+    "title": "EE339S",
     "prerequisites": [],
     "corequisites": [
       "EE339"
     ]
   },
-  "EE341": {
+  {
+    "title": "EE341",
     "prerequisites": [
       "EE313"
     ],
     "corequisites": []
   },
-  "EE347": {
+  {
+    "title": "EE347",
     "prerequisites": [
       "EE313",
       "EE325"
     ],
     "corequisites": []
   },
-  "EE348": {
+  {
+    "title": "EE348",
     "prerequisites": [
       "EE339"
     ],
     "corequisites": []
   },
-  "EE351K": {
+  {
+    "title": "EE351K",
     "prerequisites": [
-      "M427J/M427K"
+      "M427J"
     ],
     "corequisites": []
   },
-  "EE351M": {
+  {
+    "title": "EE351M",
     "prerequisites": [
-      "EE313/BME343"
+      "EE313"
     ],
     "corequisites": [
-      "BME335/EE351K"
+      "EE351K"
     ]
   },
-  "EE360C": {
+  {
+    "title": "EE360C",
     "prerequisites": [
-      "CS312/EE312",
-      "CS313K/M325K"
+      "EE312",
+      "M325K"
     ],
     "corequisites": []
   },
-  "EE360F": {
-    "prerequisites": [
-      "CS314/CS314H/EE422C/EE322C"
-    ],
-    "corequisites": []
-  },
-  "EE360K": {
-    "prerequisites": [
-      "BME335/EE351K",
-      "BME343/EE313"
-    ],
-    "corequisites": []
-  },
-  "EE360P": {
-    "prerequisites": [
-      "EE422C/EE322C"
-    ],
-    "corequisites": []
-  },
-  "EE360T": {
-    "prerequisites": [
-      "CS314/CS314H/EE422C/EE322C"
-    ],
-    "corequisites": []
-  },
-  "EE361C": {
+  {
+    "title": "EE360F",
     "prerequisites": [
       "EE422C"
     ],
     "corequisites": []
   },
-  "EE361Q": {
+  {
+    "title": "EE360K",
     "prerequisites": [
-      "CS312/CS312H/EE312"
+      "EE351K",
+      "EE313"
     ],
     "corequisites": []
   },
-  "EE361R": {
+  {
+    "title": "EE360P",
+    "prerequisites": [
+      "EE422C/EE322C"
+    ],
+    "corequisites": []
+  },
+  {
+    "title": "EE360T",
+    "prerequisites": [
+      "EE422C"
+    ],
+    "corequisites": []
+  },
+  {
+    "title": "EE361C",
+    "prerequisites": [
+      "EE422C"
+    ],
+    "corequisites": []
+  },
+  {
+    "title": "EE361Q",
+    "prerequisites": [
+      "EE312"
+    ],
+    "corequisites": []
+  },
+  {
+    "title": "EE361R",
     "prerequisites": [
       "EE325",
       "EE438"
     ],
     "corequisites": []
   },
-  "EE362K": {
+  {
+    "title": "EE362K",
     "prerequisites": [
       "EE313",
       "M340L"
     ],
     "corequisites": []
   },
-  "EE362Q": {
+  {
+    "title": "EE362Q",
     "prerequisites": [
-      "EE331/EE411"
+      "EE411"
     ],
     "corequisites": []
   },
-  "EE362R": {
+  {
+    "title": "EE362R",
     "prerequisites": [],
     "corequisites": []
   },
-  "EE362S": {
+  {
+    "title": "EE362S",
     "prerequisites": [],
     "corequisites": []
   },
-  "EE363M": {
+  {
+    "title": "EE363M",
     "prerequisites": [
       "EE325"
     ],
     "corequisites": []
   },
-  "EE363N": {
+  {
+    "title": "EE363N",
     "prerequisites": [
       "M427K"
     ],
     "corequisites": []
   },
-  "EE364D": {
+  {
+    "title": "EE364D",
     "prerequisites": [
-      "ASE333T/BME333T/CHE333T/CE333T/EE333T/ME333T/PGE333T"
+      "EE333T"
     ],
     "corequisites": [
       "EE438/EE440/EE445L/EE445S/EE461L/EE462L"
     ]
   },
-  "EE364E": {
+  {
+    "title": "EE364E",
     "prerequisites": [
-      "ASE333T/BME333T/CHE333T/CE333T/EE333T/ME333T/PGE333T"
+      "EE333T"
     ],
     "corequisites": [
       "EE438/EE440/EE445L/EE445S/EE461L/EE462L"
     ]
   },
-  "EE368L": {
+  {
+    "title": "EE368L",
     "prerequisites": [
       "EE313"
     ],
     "corequisites": [
-      "ASE333T/BME333T/CHE333T/CE333T/EE333T/ME333T/PGE333T"
+      "EE333T"
     ]
   },
-  "EE369": {
+  {
+    "title": "EE369",
     "prerequisites": [
       "EE313/EE331"
     ],
     "corequisites": []
   },
-  "EE371R": {
+  {
+    "title": "EE371R",
     "prerequisites": [
-      "BME343/EE313",
-      "BME335/EE351K/M362K"
+      "EE313",
+      "EE351K"
     ],
     "corequisites": []
   },
-  "EE374K": {
+  {
+    "title": "EE374K",
     "prerequisites": [
       "EE438"
     ],
     "corequisites": []
   },
-  "EE374L": {
+  {
+    "title": "EE374L",
     "prerequisites": [
       "EE374K"
     ],
     "corequisites": [
-      "ASE333T/BME333T/CHE333T/CE333T/EE333T/ME333T/PGE333T"
+      "EE333T"
     ]
   },
-  "EE379K": {
+  {
+    "title": "EE379K",
     "prerequisites": [
       "EE312",
       "EE313"
     ],
     "corequisites": []
   },
-  "EE379K2": {
+  {
+    "title": "EE379K2",
     "prerequisites": [
       "M340L",
-      "CS314/CS314H/EE360C",
-      "BME343/EE313",
-      "BME335/EE351K/M362K"
+      "EE360C",
+      "EE313",
+      "EE351K"
     ],
     "corequisites": [
-      "ASE333T/BME333T/CHE333T/CE333T/EE333T/ME333T/PGE333T"
+      "EE333T"
     ]
   },
-  "EE422C": {
+  {
+    "title": "EE422C",
     "prerequisites": [
-      "CS312/EE312"
+      "EE312"
     ],
     "corequisites": []
   },
-  "EE438": {
+  {
+    "title": "EE438",
     "prerequisites": [
       "EE411"
     ],
     "corequisites": [
-      "BME343/EE313",
-      "ASE333T/BME333T/CHE333T/CE333T/EE333T/ME333T/PGE333T"
+      "EE313",
+      "EE333T"
     ]
   },
-  "EE438K": {
+  {
+    "title": "EE438K",
     "prerequisites": [
       "EE438"
     ],
     "corequisites": []
   },
-  "EE440": {
+  {
+    "title": "EE440",
     "prerequisites": [
       "EE339"
     ],
     "corequisites": [
-      "BME343/EE313",
-      "ASE333T/BME333T/CHE333T/CE333T/EE333T/ME333T/PGE333T"
+      "EE313",
+      "EE333T"
     ]
   },
-  "EE445L": {
+  {
+    "title": "EE445L",
     "prerequisites": [
       "EE312",
       "EE319K",
-      "EE411/BME311",
-      "EE313/BME343"
+      "EE411",
+      "EE313"
     ],
     "corequisites": [
       "BME343/EE313",
       "ASE333T/BME333T/CHE333T/CE333T/EE333T/ME333T/PGE333T"
     ]
   },
-  "EE445S": {
+  {
+    "title": "EE445S",
     "prerequisites": [
       "EE312",
       "EE319K",
       "BME343/EE313"
     ],
     "corequisites": [
-      "BME343/EE313",
-      "ASE333T/BME333T/CHE333T/CE333T/EE333T/ME333T/PGE333T",
-      "BME335/EE351K"
+      "EE313",
+      "EE333T",
+      "EE351K"
     ]
   },
-  "EE460M": {
+  {
+    "title": "EE460M",
     "prerequisites": [
       "EE312",
       "EE316",
@@ -357,43 +407,47 @@
     ],
     "corequisites": []
   },
-  "EE460N": {
+  {
+    "title": "EE460N",
     "prerequisites": [
-      "CS312/CS312H",
-      "CS429/CS429H;EE306",
+      "EE306",
       "EE312",
       "EE319K"
     ],
     "corequisites": []
   },
-  "EE460R": {
+  {
+    "title": "EE460R",
     "prerequisites": [
       "EE316",
       "EE438"
     ],
     "corequisites": []
   },
-  "EE461L": {
+  {
+    "title": "EE461L",
     "prerequisites": [
-      "CS314/CS314H/EE422C/EE322C",
+      "EE422C",
       "M325K"
     ],
     "corequisites": [
-      "BME343/EE313",
-      "ASE333T/BME333T/CHE333T/CE333T/EE333T/ME333T/PGE333T",
-      "BME335/EE351K"
+      "EE313",
+      "EE333T",
+      "EE351K"
     ]
   },
-  "EE461P": {
+  {
+    "title": "EE461P",
     "prerequisites": [
       "M340L",
-      "CS314/CS314H/EE60C",
-      "BME343/EE313",
-      "BME335/EE351K/M362K"
+      "EE60C",
+      "EE313",
+      "EE351K"
     ],
     "corequisites": []
   },
-  "EE461S": {
+  {
+    "title": "EE461S",
     "prerequisites": [
       "EE312",
       "EE319K",
@@ -401,17 +455,19 @@
     ],
     "corequisites": []
   },
-  "EE462L": {
+  {
+    "title": "EE462L",
     "prerequisites": [
       "EE313"
     ],
     "corequisites": [
-      "BME343/EE313",
-      "ASE333T/BME333T/CHE333T/CE333T/EE333T/ME333T/PGE333T",
-      "BME335/EE351K"
+      "EE313",
+      "EE333T",
+      "EE351K"
     ]
   },
-  "EE464H": {
+  {
+    "title": "EE464H",
     "prerequisites": [
       "EE364D"
     ],
@@ -419,7 +475,8 @@
       "EE438/EE440/EE445L/EE445S/EE461L/EE462L"
     ]
   },
-  "EE464K": {
+  {
+    "title": "EE464K",
     "prerequisites": [
       "EE364D"
     ],
@@ -427,7 +484,8 @@
       "EE438/EE440/EE445L/EE445S/EE461L/EE462L"
     ]
   },
-  "EE464R": {
+  {
+    "title": "EE464R",
     "prerequisites": [
       "EE364D"
     ],
@@ -435,7 +493,8 @@
       "EE438/EE440/EE445L/EE445S/EE461L/EE462L"
     ]
   },
-  "EE464S": {
+  {
+    "title": "EE464S",
     "prerequisites": [
       "EE364E"
     ],
@@ -443,14 +502,16 @@
       "EE438/EE440/EE445L/EE445S/EE461L/EE462L"
     ]
   },
-  "EE471C": {
+  {
+    "title": "EE471C",
     "prerequisites": [
       "EE445S/EE351M/EE360K"
     ],
     "corequisites": [
-      "BME343/EE313",
-      "ASE333T/BME333T/CHE333T/CE333T/EE333T/ME333T/PGE333T",
-      "BME335/EE351K"
+      "EE313",
+      "EE333T",
+      "EE351K"
     ]
   }
+  ]
 }
