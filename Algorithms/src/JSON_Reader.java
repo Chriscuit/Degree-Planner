@@ -10,7 +10,7 @@ import java.util.List;
 
 public class JSON_Reader {
 
-    // TODO: Do something with the list of JSONcourses
+    // TODO: Do something with the list of JSONcourse list
 
     public static void main(String[] args) throws Exception {
 
