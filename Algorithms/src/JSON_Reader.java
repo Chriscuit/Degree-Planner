@@ -10,9 +10,7 @@ import java.util.List;
 
 public class JSON_Reader {
 
-    // TODO: figure out how tf we gonna read this fucker
-
-//    private String path;
+    // TODO: Do something with the list of JSONcourses
 
     public static void main(String[] args) throws Exception {
 
@@ -29,7 +27,9 @@ public class JSON_Reader {
 
         ObjectMapper objectMapper = new ObjectMapper();
 
-        TypeReference<List<JSONcourse>> mapType = new TypeReference<List<JSONcourse>() {};
-        List<JSONcourse> jsonToPersonList = objectMapper.readValue(courses, mapType);
+        TypeReference<List<JSONcourse>> mapType = new TypeReference<List<JSONcourse>>() {};
+        List<JSONcourse> jsonToJSONCourseList = objectMapper.readValue(String.valueOf(courses), mapType);
+
+        int j = 1;
     }
 }
