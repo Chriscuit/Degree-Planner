@@ -188,7 +188,7 @@
   {
     "title": "EE360P",
     "prerequisites": [
-      "EE422C/EE322C"
+      "EE422C"
     ],
     "corequisites": []
   },
@@ -390,7 +390,7 @@
     "prerequisites": [
       "EE312",
       "EE319K",
-      "BME343/EE313"
+      "EE313"
     ],
     "corequisites": [
       "EE313",
@@ -440,7 +440,7 @@
     "title": "EE461P",
     "prerequisites": [
       "M340L",
-      "EE60C",
+      "EE360C",
       "EE313",
       "EE351K"
     ],
