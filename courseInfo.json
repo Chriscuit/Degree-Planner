@@ -1,5 +1,55 @@
 {"courses" :[
   {
+    "title": "M408C",
+    "prerequisites": [],
+    "corequisites": []
+  },
+  {
+  	"title": "M408D",
+  	"prerequisites":["M408C"],
+  	"corequisites": []
+  },
+  {
+  	"title": "M325K",
+  	"prerequisites":["M408D"],
+  	"corequisites": []
+  },
+  {
+  	"title": "M427J",
+  	"prerequisites":["M408D"],
+  	"corequisites": []
+  },
+  {
+  	"title": "M427L",
+  	"prerequisites":["M408D"],
+  	"corequisites": []
+  },
+  {
+  	"title": "M340L",
+  	"prerequisites":["M408C"],
+  	"corequisites": []
+  },
+  {
+  	"title": "PHY303K",
+  	"prerequisites":[],
+  	"corequisites": ["M408D", "PHY103M"]
+  },
+  {
+  	"title": "PHY103M",
+  	"prerequisites":[],
+  	"corequisites": ["PHY303K"]
+  },
+  {
+  	"title": "PHY103N",
+  	"prerequisites":[],
+  	"corequisites": ["PHY303L"]
+  },
+  {
+  	"title": "PHY303L",
+  	"prerequisites":["PHY303K", "PHY103M"],
+  	"corequisites": ["M408D", "PHY103N"]
+  },
+  {
     "title": "EE302",
     "prerequisites": [],
     "corequisites": [
