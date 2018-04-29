@@ -1,567 +1,726 @@
-{"courses" :[
-  {
-    "title": "M408C",
-    "prerequisites": [],
-    "corequisites": []
-  },
-  {
-  	"title": "M408D",
-  	"prerequisites":["M408C"],
-  	"corequisites": []
-  },
-  {
-  	"title": "M325K",
-  	"prerequisites":["M408D"],
-  	"corequisites": []
-  },
-  {
-  	"title": "M427J",
-  	"prerequisites":["M408D"],
-  	"corequisites": []
-  },
-  {
-  	"title": "M427L",
-  	"prerequisites":["M408D"],
-  	"corequisites": []
-  },
-  {
-  	"title": "M340L",
-  	"prerequisites":["M408C"],
-  	"corequisites": []
-  },
-  {
-  	"title": "PHY303K",
-  	"prerequisites":[],
-  	"corequisites": ["M408D", "PHY103M"]
-  },
-  {
-  	"title": "PHY103M",
-  	"prerequisites":[],
-  	"corequisites": ["PHY303K"]
-  },
-  {
-  	"title": "PHY103N",
-  	"prerequisites":[],
-  	"corequisites": ["PHY303L"]
-  },
-  {
-  	"title": "PHY303L",
-  	"prerequisites":["PHY303K", "PHY103M"],
-  	"corequisites": ["M408D", "PHY103N"]
-  },
-  {
-    "title": "EE302",
-    "prerequisites": [],
-    "corequisites": [
-      "M408C"
-    ]
-  },
-  {
-    "title": "EE306",
-    "prerequisites": [],
-    "corequisites": [
-      "M408C"
-    ]
-  },
-  {
-    "title": "EE309S",
-    "prerequisites": [],
-    "corequisites": []
-  },
-  {
-    "title": "EE312",
-    "prerequisites": [
-      "EE306",
-      "EE319K"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE313",
-    "prerequisites": [
-      "EE411",
-      "M427J"
-    ],
-    "corequisites": [
-      "M340L"
-    ]
-  },
-  {
-    "title": "EE316",
-    "prerequisites": [
-      "EE306"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE319K",
-    "prerequisites": [
-      "EE306"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE411",
-    "prerequisites": [
-      "EE302"
-    ],
-    "corequisites": [
-      "M427J",
-      "PHY303L",
-      "PHY103N"
-    ]
-  },
-  {
-    "title": "EE325",
-    "prerequisites": [
-      "EE411",
-      "M427J",
-      "PHY303L",
-      "PHY103N"
-    ],
-    "corequisites": [
-      "M427L"
-    ]
-  },
-  {
-    "title": "EE325K",
-    "prerequisites": [
-      "EE325"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE333T",
-    "prerequisites": [
-      "EE312/EE313",
-      "E316L",
-      "E316M",
-      "E316N",
-      "E316P",
-      "E316K"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE334K",
-    "prerequisites": [
-      "M427J",
-      "PHY303L",
-      "PHY103N"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE338L",
-    "prerequisites": [
-      "EE438"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE339",
-    "prerequisites": [
-      "M427J",
-      "PHY303L",
-      "PHY103N"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE339S",
-    "prerequisites": [],
-    "corequisites": [
-      "EE339"
-    ]
-  },
-  {
-    "title": "EE341",
-    "prerequisites": [
-      "EE313"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE347",
-    "prerequisites": [
-      "EE313",
-      "EE325"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE348",
-    "prerequisites": [
-      "EE339"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE351K",
-    "prerequisites": [
-      "M427J"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE351M",
-    "prerequisites": [
-      "EE313"
-    ],
-    "corequisites": [
-      "EE351K"
-    ]
-  },
-  {
-    "title": "EE360C",
-    "prerequisites": [
-      "EE312",
-      "M325K"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE360F",
-    "prerequisites": [
-      "EE422C"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE360K",
-    "prerequisites": [
-      "EE351K",
-      "EE313"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE360P",
-    "prerequisites": [
-      "EE422C"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE360T",
-    "prerequisites": [
-      "EE422C"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE361C",
-    "prerequisites": [
-      "EE422C"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE361Q",
-    "prerequisites": [
-      "EE312"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE361R",
-    "prerequisites": [
-      "EE325",
-      "EE438"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE362K",
-    "prerequisites": [
-      "EE313",
-      "M340L"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE362Q",
-    "prerequisites": [
-      "EE411"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE362R",
-    "prerequisites": [],
-    "corequisites": []
-  },
-  {
-    "title": "EE362S",
-    "prerequisites": [],
-    "corequisites": []
-  },
-  {
-    "title": "EE363M",
-    "prerequisites": [
-      "EE325"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE363N",
-    "prerequisites": [
-      "M427K"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE364D",
-    "prerequisites": [
-      "EE333T"
-    ],
-    "corequisites": [
-      "EE438/EE440/EE445L/EE445S/EE461L/EE462L"
-    ]
-  },
-  {
-    "title": "EE364E",
-    "prerequisites": [
-      "EE333T"
-    ],
-    "corequisites": [
-      "EE438/EE440/EE445L/EE445S/EE461L/EE462L"
-    ]
-  },
-  {
-    "title": "EE368L",
-    "prerequisites": [
-      "EE313"
-    ],
-    "corequisites": [
-      "EE333T"
-    ]
-  },
-  {
-    "title": "EE369",
-    "prerequisites": [
-      "EE313"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE371R",
-    "prerequisites": [
-      "EE313",
-      "EE351K"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE374K",
-    "prerequisites": [
-      "EE438"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE374L",
-    "prerequisites": [
-      "EE374K"
-    ],
-    "corequisites": [
-      "EE333T"
-    ]
-  },
-  {
-    "title": "EE379K",
-    "prerequisites": [
-      "EE312",
-      "EE313"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE379K2",
-    "prerequisites": [
-      "M340L",
-      "EE360C",
-      "EE313",
-      "EE351K"
-    ],
-    "corequisites": [
-      "EE333T"
-    ]
-  },
-  {
-    "title": "EE422C",
-    "prerequisites": [
-      "EE312"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE438",
-    "prerequisites": [
-      "EE411"
-    ],
-    "corequisites": [
-      "EE313",
-      "EE333T"
-    ]
-  },
-  {
-    "title": "EE438K",
-    "prerequisites": [
-      "EE438"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE440",
-    "prerequisites": [
-      "EE339"
-    ],
-    "corequisites": [
-      "EE313",
-      "EE333T"
-    ]
-  },
-  {
-    "title": "EE445L",
-    "prerequisites": [
-      "EE312",
-      "EE319K",
-      "EE411",
-      "EE313"
-    ],
-    "corequisites": [
-      "EE313",
-      "EE333T"
-    ]
-  },
-  {
-    "title": "EE445S",
-    "prerequisites": [
-      "EE312",
-      "EE319K",
-      "EE313"
-    ],
-    "corequisites": [
-      "EE313",
-      "EE333T",
-      "EE351K"
-    ]
-  },
-  {
-    "title": "EE460M",
-    "prerequisites": [
-      "EE312",
-      "EE316",
-      "EE319K"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE460N",
-    "prerequisites": [
-      "EE306",
-      "EE312",
-      "EE319K"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE460R",
-    "prerequisites": [
-      "EE316",
-      "EE438"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE461L",
-    "prerequisites": [
-      "EE422C",
-      "M325K"
-    ],
-    "corequisites": [
-      "EE313",
-      "EE333T",
-      "EE351K"
-    ]
-  },
-  {
-    "title": "EE461P",
-    "prerequisites": [
-      "M340L",
-      "EE360C",
-      "EE313",
-      "EE351K"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE461S",
-    "prerequisites": [
-      "EE312",
-      "EE319K",
-      "M325K"
-    ],
-    "corequisites": []
-  },
-  {
-    "title": "EE462L",
-    "prerequisites": [
-      "EE313"
-    ],
-    "corequisites": [
-      "EE313",
-      "EE333T",
-      "EE351K"
-    ]
-  },
-  {
-    "title": "EE464H",
-    "prerequisites": [
-      "EE364D"
-    ],
-    "corequisites": [
-      "EE438/EE440/EE445L/EE445S/EE461L/EE462L"
-    ]
-  },
-  {
-    "title": "EE464K",
-    "prerequisites": [
-      "EE364D"
-    ],
-    "corequisites": [
-      "EE438/EE440/EE445L/EE445S/EE461L/EE462L"
-    ]
-  },
-  {
-    "title": "EE464R",
-    "prerequisites": [
-      "EE364D"
-    ],
-    "corequisites": [
-      "EE438/EE440/EE445L/EE445S/EE461L/EE462L"
-    ]
-  },
-  {
-    "title": "EE464S",
-    "prerequisites": [
-      "EE364E"
-    ],
-    "corequisites": [
-      "EE438/EE440/EE445L/EE445S/EE461L/EE462L"
-    ]
-  },
-  {
-    "title": "EE471C",
-    "prerequisites": [
-      "EE445S/EE351M/EE360K"
-    ],
-    "corequisites": [
-      "EE313",
-      "EE333T",
-      "EE351K"
-    ]
-  }
+{
+  "courses": [
+    {
+      "title": "M408C",
+      "hours": 4,
+      "difficulty": 3,
+      "prerequisites": [],
+      "corequisites": []
+    },
+    {
+      "title": "M408D",
+      "hours": 4,
+      "difficulty": 3,
+      "prerequisites": [
+        "M408C"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "M325K",
+      "hours": 3,
+      "difficulty": 3,
+      "prerequisites": [
+        "M408D"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "M427J",
+      "hours": 4,
+      "difficulty": 3,
+      "prerequisites": [
+        "M408D"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "M427L",
+      "hours": 4,
+      "difficulty": 4,
+      "prerequisites": [
+        "M408D"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "M340L",
+      "hours": 3,
+      "difficulty": 3,
+      "prerequisites": [
+        "M408C"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "PHY303K",
+      "hours": 3,
+      "difficulty": 4,
+      "prerequisites": [],
+      "corequisites": [
+        "M408D",
+        "PHY103M"
+      ]
+    },
+    {
+      "title": "PHY103M",
+      "hours": 1,
+      "difficulty": 3,
+      "prerequisites": [],
+      "corequisites": [
+        "PHY303K"
+      ]
+    },
+    {
+      "title": "PHY103N",
+      "hours": 1,
+      "difficulty": 3,
+      "prerequisites": [],
+      "corequisites": [
+        "PHY303L"
+      ]
+    },
+    {
+      "title": "PHY303L",
+      "hours": 3,
+      "difficulty": 4,
+      "prerequisites": [
+        "PHY303K",
+        "PHY103M"
+      ],
+      "corequisites": [
+        "M408D",
+        "PHY103N"
+      ]
+    },
+    {
+      "title": "EE302",
+      "hours": 3,
+      "difficulty": 4,
+      "prerequisites": [],
+      "corequisites": [
+        "M408C"
+      ]
+    },
+    {
+      "title": "EE306",
+      "hours": 3,
+      "difficulty": 4,
+      "prerequisites": [],
+      "corequisites": [
+        "M408C"
+      ]
+    },
+    {
+      "title": "EE312",
+      "hours": 3,
+      "difficulty": 3,
+      "prerequisites": [
+        "EE306",
+        "EE319K"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE313",
+      "hours": 3,
+      "difficulty": 4,
+      "prerequisites": [
+        "EE411",
+        "M427J"
+      ],
+      "corequisites": [
+        "M340L"
+      ]
+    },
+    {
+      "title": "EE316",
+      "hours": 3,
+      "difficulty": 3,
+      "prerequisites": [
+        "EE306"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE319K",
+      "hours": 3,
+      "difficulty": 4,
+      "prerequisites": [
+        "EE306"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE411",
+      "hours": 4,
+      "difficulty": 3,
+      "prerequisites": [
+        "EE302"
+      ],
+      "corequisites": [
+        "M427J",
+        "PHY303L",
+        "PHY103N"
+      ]
+    },
+    {
+      "title": "EE325",
+      "hours": 3,
+      "difficulty": 3,
+      "prerequisites": [
+        "EE411",
+        "M427J",
+        "PHY303L",
+        "PHY103N"
+      ],
+      "corequisites": [
+        "M427L"
+      ]
+    },
+    {
+      "title": "EE325K",
+      "hours": 3,
+      "difficulty": 3,
+      "prerequisites": [
+        "EE325"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE333T",
+      "hours": 3,
+      "difficulty": 4,
+      "prerequisites": [
+        "EE312/EE313",
+        "E316L",
+        "E316M",
+        "E316N",
+        "E316P",
+        "E316K"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE334K",
+      "hours": 3,
+      "difficulty": 4,
+      "prerequisites": [
+        "M427J",
+        "PHY303L",
+        "PHY103N"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE338L",
+      "hours": 3,
+      "difficulty": 3,
+      "prerequisites": [
+        "EE438"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE339",
+      "hours": 3,
+      "difficulty": 4,
+      "prerequisites": [
+        "M427J",
+        "PHY303L",
+        "PHY103N"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE339S",
+      "hours": 3,
+      "difficulty": 3,
+      "prerequisites": [],
+      "corequisites": [
+        "EE339"
+      ]
+    },
+    {
+      "title": "EE341",
+      "hours": 3,
+      "difficulty": 3,
+      "prerequisites": [
+        "EE313"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE347",
+      "hours": 3,
+      "difficulty": 4,
+      "prerequisites": [
+        "EE313",
+        "EE325"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE348",
+      "hours": 3,
+      "difficulty": 4,
+      "prerequisites": [
+        "EE339"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE351K",
+      "hours": 3,
+      "difficulty": 4,
+      "prerequisites": [
+        "M427J"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE351M",
+      "hours": 3,
+      "difficulty": 4,
+      "prerequisites": [
+        "EE313"
+      ],
+      "corequisites": [
+        "EE351K"
+      ]
+    },
+    {
+      "title": "EE360C",
+      "hours": 3,
+      "difficulty": 5,
+      "prerequisites": [
+        "EE312",
+        "M325K"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE360F",
+      "hours": 3,
+      "difficulty": 2,
+      "prerequisites": [
+        "EE422C"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE360K",
+      "hours": 3,
+      "difficulty": 3,
+      "prerequisites": [
+        "EE351K",
+        "EE313"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE360P",
+      "hours": 3,
+      "difficulty": 4,
+      "prerequisites": [
+        "EE422C"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE360T",
+      "hours": 3,
+      "difficulty": 2,
+      "prerequisites": [
+        "EE422C"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE361C",
+      "hours": 3,
+      "difficulty": 3,
+      "prerequisites": [
+        "EE422C"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE361Q",
+      "hours": 3,
+      "difficulty": 3,
+      "prerequisites": [
+        "EE312"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE361R",
+      "hours": 3,
+      "difficulty": 3,
+      "prerequisites": [
+        "EE325",
+        "EE438"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE362K",
+      "hours": 3,
+      "difficulty": 1,
+      "prerequisites": [
+        "EE313",
+        "M340L"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE362Q",
+      "hours": 3,
+      "difficulty": 5,
+      "prerequisites": [
+        "EE411"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE362R",
+      "hours": 3,
+      "difficulty": 3,
+      "prerequisites": [],
+      "corequisites": []
+    },
+    {
+      "title": "EE362S",
+      "hours": 3,
+      "difficulty": 2,
+      "prerequisites": [],
+      "corequisites": []
+    },
+    {
+      "title": "EE363M",
+      "hours": 3,
+      "difficulty": 2,
+      "prerequisites": [
+        "EE325"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE363N",
+      "hours": 3,
+      "difficulty": 2,
+      "prerequisites": [
+        "M427K"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE364D",
+      "hours": 3,
+      "difficulty": 3,
+      "prerequisites": [
+        "EE333T"
+      ],
+      "corequisites": [
+        "EE438/EE440/EE445L/EE445S/EE461L/EE462L"
+      ]
+    },
+    {
+      "title": "EE364E",
+      "hours": 3,
+      "difficulty": 4,
+      "prerequisites": [
+        "EE333T"
+      ],
+      "corequisites": [
+        "EE438/EE440/EE445L/EE445S/EE461L/EE462L"
+      ]
+    },
+    {
+      "title": "EE368L",
+      "hours": 3,
+      "difficulty": 3,
+      "prerequisites": [
+        "EE313"
+      ],
+      "corequisites": [
+        "EE333T"
+      ]
+    },
+    {
+      "title": "EE369",
+      "hours": 3,
+      "difficulty": 4,
+      "prerequisites": [
+        "EE313"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE371R",
+      "hours": 3,
+      "difficulty": 2,
+      "prerequisites": [
+        "EE313",
+        "EE351K"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE374K",
+      "hours": 3,
+      "difficulty": 4,
+      "prerequisites": [
+        "EE438"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE374L",
+      "hours": 3,
+      "difficulty": 4,
+      "prerequisites": [
+        "EE374K"
+      ],
+      "corequisites": [
+        "EE333T"
+      ]
+    },
+    {
+      "title": "EE379K",
+      "hours": 3,
+      "difficulty": 4,
+      "prerequisites": [
+        "EE312",
+        "EE313"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE379K2",
+      "hours": 3,
+      "difficulty": 4,
+      "prerequisites": [
+        "M340L",
+        "EE360C",
+        "EE313",
+        "EE351K"
+      ],
+      "corequisites": [
+        "EE333T"
+      ]
+    },
+    {
+      "title": "EE422C",
+      "hours": 4,
+      "difficulty": 3,
+      "prerequisites": [
+        "EE312"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE438",
+      "hours": 4,
+      "difficulty": 3,
+      "prerequisites": [
+        "EE411"
+      ],
+      "corequisites": [
+        "EE313",
+        "EE333T"
+      ]
+    },
+    {
+      "title": "EE438K",
+      "hours": 4,
+      "difficulty": 4,
+      "prerequisites": [
+        "EE438"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE440",
+      "hours": 4,
+      "difficulty": 3,
+      "prerequisites": [
+        "EE339"
+      ],
+      "corequisites": [
+        "EE313",
+        "EE333T"
+      ]
+    },
+    {
+      "title": "EE445L",
+      "hours": 4,
+      "difficulty": 5,
+      "prerequisites": [
+        "EE312",
+        "EE319K",
+        "EE411",
+        "EE313"
+      ],
+      "corequisites": [
+        "EE313",
+        "EE333T"
+      ]
+    },
+    {
+      "title": "EE445S",
+      "hours": 4,
+      "difficulty": 3,
+      "prerequisites": [
+        "EE312",
+        "EE319K",
+        "EE313"
+      ],
+      "corequisites": [
+        "EE313",
+        "EE333T",
+        "EE351K"
+      ]
+    },
+    {
+      "title": "EE460M",
+      "hours": 4,
+      "difficulty": 3,
+      "prerequisites": [
+        "EE312",
+        "EE316",
+        "EE319K"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE460N",
+      "hours": 4,
+      "difficulty": 5,
+      "prerequisites": [
+        "EE306",
+        "EE312",
+        "EE319K"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE460R",
+      "hours": 4,
+      "difficulty": 5,
+      "prerequisites": [
+        "EE316",
+        "EE438"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE461L",
+      "hours": 4,
+      "difficulty": 3,
+      "prerequisites": [
+        "EE422C",
+        "M325K"
+      ],
+      "corequisites": [
+        "EE313",
+        "EE333T",
+        "EE351K"
+      ]
+    },
+    {
+      "title": "EE461P",
+      "hours": 4,
+      "difficulty": 3,
+      "prerequisites": [
+        "M340L",
+        "EE360C",
+        "EE313",
+        "EE351K"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE461S",
+      "hours": 4,
+      "difficulty": 5,
+      "prerequisites": [
+        "EE312",
+        "EE319K",
+        "M325K"
+      ],
+      "corequisites": []
+    },
+    {
+      "title": "EE462L",
+      "hours": 4,
+      "difficulty": 3,
+      "prerequisites": [
+        "EE313"
+      ],
+      "corequisites": [
+        "EE313",
+        "EE333T",
+        "EE351K"
+      ]
+    },
+    {
+      "title": "EE464H",
+      "hours": 4,
+      "difficulty": 4,
+      "prerequisites": [
+        "EE364D"
+      ],
+      "corequisites": [
+        "EE438/EE440/EE445L/EE445S/EE461L/EE462L"
+      ]
+    },
+    {
+      "title": "EE464K",
+      "hours": 4,
+      "difficulty": 4,
+      "prerequisites": [
+        "EE364D"
+      ],
+      "corequisites": [
+        "EE438/EE440/EE445L/EE445S/EE461L/EE462L"
+      ]
+    },
+    {
+      "title": "EE464R",
+      "hours": 4,
+      "difficulty": 4,
+      "prerequisites": [
+        "EE364D"
+      ],
+      "corequisites": [
+        "EE438/EE440/EE445L/EE445S/EE461L/EE462L"
+      ]
+    },
+    {
+      "title": "EE464S",
+      "hours": 4,
+      "difficulty": 4,
+      "prerequisites": [
+        "EE364E"
+      ],
+      "corequisites": [
+        "EE438/EE440/EE445L/EE445S/EE461L/EE462L"
+      ]
+    },
+    {
+      "title": "EE471C",
+      "hours": 4,
+      "difficulty": 3,
+      "prerequisites": [
+        "EE445S/EE351M/EE360K"
+      ],
+      "corequisites": [
+        "EE313",
+        "EE333T",
+        "EE351K"
+      ]
+    }
   ]
 }
