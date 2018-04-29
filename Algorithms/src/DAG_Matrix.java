@@ -3,7 +3,7 @@ import java.util.*;
 public class DAG_Matrix {
 
     // TODO: implement BFS on reverse Graph to get max depth for each course. Do it for each leaf node (root in reverse) and set course depth to frontier level
-    // TODO:
+    // TODO: handle coreqs and post-co-reqs
 
     private final int vertices;
     private HashMap<String, List<String>> graph;

@@ -1,4 +1,3 @@
-import java.awt.font.NumericShaper;
 import java.util.List;
 import java.util.Objects;
 
@@ -8,8 +7,8 @@ public class Course {
     private int hours;
     private int difficulty;
     private List<String> prereqs;
+    private List<String> coreqs;
     private List<String> postCourses;
-    private Boolean isLeaf;
     private int maxDepth;
 
     // TODO: implement these puppies for the algo to work
@@ -19,12 +18,20 @@ public class Course {
     private int lastestPrereqPlacement;
 
 
-    Course(String name, int hours, int difficulty, List<String> prereqs) {
+    Course(String name, int hours, int difficulty, List<String> prereqs, List<String> coreqs) {
         setName(name);
         setHours(hours);
         setDifficulty(difficulty);
         setPrereqs(prereqs);
-        setIsLeaf();
+        setCoreqs(coreqs);
+    }
+
+    Course(JSONcourse jcourse) {
+        setName(jcourse.getTitle());
+        setHours(jcourse.getHours());
+        setDifficulty(jcourse.getDiff());
+        setPrereqs(jcourse.getPrerequisites());
+        setCoreqs(jcourse.getCorequisites());
     }
 
     public void setMaxDepth(int depth) {
@@ -70,16 +77,16 @@ public class Course {
         this.prereqs = prereqs;
     }
 
-    private void setIsLeaf() {
-        this.isLeaf = this.prereqs.isEmpty();
+    private void setCoreqs(List<String> prereqs) {
+        this.coreqs = coreqs;
+    }
+
+    private List<String> getCoreqs() {
+        return this.coreqs;
     }
 
     public void setPostCourses(List<String> list) {
         this.postCourses = list;
-    }
-
-    public Boolean isLeaf() {
-        return isLeaf;
     }
 
     @Override

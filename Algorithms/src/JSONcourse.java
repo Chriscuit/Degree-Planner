@@ -3,6 +3,7 @@ import com.fasterxml.jackson.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -61,4 +62,15 @@ public class JSONcourse {
         this.additionalProperties.put(name, value);
     }
 
+    public int getHours() {
+        char[] titleCharArr = this.title.toCharArray();
+        int x = Integer.valueOf(String.valueOf(titleCharArr[2]));
+        return x;
+    }
+
+    public int getDiff() {
+        Random ran = new Random();
+        int x = ran.nextInt(6);
+        return x;
+    }
 }

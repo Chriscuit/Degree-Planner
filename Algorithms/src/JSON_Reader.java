@@ -30,6 +30,12 @@ public class JSON_Reader {
         TypeReference<List<JSONcourse>> mapType = new TypeReference<List<JSONcourse>>() {};
         List<JSONcourse> jsonToJSONCourseList = objectMapper.readValue(String.valueOf(courses), mapType);
 
-        int j = 1;
+        CourseList courseList = new CourseList();
+
+        for (JSONcourse jcourse : jsonToJSONCourseList) {
+            courseList.add(new Course(jcourse));
+        }
+
+
     }
 }
