@@ -290,7 +290,7 @@
   {
     "title": "EE369",
     "prerequisites": [
-      "EE313/EE331"
+      "EE313"
     ],
     "corequisites": []
   },
@@ -381,8 +381,8 @@
       "EE313"
     ],
     "corequisites": [
-      "BME343/EE313",
-      "ASE333T/BME333T/CHE333T/CE333T/EE333T/ME333T/PGE333T"
+      "EE313",
+      "EE333T"
     ]
   },
   {
