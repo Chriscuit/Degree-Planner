@@ -29,7 +29,7 @@ public class Course {
     Course(JSONcourse jcourse) {
         setName(jcourse.getTitle());
         setHours(jcourse.getHours());
-        setDifficulty(jcourse.getDiff());
+        setDifficulty(jcourse.getDifficulty());
         setPrereqs(jcourse.getPrerequisites());
         setCoreqs(jcourse.getCorequisites());
     }

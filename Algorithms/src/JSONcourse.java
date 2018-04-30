@@ -3,11 +3,12 @@ import com.fasterxml.jackson.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
         "title",
+        "hours",
+        "difficulty",
         "prerequisites",
         "corequisites"
 })
@@ -15,6 +16,10 @@ public class JSONcourse {
 
     @JsonProperty("title")
     private String title;
+    @JsonProperty("hours")
+    private int hours;
+    @JsonProperty("difficulty")
+    private int difficulty;
     @JsonProperty("prerequisites")
     private List<String> prerequisites = null;
     @JsonProperty("corequisites")
@@ -52,6 +57,26 @@ public class JSONcourse {
         this.corequisites = corequisites;
     }
 
+    @JsonProperty("hours")
+    public void setHours() {
+        this.hours = hours;
+    }
+
+    @JsonProperty("hours")
+    public int getHours() {
+        return hours;
+    }
+
+    @JsonProperty("difficulty")
+    public void setDifficulty() {
+        this.difficulty = difficulty;
+    }
+
+    @JsonProperty("difficulty")
+    public int getDifficulty() {
+        return difficulty;
+    }
+
     @JsonAnyGetter
     public Map<String, Object> getAdditionalProperties() {
         return this.additionalProperties;
@@ -60,17 +85,5 @@ public class JSONcourse {
     @JsonAnySetter
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
-    }
-
-    public int getHours() {
-        char[] titleCharArr = this.title.toCharArray();
-        int x = Integer.valueOf(String.valueOf(titleCharArr[2]));
-        return x;
-    }
-
-    public int getDiff() {
-        Random ran = new Random();
-        int x = ran.nextInt(6);
-        return x;
     }
 }

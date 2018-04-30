@@ -34,6 +34,6 @@ public class JSON_Reader {
             courseList.add(new Course(jcourse));
         }
 
-
+        int j = 1;
     }
 }
