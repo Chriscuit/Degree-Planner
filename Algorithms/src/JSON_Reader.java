@@ -12,7 +12,7 @@ public class JSON_Reader {
 
     public static void main(String[] args) throws Exception {
 
-        Object obj = new JSONParser().parse(new FileReader("/Users/christophergill/Downloads/Degree-Planner/courseInfo.json"));
+        Object obj = new JSONParser().parse(new FileReader("courseInfo.json"));
 
         JSONObject jsonObject = (JSONObject) obj;
 
@@ -33,6 +33,7 @@ public class JSON_Reader {
         for (JSONcourse jcourse : jsonToJSONCourseList) {
             courseList.add(new Course(jcourse));
         }
+        courseList.finishedList();
 
         int j = 1;
     }

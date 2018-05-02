@@ -59,4 +59,36 @@ public class CourseList {
             course.setPostCourses(map.get(course.getName()));
         }
     }
+
+    public Boolean contains(String courseName) {
+
+        for (Course c : list) {
+            if (c.getName().equals(courseName)) return true;
+        }
+
+        return false;
+    }
+
+    public void errorCheck() throws InvalidCoursesJsonException {
+        for (Course c : list) {
+            for (String str : c.getPrereqs()) {
+                if (!contains(str)) {
+                    throw new InvalidCoursesJsonException(str);
+                }
+            }
+        }
+    }
+
+    public void finishedList() throws InvalidCoursesJsonException {
+        caclulatePostCourses();
+        errorCheck();
+    }
+
+    public class InvalidCoursesJsonException extends Exception {
+
+        public InvalidCoursesJsonException(String message){
+            super(message);
+        }
+
+    }
 }

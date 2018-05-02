@@ -116,7 +116,6 @@
         "hours": 3,
         "difficulty": 3,
         "prerequisites": [
-            "EE306",
             "EE319K"
         ],
         "corequisites": []
@@ -192,8 +191,8 @@
         "hours": 3,
         "difficulty": 4,
         "prerequisites": [
-            "EE312/EE313",
-            "E316L/E316M/E316N/E316P/E316K"
+            "EE312",
+            "EE313"
         ],
         "corequisites": []
     },
@@ -407,7 +406,7 @@
         "hours": 3,
         "difficulty": 2,
         "prerequisites": [
-            "M427K"
+            "M427J"
         ],
         "corequisites": []
     },
@@ -418,9 +417,7 @@
         "prerequisites": [
             "EE333T"
         ],
-        "corequisites": [
-            "EE438/EE440/EE445L/EE445S/EE461L/EE462L"
-        ]
+        "corequisites": []
     },
     {
         "title": "EE364E",
@@ -429,9 +426,7 @@
         "prerequisites": [
             "EE333T"
         ],
-        "corequisites": [
-            "EE438/EE440/EE445L/EE445S/EE461L/EE462L"
-        ]
+        "corequisites": []
     },
     {
         "title": "EE368L",
@@ -521,7 +516,6 @@
         "hours": 4,
         "difficulty": 3,
         "prerequisites": [
-            "EE411"
         ],
         "corequisites": [
             "EE313",
@@ -555,12 +549,9 @@
         "difficulty": 5,
         "prerequisites": [
             "EE312",
-            "EE319K",
-            "EE411",
             "EE313"
         ],
         "corequisites": [
-            "EE313",
             "EE333T"
         ]
     },
@@ -570,11 +561,9 @@
         "difficulty": 3,
         "prerequisites": [
             "EE312",
-            "EE319K",
             "EE313"
         ],
         "corequisites": [
-            "EE313",
             "EE333T",
             "EE351K"
         ]
@@ -585,8 +574,7 @@
         "difficulty": 3,
         "prerequisites": [
             "EE312",
-            "EE316",
-            "EE319K"
+            "EE316"
         ],
         "corequisites": []
     },
@@ -596,8 +584,7 @@
         "difficulty": 5,
         "prerequisites": [
             "EE306",
-            "EE312",
-            "EE319K"
+            "EE312"
         ],
         "corequisites": []
     },
@@ -620,7 +607,6 @@
             "M325K"
         ],
         "corequisites": [
-            "EE313",
             "EE333T",
             "EE351K"
         ]
@@ -643,7 +629,6 @@
         "difficulty": 5,
         "prerequisites": [
             "EE312",
-            "EE319K",
             "M325K"
         ],
         "corequisites": []
@@ -656,7 +641,6 @@
             "EE313"
         ],
         "corequisites": [
-            "EE313",
             "EE333T",
             "EE351K"
         ]
@@ -668,9 +652,7 @@
         "prerequisites": [
             "EE364D"
         ],
-        "corequisites": [
-            "EE438/EE440/EE445L/EE445S/EE461L/EE462L"
-        ]
+        "corequisites": []
     },
     {
         "title": "EE464K",
@@ -679,9 +661,7 @@
         "prerequisites": [
             "EE364D"
         ],
-        "corequisites": [
-            "EE438/EE440/EE445L/EE445S/EE461L/EE462L"
-        ]
+        "corequisites": []
     },
     {
         "title": "EE464R",
@@ -690,9 +670,7 @@
         "prerequisites": [
             "EE364D"
         ],
-        "corequisites": [
-            "EE438/EE440/EE445L/EE445S/EE461L/EE462L"
-        ]
+        "corequisites": []
     },
     {
         "title": "EE464S",
@@ -701,21 +679,17 @@
         "prerequisites": [
             "EE364E"
         ],
-        "corequisites": [
-            "EE438/EE440/EE445L/EE445S/EE461L/EE462L"
-        ]
+        "corequisites": []
     },
     {
         "title": "EE471C",
         "hours": 4,
         "difficulty": 3,
         "prerequisites": [
-            "EE445S/EE351M/EE360K"
+            "EE351M"
         ],
         "corequisites": [
-            "EE313",
-            "EE333T",
-            "EE351K"
+            "EE333T"
         ]
     },
     {
@@ -723,7 +697,7 @@
         "hours": 4,
         "difficulty": 4,
         "prerequisites": [
-            "EE445L/EE445S",
+            "EE445L",
             "EE333T"
         ],
         "corequisites": []

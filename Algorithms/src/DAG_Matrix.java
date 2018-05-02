@@ -6,8 +6,8 @@ public class DAG_Matrix {
     // TODO: handle coreqs and post-co-reqs
 
     private final int vertices;
-    private HashMap<String, List<String>> graph;
-    private HashMap<String, List<String>> rGraph;
+    private HashMap<String, List<String>> graph = new HashMap<>();
+    private HashMap<String, List<String>> rGraph = new HashMap<>();
     private CourseList courseList;
 
     DAG_Matrix(CourseList courseList) {
@@ -19,23 +19,15 @@ public class DAG_Matrix {
 
     private void setGraph() {
 
-        HashMap<String, List<String>> map = new HashMap<>();
-
         for (Course course : courseList.getList()) {
             graph.put(course.getName(), course.getPrereqs());
         }
-
-        this.graph = map;
     }
 
     private void setReverseGraph() {
 
-        HashMap<String, List<String>> map = new HashMap<>();
-
         for (Course course : courseList.getList()) {
             rGraph.put(course.getName(), course.getPostCourses());
         }
-
-        this.rGraph = map;
     }
 }
