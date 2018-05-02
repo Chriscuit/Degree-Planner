@@ -23,6 +23,7 @@ public class DAG_Matrix {
         setAllMaxDepths();
         setAllUpperBounds();
         setSortList();
+        initFullPlan();
     }
 
     private void setGraph() {
@@ -91,52 +92,83 @@ public class DAG_Matrix {
 
     // TODO: write notify functon for when I assign courses to semsters
     private void initFullPlan() {
+
+        if (courseList.contains("M408C")) {
+            Course M408C = C("M408C");
+            fullPlan.getSem(0).add(M408C);
+            sortList.remove(M408C);
+            M408C.setSemesterPlacement(0);
+        }
+        if (courseList.contains("M408D")) {
+            Course M408D = C("M408D");
+            if (courseList.contains("M408C")) {
+                fullPlan.getSem(1).add(M408D);
+                sortList.remove(M408D);
+                M408D.setSemesterPlacement(1);
+            } else {
+                fullPlan.getSem(0).add(M408D);
+                sortList.remove(M408D);
+                M408D.setSemesterPlacement(0);
+            }
+        }
         if (courseList.contains("EE302")) {
             Course EE302 = C("EE302");
             fullPlan.getSem(0).add(EE302);
             sortList.remove(EE302);
-//            EE302.
+            EE302.setSemesterPlacement(0);
         }
         if (courseList.contains("EE306")) {
-            Course EE306 = C("EE302");
+            Course EE306 = C("EE306");
             fullPlan.getSem(0).add(EE306);
             sortList.remove(EE306);
+            EE306.setSemesterPlacement(0);
         }
         if (courseList.contains("EE319K")) {
             Course EE319K = C("EE319K");
             fullPlan.getSem(1).add(EE319K);
             sortList.remove(EE319K);
+            EE319K.setSemesterPlacement(1);
         }
         if (courseList.contains("EE364D")) {
             Course EE364D = C("EE364D");
-            fullPlan.getSem(fullPlan.getSize()-1).add(EE364D);
+            fullPlan.getSem(fullPlan.getSize()-2).add(EE364D);
             sortList.remove(EE364D);
+            EE364D.setSemesterPlacement(fullPlan.getSize()-2);
         }
         if (courseList.contains("EE364E")) {
             Course EE364E = C("EE364E");
-            fullPlan.getSem(fullPlan.getSize()-1).add(EE364E);
+            fullPlan.getSem(fullPlan.getSize()-2).add(EE364E);
             sortList.remove(EE364E);
+            EE364E.setSemesterPlacement(fullPlan.getSize()-2);
         }
         if (courseList.contains("EE464K")) {
             Course EE464K = C("EE464K");
-            fullPlan.getSem(fullPlan.getSize()).add(EE464K);
+            fullPlan.getSem(fullPlan.getSize()-1).add(EE464K);
             sortList.remove(EE464K);
+            EE464K.setSemesterPlacement(fullPlan.getSize()-1);
         }
         if (courseList.contains("EE464R")) {
             Course EE464R = C("EE464R");
-            fullPlan.getSem(fullPlan.getSize()).add(EE464R);
+            fullPlan.getSem(fullPlan.getSize()-1).add(EE464R);
             sortList.remove(EE464R);
+            EE464R.setSemesterPlacement(fullPlan.getSize()-1);
         }
         if (courseList.contains("EE464S")) {
             Course EE464S = C("EE464S");
-            fullPlan.getSem(fullPlan.getSize()).add(EE464S);
+            fullPlan.getSem(fullPlan.getSize()-1).add(EE464S);
             sortList.remove(EE464S);
+            EE464S.setSemesterPlacement(fullPlan.getSize()-1);
         }
         if (courseList.contains("EE464S")) {
             Course EE464H = C("EE464H");
-            fullPlan.getSem(fullPlan.getSize()).add(EE464H);
+            fullPlan.getSem(fullPlan.getSize()-1).add(EE464H);
             sortList.remove(EE464H);
+            EE464H.setSemesterPlacement(fullPlan.getSize()-1);
         }
+    }
+
+    private void optimizeFullPlan() {
+
     }
 
 
