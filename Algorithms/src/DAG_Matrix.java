@@ -15,6 +15,7 @@ public class DAG_Matrix {
         this.vertices = courseList.size();
         setGraph();
         setReverseGraph();
+        setAllMaxDepths();
     }
 
     private void setGraph() {
@@ -29,5 +30,34 @@ public class DAG_Matrix {
         for (Course course : courseList.getList()) {
             rGraph.put(course.getName(), course.getPostCourses());
         }
+    }
+
+    private void setAllMaxDepths() {
+
+        for (String course : graph.keySet()) {
+            List<String> pCourses = C(course).getPostCourses();
+            if (pCourses.isEmpty()) {
+                C(course).setMaxDepth(0);
+                BFS(course);
+            }
+        }
+    }
+
+    private void BFS(String course) {
+
+        Course currCourse = C(course);
+        int baseDepth = currCourse.getMaxDepth();
+
+        for (String prereq : C(course).getPrereqs()) {
+            C(prereq).setMaxDepth(baseDepth + 1);
+            BFS(prereq);
+        }
+    }
+
+    private Course C(String course) {
+        for (Course c : this.courseList.getList()) {
+            if (c.getName().equals(course)) return c;
+        }
+        return null;
     }
 }

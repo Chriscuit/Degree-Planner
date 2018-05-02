@@ -41,22 +41,28 @@ public class CourseList {
         HashMap<String, List<String>> map = new HashMap<>();
 
         for (Course course : getList()) {
-            for (String prereq : course.getPrereqs()) {
-
-                List<String> postCourseStrings = new ArrayList<>();
-                if (map.containsKey(prereq)) {
-                    postCourseStrings = map.get(prereq);
-                    postCourseStrings.add(course.getName());
-                    map.put(prereq, postCourseStrings);
-                } else {
-                    postCourseStrings.add(course.getName());
-                    map.put(prereq, postCourseStrings);
-                }
-            }
+            populateMap(map, course, course.getPrereqs());
+            populateMap(map, course, course.getCoreqs());
+            map.put(course.getName(), map.get(course.getName()) == null ? new ArrayList<String>() : map.get(course.getName()));
         }
 
         for (Course course : getList()) {
             course.setPostCourses(map.get(course.getName()));
+        }
+    }
+
+    private void populateMap(HashMap<String, List<String>> map,  Course course, List<String> courseReqs) {
+        for (String req : courseReqs) {
+
+            List<String> postCourseStrings = new ArrayList<>();
+            if (map.containsKey(req)) {
+                postCourseStrings = map.get(req);
+                postCourseStrings.add(course.getName());
+                map.put(req, postCourseStrings);
+            } else {
+                postCourseStrings.add(course.getName());
+                map.put(req, postCourseStrings);
+            }
         }
     }
 
@@ -89,6 +95,5 @@ public class CourseList {
         public InvalidCoursesJsonException(String message){
             super(message);
         }
-
     }
 }

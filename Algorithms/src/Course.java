@@ -9,7 +9,7 @@ public class Course {
     private List<String> prereqs;
     private List<String> coreqs;
     private List<String> postCourses;
-    private int maxDepth;
+    private int maxDepth = 0;
 
     // TODO: implement these puppies for the algo to work
     private int semesterPlacement;
@@ -35,7 +35,7 @@ public class Course {
     }
 
     public void setMaxDepth(int depth) {
-        this.maxDepth = depth;
+        this.maxDepth = Integer.max(depth, this.maxDepth);
     }
 
     public int getMaxDepth() {
@@ -69,6 +69,7 @@ public class Course {
         return prereqs;
     }
 
+
     public List<String> getPostCourses() {
         return postCourses;
     }
@@ -77,12 +78,12 @@ public class Course {
         this.prereqs = prereqs;
     }
 
-    private void setCoreqs(List<String> prereqs) {
+    private void setCoreqs(List<String> coreqs) {
         this.coreqs = coreqs;
     }
 
-    private List<String> getCoreqs() {
-        return this.coreqs;
+    public List<String> getCoreqs() {
+        return coreqs;
     }
 
     public void setPostCourses(List<String> list) {

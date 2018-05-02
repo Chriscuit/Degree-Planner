@@ -28,12 +28,18 @@ public class JSON_Reader {
         TypeReference<List<JSONcourse>> mapType = new TypeReference<List<JSONcourse>>() {};
         List<JSONcourse> jsonToJSONCourseList = objectMapper.readValue(String.valueOf(courses), mapType);
 
+
+        /*
+         * Now this is where this class begins to act as the driver program
+         */
         CourseList courseList = new CourseList();
 
         for (JSONcourse jcourse : jsonToJSONCourseList) {
             courseList.add(new Course(jcourse));
         }
         courseList.finishedList();
+
+        DAG_Matrix dag = new DAG_Matrix(courseList);
 
         int j = 1;
     }
