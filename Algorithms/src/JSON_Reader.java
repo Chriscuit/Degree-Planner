@@ -39,8 +39,8 @@ public class JSON_Reader {
         }
         courseList.finishedList();
 
-        DAG_Matrix dag = new DAG_Matrix(courseList);
+        User user = new User(10);
 
-        int j = 1;
+        DAG_Matrix dag = new DAG_Matrix(courseList, user);
     }
 }

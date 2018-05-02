@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class Semester {
@@ -13,10 +12,10 @@ public class Semester {
 
     Semester() {
         list = new ArrayList<>();
+        name = numSemesters;
         totalDifficulty = 0;
         totalHours = 0;
         numSemesters++;
-        name = numSemesters;
     }
 
     public void add(Course course) {
