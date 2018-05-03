@@ -23,6 +23,7 @@ public class ScheduleOps {
         setInitBounds();
         initFullPlan();
         optimizeFullPlan();
+        filler();
     }
 
     public User getUser() {
@@ -170,5 +171,19 @@ public class ScheduleOps {
         possibleSems.sort(Comparator.comparingInt(Semester::getTotalDifficulty));
 
         return possibleSems.get(0).getName();
+    }
+
+    private void filler() {
+
+        for (Semester sem : fullPlan.getSemList()) {
+            if (sem.getTotalHours() < 12) {
+                sem.add(new Course("FILL", 3, 1, new ArrayList<>(), new ArrayList<>()));
+            }
+        }
+        for (Semester sem : fullPlan.getSemList()) {
+            if (sem.getTotalHours() < 12) {
+                filler();
+            }
+        }
     }
 }
