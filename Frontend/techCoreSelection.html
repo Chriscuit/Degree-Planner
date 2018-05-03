@@ -144,6 +144,10 @@
             <!-- <th>Secondary</th> -->
         </tr>
         <tr>
+            <td> <p id="maxChoicesPrompt"></p>
+        </td>
+        </tr>
+        <tr>
             <td>
                 <select class="form-control" id="primaryElectives" multiple></select>
             </td>
@@ -293,6 +297,16 @@
             a = course.toString().split(" ")
             return a[0] + a[1].slice(0, -1)
         }
+        function calcMaxChoices() {
+            var pCore = $('#primaryCore').val();
+            var maxChoices = 0;
+            if (pCore === "CommNets" || pCore === "Nano" || pCore === "Software") {
+                maxChoices = 4
+            } else {
+                maxChoices = 3;
+            }
+            return maxChoices
+        }
 
         function displayElectives() {
 
@@ -353,6 +367,10 @@
                 }
             }
 
+            /*changing the title of the coursesTable to let user know max number of courses they can pick */
+            var maxChoices = calcMaxChoices();
+            $("#maxChoicesPrompt").html("Please select up to " + maxChoices + " courses from this table")
+
             $("#coursesTable").show();
             if (sCore === "IC" || sCore === "Nano" || sCore === "CompArch" || sCore === "Software" || sCore === "DataScience") {
                 $("#nextButton").show()
@@ -365,82 +383,12 @@
         /*This should take in the technical core choices of the user,
         set coursesTable to visible, and populate coursesTable with the electives for the chosen cores */
         $("#displayElectivesButton").on('click', function() {
-
-            removeOptions(document.getElementById("primaryElectives"));
-            /*Get the tech cores choices and populated the CoursesTable with the proper courses */
-            var pCore = $('#primaryCore').val();
-            var sCore = $('#secondaryCore').val();
-            var select = $("#primaryElectives");
-            if (pCore === "CommNets") {
-                for (i in CommNetsCourses) {
-                    // var select = $("#primaryElectives");
-                    course = CommNetsCourses[i]
-                    opt = new Option(course, course);
-                    select.append(opt);
-
-                }
-            } else if (pCore === "IC") {
-                for (i in ICCourses) {
-                    course = ICCourses[i]
-                    opt = new Option(course, course);
-                    select.append(opt);
-                }
-            } else if (pCore === "Energy") {
-                for (i in EnergyCourses) {
-                    course = EnergyCourses[i]
-                    opt = new Option(course, course);
-                    select.append(opt);
-                }
-            } else if (pCore === "Fields") {
-                for (i in FieldsCourses) {
-                    course = FieldsCourses[i]
-                    opt = new Option(course, course);
-                    select.append(opt);
-                }
-            } else if (pCore === "Nano") {
-                for (i in NanoCourses) {
-                    course = NanoCourses[i]
-                    opt = new Option(course, course);
-                    select.append(opt);
-                }
-            } else if (pCore === "CompArch") {
-                for (i in CompArchCourses) {
-                    course = CompArchCourses[i]
-                    opt = new Option(course, course);
-                    select.append(opt);
-                }
-            } else if (pCore === "Software") {
-                for (i in SoftwareCourses) {
-                    course = SoftwareCourses[i]
-                    opt = new Option(course, course);
-                    select.append(opt);
-                }
-            } else if (pCore === "DataScience") {
-                for (i in CommNetsCourses) {
-                    course = DataScienceCourses[i]
-                    opt = new Option(course, course);
-                    select.append(opt);
-                }
-            }
-
-            $("#coursesTable").show();
-            if (sCore === "IC" || sCore === "Nano" || sCore === "CompArch" || sCore === "Software" || sCore === "DataScience") {
-                $("#nextButton").show()
-
-            } else {
-                $("#secondaryCoreRequirementsButton").show()
-            }
+            displayElectives()
         });
 
         $("#secondaryCoreRequirementsButton").on('click', function() {
             var values = $("#primaryElectives").val()
-            var pCore = $('#primaryCore').val();
-            var maxChoices = 0;
-            if (pCore === "CommNets" || pCore === "Nano" || pCore === "Software") {
-                maxChoices = 4
-            } else {
-                maxChoices = 3;
-            }
+            maxChoices = calcMaxChoices();
             if (values.length > maxChoices) {
                 alert("You selected more than " + maxChoices + " courses. Please deselect " + (values.length - maxChoices) + " course(s)");
             } else {
