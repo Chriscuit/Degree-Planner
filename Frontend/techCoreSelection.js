@@ -64,7 +64,7 @@ var EnergyDefaults = [
 ];
 
 var EnergyMandatory = [
-    "M427L: Advanced Calculus for Applications II",
+    "M 427L: Advanced Calculus for Applications II",
     "EE 325: Electromagnetic Engineering",
     "EE 462L: Power Electronics Laboratory",
     "EE 362K: Introduction to Automatic Control"

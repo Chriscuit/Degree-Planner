@@ -89,7 +89,7 @@ var required_courses = [
     "M408D",
     "PHY303K",
     "PHY103M",
-    "SOC", //social/behavioral science
+    "SBS", //social/behavioral science
     "EE411",
     "M427K",
     "PHY303L",
@@ -107,5 +107,7 @@ var required_courses = [
     "GOV312L",
     // required history courses
     "HIST1",
-    "HIST2"
+    "HIST2",
+    //free elective
+    "FELEC"
 ]
