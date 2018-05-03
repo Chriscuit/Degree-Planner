@@ -23,4 +23,8 @@ public class FullPlan {
     public int getSize() {
         return semList.size();
     }
+
+    public List<Semester> getSemList() {
+        return semList;
+    }
 }
