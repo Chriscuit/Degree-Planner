@@ -1,11 +1,11 @@
 var selectedCourses = [];
-var hoursSlider = $("#hoursSlider")
-    .slider()
-    .data("slider");
+// var hoursSlider = $("#hoursSlider")
+//     .slider()
+//     .data("slider");
 
-var difficultySlider = $("#difficultySlider")
-    .slider()
-    .data("slider");
+// var difficultySlider = $("#difficultySlider")
+//     .slider()
+//     .data("slider");
 
 $(document).ready(function() {
     console.log(JSON.parse(sessionStorage.getItem("pCourses")))
@@ -119,8 +119,8 @@ $(document).ready(function() {
         courseList = courseList.concat(sCourses)
         toSend.courseList = courseList.diff(selectedCourses)
         // toSend.primaryCore = sessionStorage.primaryCore;
-        toSend.maxHours = hoursSlider.getValue();
-        toSend.difficulty = difficultySlider.getValue();
+        //toSend.maxHours = hoursSlider.getValue();
+        //toSend.difficulty = difficultySlider.getValue();
         console.log(toSend);
     }); //end of add button on click function
 }); //end of ready function

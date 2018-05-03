@@ -6,16 +6,12 @@
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
     <!-- Bootstrap select -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.0/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="bootstrap-slider.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
-    <script src="bootstrap-slider.js"></script>
     <style>
     #technicalCoreTable,
     #primaryCoreChoicesTable,
@@ -105,7 +101,7 @@
         </tr>
         <tr>
             <td>
-                <button type="button" class="btn" id="primaryCoreRequirementsButton">Next</button>
+                <button type="button" class="btn btn-outline-secondary" id="primaryCoreRequirementsButton">Next</button>
             </td>
         </tr>
     </table>
@@ -144,8 +140,9 @@
             <!-- <th>Secondary</th> -->
         </tr>
         <tr>
-            <td> <p id="maxChoicesPrompt"></p>
-        </td>
+            <td>
+                <p id="maxChoicesPrompt"></p>
+            </td>
         </tr>
         <tr>
             <td>
@@ -188,6 +185,10 @@
     <div style="text-align:center">
         <button type="button" class="btn" id="nextButton">Next</button>
     </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.0/js/bootstrap-select.min.js"></script>
     <script type="text/javascript" src="techCoreSelection.js"></script>
     <script>
     $(document).ready(function() {
@@ -225,18 +226,14 @@
             if (Core === "CommNets") {
 
                 $("#" + primaryOrSecondary + "ChoicePrompt").html(promptText)
-                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 325: Electromagnetic Engineering", "EE325"))
-                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 351M: Digital Signal Processing", "EE351M"))
-                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("I have no preference", "No preference", true, true))
+                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 325: Electromagnetic Engineering", "EE 325: Electromagnetic Engineering"))
+                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 351M: Digital Signal Processing", "EE 351M: Digital Signal Processing"))
 
-                $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("EE 362K: Introduction to Automatic Control", "EE362K"))
-                $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("EE 371R: Digital Image and Video Processing", "EE371R"))
-                $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("EE 360K: Introduction to Digital Communication", "EE360K"))
-                $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("I have no preference", "No preference", true, true))
-
-                $("#" + primaryOrSecondary + "ChoiceSelect3").append(new Option("EE 445S: Real-Time Digital Signal Processing Laboratory", "EE445S"))
-                $("#" + primaryOrSecondary + "ChoiceSelect3").append(new Option("EE 471C: Wireless Communication Laboratory", "EE471C"))
-                $("#" + primaryOrSecondary + "ChoiceSelect3").append(new Option("I have no preference", "No preference", true, true))
+                $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("EE 362K: Introduction to Automatic Control", "EE 362K: Introduction to Automatic Control"))
+                $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("EE 371R: Digital Image and Video Processing", "EE 371R: Digital Image and Video Processing"))
+                $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("EE 360K: Introduction to Digital Communication", "EE 360K: Introduction to Digital Communication"))
+                $("#" + primaryOrSecondary + "ChoiceSelect3").append(new Option("EE 445S: Real-Time Digital Signal Processing Laboratory", "EE 445S: Real-Time Digital Signal Processing Laboratory"))
+                $("#" + primaryOrSecondary + "ChoiceSelect3").append(new Option("EE 471C: Wireless Communications Laboratory", "EE 471C: Wireless Communications Laboratory"))
 
                 $("#" + primaryOrSecondary + "ChoicePrompt").show()
                 $("#" + primaryOrSecondary + "ChoiceSelect1").show()
@@ -259,9 +256,8 @@
             if (Core === "Energy") {
 
                 $("#" + primaryOrSecondary + "ChoicePrompt").html(promptText)
-                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 368L: Power Systems Apparatus and Laboratory", "EE368L"))
-                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 369: Power Systems Engineering", "EE369"))
-                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("I have no preference", "No preference", true, true))
+                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 368L: Power Systems Apparatus and Laboratory", "EE 368L: Power Systems Apparatus and Laboratory"))
+                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 369: Power Systems Engineering", "EE 369: Power Systems Engineering"))
 
                 $("#" + primaryOrSecondary + "ChoicePrompt").show()
                 $("#" + primaryOrSecondary + "ChoiceSelect1").show()
@@ -270,13 +266,11 @@
             }
             if (Core === "Fields") {
                 $("#" + primaryOrSecondary + "ChoicePrompt").html(promptText)
-                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 438: Electronic Circuits I", "EE438"))
-                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 462L: Power Electronics Laboratory", "EE462L"))
-                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("I have no preference", "No preference", true, true))
+                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 438: Electronic Circuits I", "EE 438: Electronic Circuits I"))
+                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 462L: Power Electronics Laboratory", "EE 462L: Power Electronics Laboratory"))
 
-                $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("EE 363M: Microwave and Radio Frequency Engineering", "EE363M"))
-                $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("EE 325K: Antennas and Wireless Propagation", "EE325K"))
-                $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("I have no preference", "No preference", true, true))
+                $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("EE 363M: Microwave and Radio Frequency Engineering", "EE 363M: Microwave and Radio Frequency Engineering"))
+                $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("EE 325K: Antennas and Wireless Propagation", "EE 325K: Antennas and Wireless Propagation"))
 
                 $("#" + primaryOrSecondary + "ChoicePrompt").show()
                 $("#" + primaryOrSecondary + "ChoiceSelect1").show()
@@ -297,6 +291,7 @@
             a = course.toString().split(" ")
             return a[0] + a[1].slice(0, -1)
         }
+
         function calcMaxChoices() {
             var pCore = $('#primaryCore').val();
             var maxChoices = 0;
@@ -315,55 +310,73 @@
             var pCore = $('#primaryCore').val();
             var sCore = $('#secondaryCore').val();
             var select = $("#primaryElectives");
+
+            var pChoice1 = $("#primaryChoiceSelect1").val();
+            var pChoice2 = $("#primaryChoiceSelect2").val();
+            var pChoice3 = $("#primaryChoiceSelect3").val();
             if (pCore === "CommNets") {
                 for (i in CommNetsCourses) {
-                    // var select = $("#primaryElectives");
                     course = CommNetsCourses[i]
-                    opt = new Option(course, course);
-                    select.append(opt);
-
+                    if (course != pChoice1 && course != pChoice2 && course != pChoice3) {
+                        opt = new Option(course, course);
+                        select.append(opt);
+                    }
                 }
             } else if (pCore === "IC") {
                 for (i in ICCourses) {
                     course = ICCourses[i]
-                    opt = new Option(course, course);
-                    select.append(opt);
+                    if (course != pChoice1 && course != pChoice2 && course != pChoice3) {
+                        opt = new Option(course, course);
+                        select.append(opt);
+                    }
                 }
             } else if (pCore === "Energy") {
                 for (i in EnergyCourses) {
                     course = EnergyCourses[i]
-                    opt = new Option(course, course);
-                    select.append(opt);
+                    if (course != pChoice1 && course != pChoice2 && course != pChoice3) {
+                        opt = new Option(course, course);
+                        select.append(opt);
+                    }
                 }
             } else if (pCore === "Fields") {
                 for (i in FieldsCourses) {
                     course = FieldsCourses[i]
-                    opt = new Option(course, course);
-                    select.append(opt);
+                    if (course != pChoice1 && course != pChoice2 && course != pChoice3) {
+                        opt = new Option(course, course);
+                        select.append(opt);
+                    }
                 }
             } else if (pCore === "Nano") {
                 for (i in NanoCourses) {
                     course = NanoCourses[i]
-                    opt = new Option(course, course);
-                    select.append(opt);
+                    if (course != pChoice1 && course != pChoice2 && course != pChoice3) {
+                        opt = new Option(course, course);
+                        select.append(opt);
+                    }
                 }
             } else if (pCore === "CompArch") {
                 for (i in CompArchCourses) {
                     course = CompArchCourses[i]
-                    opt = new Option(course, course);
-                    select.append(opt);
+                    if (course != pChoice1 && course != pChoice2 && course != pChoice3) {
+                        opt = new Option(course, course);
+                        select.append(opt);
+                    }
                 }
             } else if (pCore === "Software") {
                 for (i in SoftwareCourses) {
                     course = SoftwareCourses[i]
-                    opt = new Option(course, course);
-                    select.append(opt);
+                    if (course != pChoice1 && course != pChoice2 && course != pChoice3) {
+                        opt = new Option(course, course);
+                        select.append(opt);
+                    }
                 }
             } else if (pCore === "DataScience") {
                 for (i in CommNetsCourses) {
                     course = DataScienceCourses[i]
-                    opt = new Option(course, course);
-                    select.append(opt);
+                    if (course != pChoice1 && course != pChoice2 && course != pChoice3) {
+                        opt = new Option(course, course);
+                        select.append(opt);
+                    }
                 }
             }
 
@@ -394,7 +407,6 @@
             } else {
                 displayElectivesWithinRequirements("secondary", "nextButton");
             }
-
         });
 
         function sendInfo() {
@@ -431,15 +443,7 @@
             var pCourses = []
             for (let i = 1; i <= primarySelects; i++) {
                 var selection = $("#primaryChoiceSelect" + i).val()
-                if (pCore === "CommNets" && selection === "No preference") {
-                    pCourses.push(CommNetsDefaults[i - 1])
-                } else if (pCore === "Energy" && selection === "No preference") {
-                    pCourses.push(EnergyDefaults[i - 1])
-                } else if (pCore === "Fields" && selection === "No preference") {
-                    pCourses.push(FieldsDefaults[i - 1])
-                } else {
-                    pCourses.push(selection);
-                }
+                pCourses.push(selection);
             }
 
             if (pCore === "CommNets") {
@@ -467,15 +471,7 @@
             if (secondarySelects != 0) {
                 for (let i = 1; i <= secondarySelects; i++) {
                     var selection = $("#secondaryChoiceSelect" + i).val()
-                    if (sCore === "CommNets" && selection === "No preference") {
-                        sCourses.push(CommNetsDefaults[i - 1])
-                    } else if (sCore === "Energy" && selection === "No preference") {
-                        sCourses.push(EnergyDefaults[i - 1])
-                    } else if (sCore === "Fields" && selection === "No preference") {
-                        sCourses.push(FieldsDefaults[i - 1])
-                    } else {
-                        sCourses.push(selection);
-                    }
+                    sCourses.push(selection);
                 }
             }
 
@@ -553,7 +549,49 @@
             }
             for (i in sCourses) {
                 sCourses[i] = parseCourseName(sCourses[i])
+
+                /*removing duplicate courses */
+                if (pCourses.indexOf(sCourses[i]) > -1) {
+                    //if duplicate course is a math course
+                    if (sCourses[i] === "M427L") {
+                        sCourses[i] = "M325K"
+                    } else if (sCourses[i] === "M325K") {
+                        sCourses[i] = "M427L"
+                    } else { //if duplicate course is EE
+
+                        var potentialCourses = []
+                        if (sCore === "CommNets") {
+                            potentialCourses = CommNetsCourses.diff(pCourses);
+                            potentialCourses = potentialCourses.diff(CommNetsMandatory)
+                        } else if (sCore === "IC") {
+                            potentialCourses = ICCourses.diff(pCourses);
+                            potentialCourses = potentialCourses.diff(ICMandatory)
+                        } else if (sCore === "Energy") {
+                            potentialCourses = EnergyCourses.diff(pCourses);
+                            potentialCourses = potentialCourses.diff(EnergyMandatory)
+                        } else if (sCore === "Fields") {
+                            potentialCourses = FieldsCourses.diff(pCourses);
+                            potentialCourses = potentialCourses.diff(FieldsMandatory)
+                        } else if (sCore === "Nano") {
+                            potentialCourses = NanoCourses.diff(pCourses);
+                            potentialCourses = potentialCourses.diff(NanoMandatory)
+                        } else if (sCore === "CompArch") {
+                            potentialCourses = CompArchCourses.diff(pCourses);
+                            potentialCourses = potentialCourses.diff(CompArchMandatory)
+                        } else if (sCore === "Software") {
+                            potentialCourses = SoftwareCourses.diff(pCourses);
+                            potentialCourses = potentialCourses.diff(SoftwareMandatory)
+                        } else if (sCore === "DataScience") {
+                            potentialCourses = DataScienceCourses.diff(pCourses);
+                            potentialCourses = potentialCourses.diff(DataScienceMandatory)
+                        }
+
+                        var randIndex = Math.floor(Math.random() * potentialCourses.length);
+                        sCourses[i] = parseCourseName(potentialCourses[randIndex]);
+                    }
+                }
             }
+
             toSend.pCourses = pCourses;
             toSend.sCourses = sCourses;
             sessionStorage.setItem("pCourses", JSON.stringify(pCourses));
@@ -564,7 +602,13 @@
         }
 
         $("#nextButton").on('click', function() {
-            sendInfo();
+            var values = $("#primaryElectives").val()
+            maxChoices = calcMaxChoices();
+            if (values.length > maxChoices) {
+                alert("You selected more than " + maxChoices + " courses. Please deselect " + (values.length - maxChoices) + " course(s)");
+            } else {
+                sendInfo();
+            }
         })
 
     });
