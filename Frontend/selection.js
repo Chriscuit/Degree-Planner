@@ -13,6 +13,16 @@ var CommNetsCourses = [
 	"EE 460J: Data Science Laboratory"
 ];
 
+var CommNetsDefaults = [
+	"EE 351M: Digital Signal Processing",
+	"EE 362K: Introduction to Automatic Control",
+	"EE 445S: Real-Time Digital Signal Processing Laboratory"
+];
+
+var CommNetsMandatory = [
+	"M 427L: Advanced Calculus for Applications II"
+];
+
 var ICCourses = [
 	"EE 438K: Analog Electronics",
 	"EE 338L: Analog Integrated Circuit Design",
@@ -28,6 +38,14 @@ var ICCourses = [
 	"EE 374L: Applications of Biomedical Engineering"
 ];
 
+var ICMandatory = [
+	"M 427L: Advanced Calculus for Applications II",
+	"EE 325: Electromagnetic Engineering",
+	"EE 339: Solid-State Electronic Devices",
+	"EE 438 :Fundamentals of Electronic Circuits I Laboratory",
+	"EE 316: Digital Logic Design"
+];
+
 var EnergyCourses = [
 	"EE 339: Solid-State Electronic Devices",
 	"EE 339S: Solar Energy Conversion Devices",
@@ -41,7 +59,18 @@ var EnergyCourses = [
 	"ME 337C: Intro to Nuclear Power Systems"
 ];
 
-var fieldsCourses = [
+var EnergyDefaults = [
+	"EE 368L"
+];
+
+var EnergyMandatory = [
+	"M427L: Advanced Calculus for Applications II",
+	"EE 325: Electromagnetic Engineering",
+	"EE 462L: Power Electronics Laboratory",
+	"EE 362K: Introduction to Automatic Control"
+];
+
+var FieldsCourses = [
 	"EE 325K: Antennas and Wireless Propagation",
 	"EE 334K: Quantum Theory of Engineering Materials",
 	"EE 341: Electric Drives and Machines",
@@ -55,6 +84,16 @@ var fieldsCourses = [
 	"EE 374L: Applications of Biomedical Engineering"
 ]
 
+var FieldsDefaults = [
+	"EE 438",
+	"EE 325K"
+];
+
+var FieldsMandatory = [
+	"M 427L: Advanced Calculus for Applications II",
+	"EE 325: Electromagnetic Engineering",
+	"EE 339: Solid-State Electronic Devices",
+];
 var NanoCourses = [
 	"EE 334K: Quantum Theory of Engineering Materials",
 	"EE 438 :Fundamentals of Electronic Circuits I Laboratory",
@@ -64,6 +103,13 @@ var NanoCourses = [
 	"EE 348: Laser and Optical Engineering",
 	"EE 460R: Introduction to VLSI Design",
 	"EE 340P: High-Throughput Nanopatterning"
+];
+
+var NanoMandatory = [
+	"M 427L: Advanced Calculus for Applications II",
+	"EE 325: Electromagnetic Engineering",
+	"EE 339: Solid-State Electronic Devices",
+	"EE 440: Integrated Circuit Nanomanufacturing Techniques"
 ];
 
 var CompArchCourses = [
@@ -77,6 +123,14 @@ var CompArchCourses = [
 	"EE 461S: Operating Systems",
 	"EE 362K: Introduction to Automatic Control",
 	"EE 379K: Information Security & Privacy"
+];
+
+var CompArchMandatory = [
+	"M 325K: Discrete Math",
+	"EE 460N: Computer Architecture",
+	"EE 316: Digital Logic Design",
+	"EE 445L: Embedded Systems Design Laboratory",
+	"EE 360C: Algorithms"
 ];
 
 var SoftwareCourses = [
@@ -95,6 +149,13 @@ var SoftwareCourses = [
 	"EE 379K: Information Security & Privacy"
 ];
 
+var SoftwareMandatory = [
+	"EE 360C: Algorithms",
+	"M 325K: Discrete Math",
+	"EE 461L: Software Engineering and Design Laboratory",
+	"EE 422C: Software Design & Implementation II"
+];
+
 var DataScienceCourses = [
 	"EE 422C: Software Design & Implementation II",
 	"EE 445S: Real-Time Digital Signal Processing Laboratory",
@@ -106,3 +167,11 @@ var DataScienceCourses = [
 	"EE 371R: Digital Image and Video Processing",
 	"EE 379K: Architecture for Big Data Science"
 ]
+
+var DataScienceMandatory = [
+	"EE 360C: Algorithms",
+	"M 325K: Discrete Math",
+	"EE 461P: Data Science Principles",
+	"EE 460J: Data Science Laboratory",
+	"EE 351M: Digital Signal Processing"
+];
