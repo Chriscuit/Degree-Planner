@@ -192,7 +192,8 @@
         "difficulty": 4,
         "prerequisites": [
             "EE312",
-            "EE313"
+            "EE313",
+            "E316K"
         ],
         "corequisites": []
     },
@@ -382,14 +383,20 @@
         "title": "EE362R",
         "hours": 3,
         "difficulty": 3,
-        "prerequisites": [],
+        "prerequisites": [
+            "EE312",
+            "EE313"
+        ],
         "corequisites": []
     },
     {
         "title": "EE362S",
         "hours": 3,
         "difficulty": 2,
-        "prerequisites": [],
+        "prerequisites": [
+            "EE312",
+            "EE313"
+        ],
         "corequisites": []
     },
     {
@@ -700,6 +707,82 @@
             "EE445L",
             "EE333T"
         ],
+        "corequisites": []
+    },
+    {
+        "title": "RHE306",
+        "hours": 3,
+        "difficulty": 2,
+        "prerequisites": [],
+        "corequisites": []
+    },
+    {
+        "title": "E316K",
+        "hours": 3,
+        "difficulty": 2,
+        "prerequisites": [
+            "RHE306"
+        ],
+        "corequisites": []
+    },
+    {
+        "title": "VAPA",
+        "hours": 3,
+        "difficulty": 2,
+        "prerequisites": [],
+        "corequisites": []
+    },
+    {
+        "title": "GOV310L",
+        "hours": 3,
+        "difficulty": 2,
+        "prerequisites": [],
+        "corequisites": []
+    },
+    {
+        "title": "GOV312L",
+        "hours": 3,
+        "difficulty": 2,
+        "prerequisites": [
+            "GOV310L"
+        ],
+        "corequisites": []
+    },
+    {
+        "title": "HIS001",
+        "hours": 3,
+        "difficulty": 2,
+        "prerequisites": [],
+        "corequisites": []
+    },
+    {
+        "title": "HIS002",
+        "hours": 3,
+        "difficulty": 2,
+        "prerequisites": [
+            "HIS001"
+        ],
+        "corequisites": []
+    },
+    {
+        "title": "ELEC1",
+        "hours": 3,
+        "difficulty": 2,
+        "prerequisites": [],
+        "corequisites": []
+    },
+    {
+        "title": "UGS303",
+        "hours": 3,
+        "difficulty": 2,
+        "prerequisites": [],
+        "corequisites": []
+    },
+    {
+        "title": "ELEC2",
+        "hours": 3,
+        "difficulty": 2,
+        "prerequisites": [],
         "corequisites": []
     }]
 }

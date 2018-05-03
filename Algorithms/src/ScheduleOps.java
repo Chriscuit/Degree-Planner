@@ -2,7 +2,7 @@ import java.util.*;
 
 public class ScheduleOps {
 
-    // TODO: implement preBFS on reverse Graph to get max depth for each course. Do it for each leaf node (root in reverse) and set course depth to frontier level
+    // TODO: implement depthBFS on reverse Graph to get max depth for each course. Do it for each leaf node (root in reverse) and set course depth to frontier level
     // TODO: handle coreqs and post-co-reqs
 
     private final int vertices;
@@ -40,12 +40,12 @@ public class ScheduleOps {
 
             if (rPrereq.isEmpty()) {
                 course.setMaxDepth(0);
-                preBFS(course);
+                depthBFS(course);
             }
         }
     }
 
-    private void preBFS(Course course) {
+    private void depthBFS(Course course) {
 
         int baseDepth = course.getMaxDepth();
 
@@ -56,7 +56,7 @@ public class ScheduleOps {
         for (String prereq : course.getPrereqs()) {
             Course cPrereq = C(prereq);
             cPrereq.setMaxDepth(baseDepth + 1);
-            preBFS(cPrereq);
+            depthBFS(cPrereq);
         }
     }
 
@@ -109,6 +109,7 @@ public class ScheduleOps {
         hardcodeCourse("PHY103M", C("PHY103M").getLowerBound());
         hardcodeCourse("PHY303L", C("PHY303L").getLowerBound());
         hardcodeCourse("PHY103N", C("PHY103N").getLowerBound());
+        hardcodeCourse("UGS303", C("UGS303").getLowerBound());
     }
 
     private void hardcodeCourse(String courseName, int targetSem) {
