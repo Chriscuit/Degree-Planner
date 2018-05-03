@@ -6,15 +6,17 @@ public class ScheduleOps {
     // TODO: handle coreqs and post-co-reqs
 
     private final int vertices;
-    private CourseList courseList;
+    private CourseList fullCourseList;
+    private CourseList userCourseList;
     private List<Course> sortedList;
     private HashMap<String, Course> strToCourse;
     private User user;
     private FullPlan fullPlan;
 
-    ScheduleOps(CourseList courseList, User user) {
-        this.courseList = courseList;
-        this.vertices = courseList.size();
+    ScheduleOps(User user) {
+        this.fullCourseList = user.getFullCourseList();
+        this.userCourseList = user.getUserCourseList();
+        this.vertices = userCourseList.size();
         this.user = user;
         this.fullPlan = new FullPlan(user.getNumSemesters());
         setStrToCourse();
@@ -29,14 +31,13 @@ public class ScheduleOps {
     public User getUser() {
         return this.user;
     }
-    public CourseList getCourseList() {
-        return this.courseList;
+    public CourseList getFullCourseList() {
+        return this.fullCourseList;
     }
 
     private void setAllMaxDepths() {
 
-        for (Course course : courseList.getList()) {
-            List<String> rCoreq = course.getrCoreqs();
+        for (Course course : userCourseList.getList()) {
             List<String> rPrereq = course.getrPrereqs();
 
             if (rPrereq.isEmpty()) {
@@ -67,16 +68,16 @@ public class ScheduleOps {
 
     private void setInitBounds() {
 
-        for (Course c : courseList.getList()) {
+        for (Course c : userCourseList.getList()) {
             c.setLowerBound(0);
         }
-        for (Course c : courseList.getList()) {
+        for (Course c : userCourseList.getList()) {
             c.setUpperBound(user.getNumSemesters() - c.getMaxDepth() - 1);
         }
     }
 
     private void setSortedList() {
-        this.sortedList = new ArrayList<>(courseList.getList());
+        this.sortedList = new ArrayList<>(userCourseList.getList());
         sortedList.sort(Comparator.comparingInt(Course::getMaxDepth));
         Collections.reverse(sortedList);
     }
@@ -85,7 +86,7 @@ public class ScheduleOps {
 
         strToCourse = new HashMap<>();
 
-        for (Course c : courseList.getList()) {
+        for (Course c : fullCourseList.getList()) {
             strToCourse.put(c.getName(), c);
         }
     }
@@ -95,6 +96,8 @@ public class ScheduleOps {
 
         int lastSem = fullPlan.getSize() - 1;
 
+        hardcodeCourse("RHE306", C("RHE306").getLowerBound());
+        hardcodeCourse("E316K", C("E316K").getLowerBound());
         hardcodeCourse("M408C", 0);
         hardcodeCourse("M408D",C("M408D").getLowerBound());
         hardcodeCourse("EE302", 0);
@@ -110,11 +113,11 @@ public class ScheduleOps {
         hardcodeCourse("PHY103M", C("PHY103M").getLowerBound());
         hardcodeCourse("PHY303L", C("PHY303L").getLowerBound());
         hardcodeCourse("PHY103N", C("PHY103N").getLowerBound());
-        hardcodeCourse("UGS303", C("UGS303").getLowerBound());
+        hardcodeCourse("UGS", C("UGS").getLowerBound());
     }
 
     private void hardcodeCourse(String courseName, int targetSem) {
-        if (courseList.contains(courseName)) {
+        if (userCourseList.contains(courseName)) {
             Course course = C(courseName);
             fullPlan.getSem(targetSem).add(course);
             sortedList.remove(course);
@@ -169,6 +172,18 @@ public class ScheduleOps {
         }
 
         possibleSems.sort(Comparator.comparingInt(Semester::getTotalDifficulty));
+
+        int optDiff = possibleSems.get(0).getTotalDifficulty();
+
+        Collections.reverse(possibleSems);
+
+        for (int j = 0; j < possibleSems.size(); j++) {
+            if (possibleSems.get(j).getTotalDifficulty() > optDiff) {
+                possibleSems.remove(j);
+            }
+        }
+
+        possibleSems.sort(Comparator.comparingInt(Semester::getName));
 
         return possibleSems.get(0).getName();
     }

@@ -31,7 +31,7 @@ public class Course {
         setCoreqs(coreqs);
     }
 
-    Course(JSONcourse jcourse) {
+    Course(JsonCourseData jcourse) {
         setName(jcourse.getTitle());
         setHours(jcourse.getHours());
         setDifficulty(jcourse.getDifficulty());

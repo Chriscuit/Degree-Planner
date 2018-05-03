@@ -748,37 +748,37 @@
         "corequisites": []
     },
     {
-        "title": "HIS001",
+        "title": "HIST1",
         "hours": 3,
         "difficulty": 2,
         "prerequisites": [],
         "corequisites": []
     },
     {
-        "title": "HIS002",
+        "title": "HIST2",
         "hours": 3,
         "difficulty": 2,
         "prerequisites": [
-            "HIS001"
+            "HIST1"
         ],
         "corequisites": []
     },
     {
-        "title": "ELEC1",
+        "title": "SBS",
         "hours": 3,
         "difficulty": 2,
         "prerequisites": [],
         "corequisites": []
     },
     {
-        "title": "UGS303",
+        "title": "UGS",
         "hours": 3,
         "difficulty": 2,
         "prerequisites": [],
         "corequisites": []
     },
     {
-        "title": "ELEC2",
+        "title": "FELEC",
         "hours": 3,
         "difficulty": 2,
         "prerequisites": [],

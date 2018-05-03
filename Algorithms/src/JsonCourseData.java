@@ -12,7 +12,7 @@ import java.util.Map;
         "prerequisites",
         "corequisites"
 })
-public class JSONcourse {
+public class JsonCourseData {
 
     @JsonProperty("title")
     private String title;
