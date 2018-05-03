@@ -221,17 +221,17 @@
             if (Core === "CommNets") {
 
                 $("#" + primaryOrSecondary + "ChoicePrompt").html(promptText)
-                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 325: Electromagnetic Engineering", "EE 325: Electromagnetic Engineering"))
-                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 351M: Digital Signal Processing", "EE 351M: Digital Signal Processing"))
+                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 325: Electromagnetic Engineering", "EE325"))
+                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 351M: Digital Signal Processing", "EE351M"))
                 $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("I have no preference", "No preference", true, true))
 
-                $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("EE 362K: Introduction to Automatic Control", "EE 362K: Introduction to Automatic Control"))
-                $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("EE 371R: Digital Image and Video Processing", "EE 371R: Digital Image and Video Processing"))
-                $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("EE 360K: Introduction to Digital Communication", "EE 360K: Introduction to Digital Communication"))
+                $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("EE 362K: Introduction to Automatic Control", "EE362K"))
+                $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("EE 371R: Digital Image and Video Processing", "EE371R"))
+                $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("EE 360K: Introduction to Digital Communication", "EE360K"))
                 $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("I have no preference", "No preference", true, true))
 
-                $("#" + primaryOrSecondary + "ChoiceSelect3").append(new Option("EE 445S: Real-Time Digital Signal Processing Laboratory", "EE 445S: Real-Time Digital Signal Processing Laboratory"))
-                $("#" + primaryOrSecondary + "ChoiceSelect3").append(new Option("EE 471C: Wireless Communication Laboratory", "EE 471C: Wireless Communication Laboratory"))
+                $("#" + primaryOrSecondary + "ChoiceSelect3").append(new Option("EE 445S: Real-Time Digital Signal Processing Laboratory", "EE445S"))
+                $("#" + primaryOrSecondary + "ChoiceSelect3").append(new Option("EE 471C: Wireless Communication Laboratory", "EE471C"))
                 $("#" + primaryOrSecondary + "ChoiceSelect3").append(new Option("I have no preference", "No preference", true, true))
 
                 $("#" + primaryOrSecondary + "ChoicePrompt").show()
@@ -255,8 +255,8 @@
             if (Core === "Energy") {
 
                 $("#" + primaryOrSecondary + "ChoicePrompt").html(promptText)
-                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 368L: Power Systems Apparatus and Laboratory", "EE 368L"))
-                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 369: Power Systems Engineering", "EE 369"))
+                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 368L: Power Systems Apparatus and Laboratory", "EE368L"))
+                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 369: Power Systems Engineering", "EE369"))
                 $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("I have no preference", "No preference", true, true))
 
                 $("#" + primaryOrSecondary + "ChoicePrompt").show()
@@ -266,12 +266,12 @@
             }
             if (Core === "Fields") {
                 $("#" + primaryOrSecondary + "ChoicePrompt").html(promptText)
-                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 438: Electronic Circuits I", "EE 438"))
-                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 462L: Power Electronics Laboratory", "EE 462L"))
+                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 438: Electronic Circuits I", "EE438"))
+                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 462L: Power Electronics Laboratory", "EE462L"))
                 $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("I have no preference", "No preference", true, true))
 
-                $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("EE 363M: Microwave and Radio Frequency Engineering", "EE 363M"))
-                $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("EE 325K: Antennas and Wireless Propagation", "EE 325K"))
+                $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("EE 363M: Microwave and Radio Frequency Engineering", "EE363M"))
+                $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("EE 325K: Antennas and Wireless Propagation", "EE325K"))
                 $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("I have no preference", "No preference", true, true))
 
                 $("#" + primaryOrSecondary + "ChoicePrompt").show()
@@ -289,6 +289,10 @@
             displayElectivesWithinRequirements("primary", "displayElectivesButton")
         })
 
+        function parseCourseName(course) {
+            a = course.toString().split(" ")
+            return a[0] + a[1].slice(0, -1)
+        }
 
         function displayElectives() {
 
@@ -296,7 +300,6 @@
             /*Get the tech cores choices and populated the CoursesTable with the proper courses */
             var pCore = $('#primaryCore').val();
             var sCore = $('#secondaryCore').val();
-            console.log(sCore)
             var select = $("#primaryElectives");
             if (pCore === "CommNets") {
                 for (i in CommNetsCourses) {
@@ -352,7 +355,6 @@
 
             $("#coursesTable").show();
             if (sCore === "IC" || sCore === "Nano" || sCore === "CompArch" || sCore === "Software" || sCore === "DataScience") {
-                console.log('showing button')
                 $("#nextButton").show()
 
             } else {
@@ -423,7 +425,6 @@
 
             $("#coursesTable").show();
             if (sCore === "IC" || sCore === "Nano" || sCore === "CompArch" || sCore === "Software" || sCore === "DataScience") {
-                console.log('showing button')
                 $("#nextButton").show()
 
             } else {
@@ -598,6 +599,13 @@
 
             toSend.pCore = pCore;
             toSend.sCore = sCore;
+            for (i in pCourses) {
+                console.log(pCourses[i])
+                pCourses[i] = parseCourseName(pCourses[i])
+            }
+            for (i in sCourses) {
+                sCourses[i] = parseCourseName(sCourses[i])
+            }
             toSend.pCourses = pCourses;
             toSend.sCourses = sCourses;
             console.log(toSend);
