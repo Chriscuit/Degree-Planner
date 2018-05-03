@@ -13,12 +13,6 @@ var CommNetsCourses = [
     "EE 460J: Data Science Laboratory"
 ];
 
-var CommNetsDefaults = [
-    "EE 351M: Digital Signal Processing",
-    "EE 362K: Introduction to Automatic Control",
-    "EE 445S: Real-Time Digital Signal Processing Laboratory"
-];
-
 var CommNetsMandatory = [
     "M 427L: Advanced Calculus for Applications II"
 ];
@@ -59,10 +53,6 @@ var EnergyCourses = [
     "ME 337C: Intro to Nuclear Power Systems"
 ];
 
-var EnergyDefaults = [
-    "EE 368L"
-];
-
 var EnergyMandatory = [
     "M 427L: Advanced Calculus for Applications II",
     "EE 325: Electromagnetic Engineering",
@@ -83,11 +73,6 @@ var FieldsCourses = [
     "EE 374K: Biomedical Electronic Instrument Design",
     "EE 374L: Applications of Biomedical Engineering"
 ]
-
-var FieldsDefaults = [
-    "EE 438",
-    "EE 325K"
-];
 
 var FieldsMandatory = [
     "M 427L: Advanced Calculus for Applications II",

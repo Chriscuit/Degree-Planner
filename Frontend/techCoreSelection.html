@@ -547,7 +547,49 @@
             }
             for (i in sCourses) {
                 sCourses[i] = parseCourseName(sCourses[i])
+
+                /*removing duplicate courses */
+                if (pCourses.indexOf(sCourses[i]) > -1) {
+                    //if duplicate course is a math course
+                    if (sCourses[i]==="M427L") {
+                        sCourses[i]="M325K"
+                    } else if (sCourses[i]==="M325K") {
+                        sCourses[i]="M427L"
+                    } else { //if duplicate course is EE
+
+                        var potentialCourses=[]
+                        if (sCore === "CommNets") {
+                            potentialCourses = CommNetsCourses.diff(pCourses);
+                            potentialCourses = potentialCourses.diff(CommNetsMandatory)
+                        } else if (sCore === "IC") {
+                            potentialCourses = ICCourses.diff(pCourses);
+                            potentialCourses = potentialCourses.diff(ICMandatory)
+                        } else if (sCore === "Energy") {
+                            potentialCourses = EnergyCourses.diff(pCourses);
+                            potentialCourses = potentialCourses.diff(EnergyMandatory)
+                        } else if (sCore === "Fields") {
+                            potentialCourses = FieldsCourses.diff(pCourses);
+                            potentialCourses = potentialCourses.diff(FieldsMandatory)
+                        } else if (sCore === "Nano") {
+                            potentialCourses = NanoCourses.diff(pCourses);
+                            potentialCourses = potentialCourses.diff(NanoMandatory)
+                        } else if (sCore === "CompArch") {
+                            potentialCourses = CompArchCourses.diff(pCourses);
+                            potentialCourses = potentialCourses.diff(CompArchMandatory)
+                        } else if (sCore === "Software") {
+                            potentialCourses = SoftwareCourses.diff(pCourses);
+                            potentialCourses = potentialCourses.diff(SoftwareMandatory)
+                        } else if (sCore === "DataScience") {
+                            potentialCourses = DataScienceCourses.diff(pCourses);
+                            potentialCourses = potentialCourses.diff(DataScienceMandatory)
+                        }
+
+                        var randIndex = Math.floor(Math.random() * potentialCourses.length);
+                        sCourses[i]=parseCourseName(potentialCourses[randIndex]);
+                    }
+                }
             }
+
             toSend.pCourses = pCourses;
             toSend.sCourses = sCourses;
             sessionStorage.setItem("pCourses", JSON.stringify(pCourses));
