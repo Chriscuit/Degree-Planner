@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+    console.log(courseDescriptions["EE302"])
     var num_of_schedules = 4;
     //placeholder JSON object
     var sem =
@@ -17,6 +19,7 @@ $(document).ready(function() {
                 $("#" + current_element).html(
                     obj.courses[coursenum - 1].courseName
                 );
+                $("#" + current_element).attr('data-original-title', courseDescriptions['EE302'])
             }
         }
     }
