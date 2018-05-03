@@ -454,8 +454,8 @@
 
 				for (let i=0; i < numToRandomize;  i++) {
 					var randIndex = Math.floor(Math.random() * coursesLeftOver.length);
-					console.log(randIndex, )
-					pCourses.push(coursesLeftOver[randIndex])
+					pCourses.push(coursesLeftOver[randIndex]);
+					coursesLeftOver.splice(randIndex, 1);
 				}
 
 				toSend.pCore = pCore;
