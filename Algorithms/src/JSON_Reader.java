@@ -39,7 +39,7 @@ public class JSON_Reader {
         }
         courseList.finishedList();
 
-        User user = new User(10);
+        User user = new User(8);
 
         ScheduleOps so = new ScheduleOps(courseList, user);
 

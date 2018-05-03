@@ -94,9 +94,8 @@ public class ScheduleOps {
 
         int lastSem = fullPlan.getSize() - 1;
 
-        // basics
         hardcodeCourse("M408C", 0);
-        hardcodeCourse("M408D",C("M408C").getSemesterPlacement()+1);
+        hardcodeCourse("M408D",C("M408D").getLowerBound());
         hardcodeCourse("EE302", 0);
         hardcodeCourse("EE306", 0);
         hardcodeCourse("EE319K", 1);
@@ -106,6 +105,10 @@ public class ScheduleOps {
         hardcodeCourse("EE464R", lastSem);
         hardcodeCourse("EE464S", lastSem);
         hardcodeCourse("EE464H", lastSem);
+        hardcodeCourse("PHY303K", C("PHY303K").getLowerBound());
+        hardcodeCourse("PHY103M", C("PHY103M").getLowerBound());
+        hardcodeCourse("PHY303L", C("PHY303L").getLowerBound());
+        hardcodeCourse("PHY103N", C("PHY103N").getLowerBound());
     }
 
     private void hardcodeCourse(String courseName, int targetSem) {

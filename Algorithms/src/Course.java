@@ -21,7 +21,7 @@ public class Course {
     private int lowerBound = 0;
     private int upperBound = Integer.MAX_VALUE;
     private int lastestPrereqPlacement;
-    private int semesterPlacement;
+    private int semesterPlacement = 0;
 
     Course(String name, int hours, int difficulty, List<String> prereqs, List<String> coreqs) {
         setName(name);
