@@ -6,16 +6,12 @@
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
     <!-- Bootstrap select -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.0/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="bootstrap-slider.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
-    <script src="bootstrap-slider.js"></script>
     <style>
     #technicalCoreTable,
     #primaryCoreChoicesTable,
@@ -105,7 +101,7 @@
         </tr>
         <tr>
             <td>
-                <button type="button" class="btn" id="primaryCoreRequirementsButton">Next</button>
+                <button type="button" class="btn btn-outline-secondary" id="primaryCoreRequirementsButton">Next</button>
             </td>
         </tr>
     </table>
@@ -144,8 +140,9 @@
             <!-- <th>Secondary</th> -->
         </tr>
         <tr>
-            <td> <p id="maxChoicesPrompt"></p>
-        </td>
+            <td>
+                <p id="maxChoicesPrompt"></p>
+            </td>
         </tr>
         <tr>
             <td>
@@ -188,6 +185,10 @@
     <div style="text-align:center">
         <button type="button" class="btn" id="nextButton">Next</button>
     </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.0/js/bootstrap-select.min.js"></script>
     <script type="text/javascript" src="techCoreSelection.js"></script>
     <script>
     $(document).ready(function() {
@@ -290,6 +291,7 @@
             a = course.toString().split(" ")
             return a[0] + a[1].slice(0, -1)
         }
+
         function calcMaxChoices() {
             var pCore = $('#primaryCore').val();
             var maxChoices = 0;
@@ -315,7 +317,7 @@
             if (pCore === "CommNets") {
                 for (i in CommNetsCourses) {
                     course = CommNetsCourses[i]
-                    if (course!=pChoice1 && course != pChoice2 && course != pChoice3) {
+                    if (course != pChoice1 && course != pChoice2 && course != pChoice3) {
                         opt = new Option(course, course);
                         select.append(opt);
                     }
@@ -323,7 +325,7 @@
             } else if (pCore === "IC") {
                 for (i in ICCourses) {
                     course = ICCourses[i]
-                    if (course!=pChoice1 && course != pChoice2 && course != pChoice3) {
+                    if (course != pChoice1 && course != pChoice2 && course != pChoice3) {
                         opt = new Option(course, course);
                         select.append(opt);
                     }
@@ -331,7 +333,7 @@
             } else if (pCore === "Energy") {
                 for (i in EnergyCourses) {
                     course = EnergyCourses[i]
-                    if (course!=pChoice1 && course != pChoice2 && course != pChoice3) {
+                    if (course != pChoice1 && course != pChoice2 && course != pChoice3) {
                         opt = new Option(course, course);
                         select.append(opt);
                     }
@@ -339,7 +341,7 @@
             } else if (pCore === "Fields") {
                 for (i in FieldsCourses) {
                     course = FieldsCourses[i]
-                    if (course!=pChoice1 && course != pChoice2 && course != pChoice3) {
+                    if (course != pChoice1 && course != pChoice2 && course != pChoice3) {
                         opt = new Option(course, course);
                         select.append(opt);
                     }
@@ -347,7 +349,7 @@
             } else if (pCore === "Nano") {
                 for (i in NanoCourses) {
                     course = NanoCourses[i]
-                    if (course!=pChoice1 && course != pChoice2 && course != pChoice3) {
+                    if (course != pChoice1 && course != pChoice2 && course != pChoice3) {
                         opt = new Option(course, course);
                         select.append(opt);
                     }
@@ -355,7 +357,7 @@
             } else if (pCore === "CompArch") {
                 for (i in CompArchCourses) {
                     course = CompArchCourses[i]
-                    if (course!=pChoice1 && course != pChoice2 && course != pChoice3) {
+                    if (course != pChoice1 && course != pChoice2 && course != pChoice3) {
                         opt = new Option(course, course);
                         select.append(opt);
                     }
@@ -363,7 +365,7 @@
             } else if (pCore === "Software") {
                 for (i in SoftwareCourses) {
                     course = SoftwareCourses[i]
-                    if (course!=pChoice1 && course != pChoice2 && course != pChoice3) {
+                    if (course != pChoice1 && course != pChoice2 && course != pChoice3) {
                         opt = new Option(course, course);
                         select.append(opt);
                     }
@@ -371,7 +373,7 @@
             } else if (pCore === "DataScience") {
                 for (i in CommNetsCourses) {
                     course = DataScienceCourses[i]
-                    if (course!=pChoice1 && course != pChoice2 && course != pChoice3) {
+                    if (course != pChoice1 && course != pChoice2 && course != pChoice3) {
                         opt = new Option(course, course);
                         select.append(opt);
                     }
@@ -551,13 +553,13 @@
                 /*removing duplicate courses */
                 if (pCourses.indexOf(sCourses[i]) > -1) {
                     //if duplicate course is a math course
-                    if (sCourses[i]==="M427L") {
-                        sCourses[i]="M325K"
-                    } else if (sCourses[i]==="M325K") {
-                        sCourses[i]="M427L"
+                    if (sCourses[i] === "M427L") {
+                        sCourses[i] = "M325K"
+                    } else if (sCourses[i] === "M325K") {
+                        sCourses[i] = "M427L"
                     } else { //if duplicate course is EE
 
-                        var potentialCourses=[]
+                        var potentialCourses = []
                         if (sCore === "CommNets") {
                             potentialCourses = CommNetsCourses.diff(pCourses);
                             potentialCourses = potentialCourses.diff(CommNetsMandatory)
@@ -585,7 +587,7 @@
                         }
 
                         var randIndex = Math.floor(Math.random() * potentialCourses.length);
-                        sCourses[i]=parseCourseName(potentialCourses[randIndex]);
+                        sCourses[i] = parseCourseName(potentialCourses[randIndex]);
                     }
                 }
             }
