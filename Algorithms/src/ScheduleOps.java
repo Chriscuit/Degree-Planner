@@ -161,6 +161,8 @@ public class ScheduleOps {
 
     private int findLowestDiffSem(int lowerBound, int upperBound, Course course) {
 
+        // TODO: find bug in dis bich
+
         if (lowerBound > upperBound) {
             System.out.println("fuck me");
         }
