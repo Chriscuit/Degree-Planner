@@ -608,7 +608,10 @@
             }
             toSend.pCourses = pCourses;
             toSend.sCourses = sCourses;
+            sessionStorage.pCourses = pCourses
+            sessionStorage.sCourses = sCourses
             console.log(toSend);
+            window.location.href = "previousCoursesSelection.html"
         }
 
         $("#nextButton").on('click', function() {
