@@ -36,18 +36,36 @@ public class CourseList {
         return this.list;
     }
 
-    public void caclulatePostCourses() {
+//    public void calculatePostCourses() {
+//
+//        HashMap<String, List<String>> map = new HashMap<>();
+//
+//        for (Course course : getList()) {
+//            populateMap(map, course, course.getPrereqs());
+//            populateMap(map, course, course.getCoreqs());
+//            map.put(course.getName(), map.get(course.getName()) == null ? new ArrayList<String>() : map.get(course.getName()));
+//        }
+//
+//        for (Course course : getList()) {
+//            course.setPostCourses(map.get(course.getName()));
+//        }
+//    }
 
-        HashMap<String, List<String>> map = new HashMap<>();
+    public void calculateReversePreCo() {
+
+        HashMap<String, List<String>> preMap = new HashMap<>();
+        HashMap<String, List<String>> coMap = new HashMap<>();
 
         for (Course course : getList()) {
-            populateMap(map, course, course.getPrereqs());
-            populateMap(map, course, course.getCoreqs());
-            map.put(course.getName(), map.get(course.getName()) == null ? new ArrayList<String>() : map.get(course.getName()));
+            populateMap(preMap, course, course.getPrereqs());
+            populateMap(coMap, course, course.getCoreqs());
+            preMap.put(course.getName(), preMap.get(course.getName()) == null ? new ArrayList<String>() : preMap.get(course.getName()));
+            coMap.put(course.getName(), coMap.get(course.getName()) == null ? new ArrayList<String>() : coMap.get(course.getName()));
         }
 
         for (Course course : getList()) {
-            course.setPostCourses(map.get(course.getName()));
+            course.setrPrereqs(preMap.get(course.getName()));
+            course.setrCoreq(coMap.get(course.getName()));
         }
     }
 
@@ -86,7 +104,7 @@ public class CourseList {
     }
 
     public void finishedList() throws InvalidCoursesJsonException {
-        caclulatePostCourses();
+        calculateReversePreCo();
         errorCheck();
     }
 

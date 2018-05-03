@@ -41,7 +41,7 @@ public class JSON_Reader {
 
         User user = new User(10);
 
-        DAG_Matrix dag = new DAG_Matrix(courseList, user);
+        ScheduleOps so = new ScheduleOps(courseList, user);
 
         int j = 1;
     }
