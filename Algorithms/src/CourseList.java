@@ -65,7 +65,7 @@ public class CourseList {
 
         for (Course course : getList()) {
             course.setrPrereqs(preMap.get(course.getName()));
-            course.setrCoreq(coMap.get(course.getName()));
+            course.setrCoreqs(coMap.get(course.getName()));
         }
     }
 

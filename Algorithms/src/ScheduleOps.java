@@ -20,7 +20,7 @@ public class ScheduleOps {
         setStrToCourse();
         setAllMaxDepths();
         setSortList();
-        setAllUpperBounds();
+        setInitBounds();
         initFullPlan();
     }
 
@@ -34,7 +34,7 @@ public class ScheduleOps {
     private void setAllMaxDepths() {
 
         for (Course course : courseList.getList()) {
-            List<String> rCoreq = course.getrCoreq();
+            List<String> rCoreq = course.getrCoreqs();
             List<String> rPrereq = course.getrPrereqs();
 
             if (rPrereq.isEmpty()) {
@@ -77,10 +77,13 @@ public class ScheduleOps {
         return strToCourse.get(course);
     }
 
-    private void setAllUpperBounds() {
+    private void setInitBounds() {
 
         for (Course c : courseList.getList()) {
-            c.setLowerBound(user.getNumSemesters() - c.getMaxDepth());
+            c.setLowerBound(0);
+        }
+        for (Course c : courseList.getList()) {
+            c.setUpperBound(user.getNumSemesters() - c.getMaxDepth());
         }
     }
 
@@ -124,13 +127,29 @@ public class ScheduleOps {
             fullPlan.getSem(targetSem).add(course);
             sortList.remove(course);
             course.setSemesterPlacement(targetSem);
+            updateConnections(course);
+        }
+    }
+
+    private void updateConnections(Course c) {
+
+        int sem = c.getSemesterPlacement();
+
+        for (String prereq : c.getPrereqs()) {
+            C(prereq).setUpperBound(sem - 1);
+        }
+        for (String coreq : c.getCoreqs()) {
+            C(coreq).setUpperBound(sem);
+        }
+        for (String rPrereq : c.getrPrereqs()) {
+            C(rPrereq).setLowerBound(sem + 1);
+        }
+        for (String rCoreq : c.getrCoreqs()) {
+            C(rCoreq).setLowerBound(sem);
         }
     }
 
     private void optimizeFullPlan() {
 
-
     }
-
-
 }

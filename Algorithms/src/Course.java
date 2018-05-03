@@ -11,14 +11,14 @@ public class Course {
     private List<String> coreqs;
 
     private List<String> rPrereqs;
-    private List<String> rCoreq;
+    private List<String> rCoreqs;
 
     private List<String> postCourses;
     private int maxDepth = 0;
 
     // TODO: implement these puppies for the algo to work
     private int lowerBound = 0;
-    private int upperBound;
+    private int upperBound = Integer.MAX_VALUE;
     private int lastestPrereqPlacement;
     private int semesterPlacement;
 
@@ -118,7 +118,7 @@ public class Course {
     }
 
     public void setUpperBound(int upperBound) {
-        this.upperBound = upperBound;
+        this.upperBound = Integer.min(this.upperBound, upperBound);
     }
 
     public int getLastestPrereqPlacement() {
@@ -137,12 +137,18 @@ public class Course {
         this.rPrereqs = rPrereqs;
     }
 
-    public List<String> getrCoreq() {
-        return rCoreq;
+    public List<String> getrCoreqs() {
+        return rCoreqs;
     }
 
-    public void setrCoreq(List<String> rCoreq) {
-        this.rCoreq = rCoreq;
+    public void setrCoreqs(List<String> rCoreqs) {
+        this.rCoreqs = rCoreqs;
+    }
+
+    private void updateConnections() {
+        for (String prereq : prereqs) {
+
+        }
     }
 
     @Override
