@@ -7,7 +7,7 @@ public class ScheduleOps {
 
     private final int vertices;
     private CourseList courseList;
-    private List<Course> sortList;
+    private List<Course> sortedList;
     private HashMap<String, Course> strToCourse;
     private User user;
     private FullPlan fullPlan;
@@ -19,9 +19,10 @@ public class ScheduleOps {
         this.fullPlan = new FullPlan(user.getNumSemesters());
         setStrToCourse();
         setAllMaxDepths();
-        setSortList();
+        setSortedList();
         setInitBounds();
         initFullPlan();
+        optimizeFullPlan();
     }
 
     public User getUser() {
@@ -41,35 +42,21 @@ public class ScheduleOps {
                 course.setMaxDepth(0);
                 preBFS(course);
             }
-            if (rCoreq.isEmpty()) {
-                course.setMaxDepth(0);
-                preBFS(course);
-            }
         }
-
     }
 
     private void preBFS(Course course) {
 
-        Course currCourse = course;
-        int baseDepth = currCourse.getMaxDepth();
+        int baseDepth = course.getMaxDepth();
 
+        for (String coreq : course.getCoreqs()) {
+            Course cCoreq = C(coreq);
+            cCoreq.setMaxDepth(baseDepth);
+        }
         for (String prereq : course.getPrereqs()) {
             Course cPrereq = C(prereq);
             cPrereq.setMaxDepth(baseDepth + 1);
             preBFS(cPrereq);
-        }
-    }
-
-    private void coBFS(Course course) {
-
-        Course currCourse = course;
-        int baseDepth = currCourse.getMaxDepth();
-
-        for (String coreq : course.getCoreqs()) {
-            Course cCoreq = C(coreq);
-            cCoreq.setMaxDepth(baseDepth + 1);
-            preBFS(cCoreq);
         }
     }
 
@@ -83,14 +70,14 @@ public class ScheduleOps {
             c.setLowerBound(0);
         }
         for (Course c : courseList.getList()) {
-            c.setUpperBound(user.getNumSemesters() - c.getMaxDepth());
+            c.setUpperBound(user.getNumSemesters() - c.getMaxDepth() - 1);
         }
     }
 
-    private void setSortList() {
-        this.sortList = new ArrayList<>(courseList.getList());
-        sortList.sort(Comparator.comparingInt(Course::getMaxDepth));
-        Collections.reverse(sortList);
+    private void setSortedList() {
+        this.sortedList = new ArrayList<>(courseList.getList());
+        sortedList.sort(Comparator.comparingInt(Course::getMaxDepth));
+        Collections.reverse(sortedList);
     }
 
     private void setStrToCourse() {
@@ -125,7 +112,7 @@ public class ScheduleOps {
         if (courseList.contains(courseName)) {
             Course course = C(courseName);
             fullPlan.getSem(targetSem).add(course);
-            sortList.remove(course);
+            sortedList.remove(course);
             course.setSemesterPlacement(targetSem);
             updateConnections(course);
         }
@@ -151,5 +138,33 @@ public class ScheduleOps {
 
     private void optimizeFullPlan() {
 
+        int optSem;
+
+        while (!sortedList.isEmpty()) {
+
+            Course course = sortedList.get(0);
+            optSem = findLowestDiffSem(course.getLowerBound(), course.getUpperBound(), course);
+            fullPlan.getSem(optSem).add(course);
+            sortedList.remove(course);
+            course.setSemesterPlacement(optSem);
+            updateConnections(course);
+        }
+    }
+
+    private int findLowestDiffSem(int lowerBound, int upperBound, Course course) {
+
+        if (lowerBound > upperBound) {
+            System.out.println("fuck me");
+        }
+
+        List<Semester> possibleSems = new ArrayList<>();
+
+        for (int i = lowerBound; i <= upperBound; i++) {
+            possibleSems.add(fullPlan.getSem(i));
+        }
+
+        possibleSems.sort(Comparator.comparingInt(Semester::getTotalDifficulty));
+
+        return possibleSems.get(0).getName();
     }
 }

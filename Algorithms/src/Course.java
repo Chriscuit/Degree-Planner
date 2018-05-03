@@ -15,6 +15,7 @@ public class Course {
 
     private List<String> postCourses;
     private int maxDepth = 0;
+    private int minHeight = 0;
 
     // TODO: implement these puppies for the algo to work
     private int lowerBound = 0;
@@ -145,10 +146,12 @@ public class Course {
         this.rCoreqs = rCoreqs;
     }
 
-    private void updateConnections() {
-        for (String prereq : prereqs) {
+    public int getMinHeight() {
+        return minHeight;
+    }
 
-        }
+    public void setMinHeight(int minHeight) {
+        this.minHeight = Integer.max(minHeight, this.minHeight);
     }
 
     @Override

@@ -36,20 +36,6 @@ public class CourseList {
         return this.list;
     }
 
-//    public void calculatePostCourses() {
-//
-//        HashMap<String, List<String>> map = new HashMap<>();
-//
-//        for (Course course : getList()) {
-//            populateMap(map, course, course.getPrereqs());
-//            populateMap(map, course, course.getCoreqs());
-//            map.put(course.getName(), map.get(course.getName()) == null ? new ArrayList<String>() : map.get(course.getName()));
-//        }
-//
-//        for (Course course : getList()) {
-//            course.setPostCourses(map.get(course.getName()));
-//        }
-//    }
 
     public void calculateReversePreCo() {
 
