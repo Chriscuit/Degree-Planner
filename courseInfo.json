@@ -522,8 +522,7 @@
         "title": "EE438",
         "hours": 4,
         "difficulty": 3,
-        "prerequisites": [
-        ],
+        "prerequisites": [],
         "corequisites": [
             "EE313",
             "EE333T"

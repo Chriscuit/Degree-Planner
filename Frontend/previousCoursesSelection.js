@@ -8,7 +8,7 @@ var difficultySlider = $("#difficultySlider")
     .data("slider");
 
 $(document).ready(function() {
-    console.log(sessionStorage.pCourses)
+    console.log(JSON.parse(sessionStorage.getItem("pCourses")))
     console.log(sessionStorage.sCourses)
     for (i in M_courses) {
         var select = $("#coursePicker");
@@ -104,14 +104,21 @@ $(document).ready(function() {
         });
     });
 
+    Array.prototype.diff = function(a) {
+        return this.filter(function(i) { return a.indexOf(i) < 0; });
+    };
+
     // Placeholder for function that sends data to backend
     $("#displayTimeDifficulty").on("click", function() {
         var toSend = {};
-        toSend.selectedCourses = selectedCourses;
+
+        var courseList = required_courses;
+        var pCourses = JSON.parse(sessionStorage.getItem("pCourses"))
+        var sCourses = JSON.parse(sessionStorage.getItem("sCourses"))
+        courseList = courseList.concat(pCourses)
+        courseList = courseList.concat(sCourses)
+        toSend.courseList = courseList.diff(selectedCourses)
         // toSend.primaryCore = sessionStorage.primaryCore;
-        // toSend.secondaryCore = sessionStorage.secondaryCore;
-        // toSend.anchorCoursesPrimary = sessionStorage.anchorCoursesPrimary;
-        // toSend.anchorCoursesSecondary = sessionStorage.anchorCoursesSecondary;
         toSend.maxHours = hoursSlider.getValue();
         toSend.difficulty = difficultySlider.getValue();
         console.log(toSend);

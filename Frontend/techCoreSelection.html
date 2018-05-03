@@ -608,8 +608,9 @@
             }
             toSend.pCourses = pCourses;
             toSend.sCourses = sCourses;
-            sessionStorage.pCourses = pCourses
-            sessionStorage.sCourses = sCourses
+            sessionStorage.setItem("pCourses", JSON.stringify(pCourses));
+            sessionStorage.setItem("sCourses", JSON.stringify(sCourses));
+
             console.log(toSend);
             window.location.href = "previousCoursesSelection.html"
         }
