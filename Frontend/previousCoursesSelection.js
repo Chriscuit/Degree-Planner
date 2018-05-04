@@ -206,7 +206,30 @@ $(document).ready(function() {
     }
 
 
-
+    $(document).on('click', '.display', function() {
+        selectedCourses = [];
+        document.getElementById("selectedCourses").innerHTML = "";
+        var elem = courses[$(this).text()]
+        elem.selected = !elem.selected
+        var row = $('#searchTable .row:contains("' + $(this).text() + '")')
+        console.log(row)
+        if (elem.selected) {
+            row.children(".checkmark").show()
+        } else {
+            row.children(".checkmark").hide()
+        }
+        var index = selectedCourses.indexOf($(this).text());
+        if (index > -1) {
+            array.splice(index, 1);
+        }
+        $(this).remove()
+        // Object.keys(courses).filter((course_num) => (courses[course_num].selected)).forEach((course_num) => {
+        //     selectedCourses.push(course_num);
+        //     var num = $("<div>", { "class": "col-sm-auto display " + getDept(course_num) });
+        //     num.append(course_num)
+        //     $("#selectedCourses").append(num);
+        // })
+    });
 
     // Placeholder for function that sends data to backend
     $("#displayTimeDifficulty").on("click", function() {
