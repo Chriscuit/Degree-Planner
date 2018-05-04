@@ -103,9 +103,9 @@ public class ScheduleOps {
         hardcodeCourse("EE302", 0);
         hardcodeCourse("EE306", 0);
         hardcodeCourse("EE319K", 1);
-        hardcodeCourse("EE312", C("EE312").getLowerBound());
+//        hardcodeCourse("EE312", C("EE312").getLowerBound());
         hardcodeCourse("M427J", C("M427J").getLowerBound());
-        hardcodeCourse("EE313", C("EE313").getLowerBound());
+//        hardcodeCourse("EE313", C("EE313").getLowerBound());
         hardcodeCourse("EE364D", lastSem-1);
         hardcodeCourse("EE364E", lastSem-1);
         hardcodeCourse("EE464K", lastSem);
@@ -114,10 +114,10 @@ public class ScheduleOps {
         hardcodeCourse("EE464H", lastSem);
         hardcodeCourse("PHY303K", C("PHY303K").getLowerBound());
         hardcodeCourse("PHY103M", C("PHY103M").getLowerBound());
-        hardcodeCourse("PHY303L", C("PHY303L").getLowerBound());
-        hardcodeCourse("PHY103N", C("PHY103N").getLowerBound());
+//        hardcodeCourse("PHY303L", C("PHY303L").getLowerBound());
+//        hardcodeCourse("PHY103N", C("PHY103N").getLowerBound());
         hardcodeCourse("UGS", C("UGS").getLowerBound());
-        hardcodeCourse("EE333T", C("EE333T").getLowerBound());
+//        hardcodeCourse("EE333T", C("EE333T").getLowerBound());
 
     }
 

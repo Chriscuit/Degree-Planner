@@ -45,7 +45,7 @@ public class JsonReader {
 
         ObjectMapper objectMapper = new ObjectMapper();
 
-        JsonUserData jsonUserData = objectMapper.readValue(new File("testDegreePlan.json"), JsonUserData.class);
+        JsonUserData jsonUserData = objectMapper.readValue(new File("TEST4_Power_Comm_NoCredit_8sem.json"), JsonUserData.class);
 
         User user = new User(jsonUserData, fullCourseList);
 
