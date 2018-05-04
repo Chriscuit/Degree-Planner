@@ -21,7 +21,7 @@ public class JsonReader {
 
     public void readInFullCourseList() throws IOException, ParseException, CourseList.InvalidCoursesJsonException {
 
-        Object obj = new JSONParser().parse(new FileReader("courseInfo.json"));
+        Object obj = new JSONParser().parse(new FileReader("/Users/christophergill/Downloads/Degree-Planner/courseInfo.json"));
 
         JSONObject jsonObject = (JSONObject) obj;
 

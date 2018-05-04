@@ -3,19 +3,26 @@ import java.util.List;
 
 public class Semester {
 
-    private static int numSemesters = 0;
+//    private static int numSemesters = 0;
 
     private int name;
     private List<Course> list;
     private int totalDifficulty;
     private int totalHours;
 
-    Semester() {
+//    Semester() {
+//        list = new ArrayList<>();
+//        name = numSemesters;
+//        totalDifficulty = 0;
+//        totalHours = 0;
+//        numSemesters++;
+//    }
+
+    Semester(FullPlan fp) {
         list = new ArrayList<>();
-        name = numSemesters;
+        name = fp.getSize();
         totalDifficulty = 0;
         totalHours = 0;
-        numSemesters++;
     }
 
     public void add(Course course) {

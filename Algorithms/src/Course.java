@@ -17,7 +17,6 @@ public class Course {
     private int maxDepth = 0;
     private int minHeight = 0;
 
-    // TODO: implement these puppies for the algo to work
     private int lowerBound = 0;
     private int upperBound = Integer.MAX_VALUE;
     private int lastestPrereqPlacement;

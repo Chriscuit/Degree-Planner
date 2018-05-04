@@ -1,53 +1,53 @@
 {
   "JsonSemester" : [ {
     "name" : 0,
-    "hours" : 16,
-    "difficulty" : 15,
-    "size" : 5,
-    "courses" : [ "RHE306", "M408C", "EE302", "EE306", "UGS" ]
+    "hours" : 13,
+    "difficulty" : 13,
+    "size" : 4,
+    "courses" : [ "M408D", "EE302", "EE306", "UGS" ]
   }, {
     "name" : 1,
     "hours" : 14,
-    "difficulty" : 16,
-    "size" : 5,
-    "courses" : [ "E316K", "M408D", "EE319K", "PHY303K", "PHY103M" ]
+    "difficulty" : 13,
+    "size" : 4,
+    "courses" : [ "EE319K", "M427J", "M427L", "GOV312L" ]
   }, {
     "name" : 2,
-    "hours" : 17,
+    "hours" : 13,
     "difficulty" : 14,
     "size" : 5,
-    "courses" : [ "M427J", "M325K", "GOV310L", "M427L", "SBS" ]
+    "courses" : [ "PHY103N", "PHY303L", "EE351K", "SBS", "FILL" ]
   }, {
     "name" : 3,
-    "hours" : 17,
-    "difficulty" : 18,
-    "size" : 6,
-    "courses" : [ "PHY103N", "PHY303L", "EE411", "EE351K", "FELEC", "GOV312L" ]
+    "hours" : 13,
+    "difficulty" : 12,
+    "size" : 4,
+    "courses" : [ "EE411", "EE312", "M325K", "EE316" ]
   }, {
     "name" : 4,
-    "hours" : 15,
-    "difficulty" : 15,
-    "size" : 5,
-    "courses" : [ "M340L", "EE312", "EE313", "EE316", "VAPA" ]
+    "hours" : 13,
+    "difficulty" : 12,
+    "size" : 4,
+    "courses" : [ "M340L", "EE313", "EE422C", "VAPA" ]
   }, {
     "name" : 5,
-    "hours" : 15,
+    "hours" : 14,
     "difficulty" : 15,
     "size" : 4,
-    "courses" : [ "EE333T", "EE445S", "EE445L", "EE422C" ]
+    "courses" : [ "EE333T", "EE445S", "EE445L", "EE361C" ]
   }, {
     "name" : 6,
     "hours" : 16,
     "difficulty" : 15,
     "size" : 5,
-    "courses" : [ "EE364D", "HIST1", "EE461L", "EE351M", "EE361C" ]
+    "courses" : [ "EE364D", "HIST1", "EE461L", "EE360C", "EE371R" ]
   }, {
     "name" : 7,
-    "hours" : 17,
-    "difficulty" : 18,
-    "size" : 5,
-    "courses" : [ "EE464K", "EE461S", "EE360C", "EE371R", "HIST2" ]
+    "hours" : 14,
+    "difficulty" : 15,
+    "size" : 4,
+    "courses" : [ "EE464K", "EE461S", "EE351M", "HIST2" ]
   } ],
-  "totalHours" : 127,
+  "totalHours" : 110,
   "numSemesters" : 8
 }
