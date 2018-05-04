@@ -222,4 +222,8 @@ public class ScheduleOps {
             }
         }
     }
+
+    public FullPlan getFullPlan() {
+        return this.fullPlan;
+    }
 }
