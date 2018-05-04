@@ -14,12 +14,6 @@
     color: green;
 }
 
-.form-control {
-    width: 60%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
 .display {
     background-color: green;
     text-align: center;
@@ -28,9 +22,14 @@
     margin-top: 8px;
 }
 
+#searchForm {
+    margin-top: 10px;
+    width: 80%;
+}
+
 #searchBox {
     /* Add a search icon to input */
-    width: 80%;
+    /*width: 80%;*/
 }
 
 #coursePicker {
