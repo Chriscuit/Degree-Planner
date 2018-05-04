@@ -424,7 +424,14 @@
         "prerequisites": [
             "EE333T"
         ],
-        "corequisites": []
+        "corequisites": [
+            "EE461L",
+            "EE462L",
+            "EE445L",
+            "EE440",
+            "EE438",
+            "EE445S"
+        ]
     },
     {
         "title": "EE364E",
@@ -433,7 +440,14 @@
         "prerequisites": [
             "EE333T"
         ],
-        "corequisites": []
+        "corequisites": [
+            "EE461L",
+            "EE462L",
+            "EE445L",
+            "EE440",
+            "EE438",
+            "EE445S"
+        ]
     },
     {
         "title": "EE368L",
