@@ -14,29 +14,44 @@
     <!-- Bootstrap select -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.0/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="bootstrap-slider.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./previousCoursesSelection.css">
     <title>Previous Courses page</title>
+    <style>
+    html,
+    body {
+        height: 100%;
+    }
+    </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="col-4">
-            <h4>Department</h4>
-            <select class="selectpicker" data-live-search="true" id="departmentPicker">
-                <option data-tokens="M">Mathematics</option>
-                <option data-tokens="EE" selected="selected">Electrical Engineering</option>
-                <option data-tokens="PHY">Physics</option>
-            </select>
-            <div id="test">
-                <select id="coursePicker" multiple class="selectpicker" data-live-search="true" data-selected-text-format="count"></select>
-            </div>
-            <h4 id="selection">Courses Selected: </h4>
-            <div id="selectedCourses"></div>
-            <button id="displayTimeDifficulty">Next</button>
-            <!-- <div>
+    <div class="container" style="height: 100%">
+        <div class="row">
+            <div class="col-lg-8">
+                <h4>Department</h4>
+                <select class="selectpicker" data-live-search="true" id="departmentPicker">
+                    <option data-tokens="M">Mathematics</option>
+                    <option data-tokens="EE" selected="selected">Electrical Engineering</option>
+                    <option data-tokens="PHY">Physics</option>
+                </select>
+                <!-- <div id="test">
+    <select id="coursePicker" multiple class="selectpicker" data-live-search="true" data-selected-text-format="count"></select>
+</div> -->
+                <input type="text" class="form-control" id="searchBox" name="searchBox" placeholder="Search for courses">
+                <div id="searchTable" style="overflow: scroll; height:80vh;">
+                </div>
+                <!-- <div>
     Max Hours Per Semester
     <input id="hoursSlider" data-slider-id='ex1Slider' type="text" data-slider-min="3" data-slider-max="22" data-slider-step="1" data-slider-value="14" /> Difficulty Level
     <input id="difficultySlider" type="text" data-slider-ticks="[1, 2, 3, 4, 5]" data-slider-ticks-labels='["easy", "", "medium", "", "difficult"]' data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3" data-slider-tooltip="show" />
 </div> -->
+            </div>
+            <div class="col-lg-4">
+                <h4 id="selection">Courses Selected: </h4>
+                <div id="selectedCourses" class="col-lg-4"></div>
+                <button id="displayTimeDifficulty" class="btn btn-outline-secondary">Next</button>
+            </div>
         </div>
     </div>
     <!-- Optional JavaScript -->

@@ -1,0 +1,28 @@
+.num {
+    background-color: orange;
+    text-align: center;
+    border-radius: 8px;
+    color: white;
+    margin-left: 20px;
+}
+
+.row {
+    padding-top: 10px;
+}
+
+.checkmark {
+    color: green;
+}
+
+.form-control {
+    width: 60%;
+    margin-top: 10px;
+}
+
+.display {
+    background-color: orange;
+    text-align: center;
+    border-radius: 8px;
+    color: white;
+    margin-top: 8px;
+}
