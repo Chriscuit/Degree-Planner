@@ -134,6 +134,8 @@ public class Course {
         return rPrereqs;
     }
 
+    public int getrPrereqsSize() { return rPrereqs.size(); }
+
     public void setrPrereqs(List<String> rPrereqs) {
         this.rPrereqs = rPrereqs;
     }

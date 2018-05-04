@@ -151,22 +151,26 @@ public class ScheduleOps {
 
     private void optimizeFullPlan() {
 
-        int optSem;
-
+        while (!sortedList.isEmpty() && sortedList.get(0).getMaxDepth() != 0) {
+            scheduleCourse();
+        }
+        sortedList.sort(Comparator.comparingInt(Course::getrPrereqsSize));
         while (!sortedList.isEmpty()) {
-
-            Course course = sortedList.get(0);
-            optSem = findLowestDiffSem(course.getLowerBound(), course.getUpperBound(), course);
-            fullPlan.getSem(optSem).add(course);
-            sortedList.remove(course);
-            course.setSemesterPlacement(optSem);
-            updateConnections(course);
+            scheduleCourse();
         }
     }
 
-    private int findLowestDiffSem(int lowerBound, int upperBound, Course course) {
+    private void scheduleCourse() {
+        int optSem;
+        Course course = sortedList.get(0);
+        optSem = findLowestDiffSem(course.getLowerBound(), course.getUpperBound(), course);
+        fullPlan.getSem(optSem).add(course);
+        sortedList.remove(course);
+        course.setSemesterPlacement(optSem);
+        updateConnections(course);
+    }
 
-        // TODO: find bug in dis bich
+    private int findLowestDiffSem(int lowerBound, int upperBound, Course course) {
 
         if (lowerBound > upperBound) {
             System.out.println(course.getName());
