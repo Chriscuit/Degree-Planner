@@ -56,7 +56,7 @@
     }
 
     .navbar-text {
-        margin-right: 43%;
+        margin-right: 44%;
     }
     </style>
 </head>
@@ -68,7 +68,7 @@
         <div class="container">
             <a href="#" class="navbar-brand">G4++</a>
             <span class="navbar-text">
-                Choose your tech cores
+                Tech core selection
             </span>
         </div>
     </nav>
@@ -227,6 +227,7 @@
 
         Displays the choices a student has within the courses required for the particular core*/
         function displayElectivesWithinRequirements(primaryOrSecondary, buttonToDisplay) {
+            $("#displayElectivesButton").hide()
             $("#" + primaryOrSecondary + "ChoicePrompt").empty()
             $("#" + primaryOrSecondary + "ChoiceSelect1").empty()
             $("#" + primaryOrSecondary + "ChoiceSelect2").empty()
