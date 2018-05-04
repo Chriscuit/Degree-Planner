@@ -13,7 +13,13 @@ import java.util.List;
 
 public class JsonReader {
 
-    public static void readInFullCourseList(CourseList courseList) throws IOException, ParseException, CourseList.InvalidCoursesJsonException {
+    private CourseList fullCourseList = new CourseList();
+
+    JsonReader() throws ParseException, CourseList.InvalidCoursesJsonException, IOException {
+        readInFullCourseList();
+    }
+
+    public void readInFullCourseList() throws IOException, ParseException, CourseList.InvalidCoursesJsonException {
 
         Object obj = new JSONParser().parse(new FileReader("courseInfo.json"));
 
@@ -36,12 +42,13 @@ public class JsonReader {
          * Now this is where this class begins to act as the driver program
          */
         for (JsonCourseData jcourse : jsonToJSONCourseList) {
-            courseList.add(new Course(jcourse));
+            fullCourseList.add(new Course(jcourse));
         }
-        courseList.finishedList();
+        fullCourseList.finishedList();
+
     }
 
-    public static User readInUserInput(CourseList fullCourseList) throws IOException, ParseException, CourseList.InvalidCoursesJsonException {
+    public User readInUserInput() throws IOException {
 
         ObjectMapper objectMapper = new ObjectMapper();
 

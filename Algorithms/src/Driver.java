@@ -1,14 +1,10 @@
 public class Driver {
     public static void main(String[] args) throws Exception {
 
-        CourseList fullCourseList = new CourseList();
+        JsonReader jsonReader = new JsonReader();
 
-        JsonReader.readInFullCourseList(fullCourseList);
-
-        User user = JsonReader.readInUserInput(fullCourseList);
+        User user = jsonReader.readInUserInput();
 
         ScheduleOps so = new ScheduleOps(user);
-
-        int j = 1;
     }
 }
