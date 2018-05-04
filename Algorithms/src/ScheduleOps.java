@@ -183,15 +183,26 @@ public class ScheduleOps {
             possibleSems.add(fullPlan.getSem(i));
         }
 
-        possibleSems.sort(Comparator.comparingInt(Semester::getScore));
 
-        int optDiff = possibleSems.get(0).getTotalDifficulty();
+        possibleSems.sort(Comparator.comparingInt(Semester::getScore)); // prioritizes semesters by diff and hours
+
+        int optScore = possibleSems.get(0).getScore();
 
         Collections.reverse(possibleSems);
 
-        while (possibleSems.get(0).getTotalDifficulty() > optDiff) {
+        while (possibleSems.get(0).getScore() > optScore) {
             possibleSems.remove(0);
         }
+
+//        possibleSems.sort(Comparator.comparingInt(Semester::getTotalDifficulty)); // prioritizes semesters by diff only
+//
+//        int optDiff = possibleSems.get(0).getTotalDifficulty();
+//
+//        Collections.reverse(possibleSems);
+//
+//        while (possibleSems.get(0).getTotalDifficulty() > optDiff) {
+//            possibleSems.remove(0);
+//        }
 
         possibleSems.sort(Comparator.comparingInt(Semester::getName));
 
