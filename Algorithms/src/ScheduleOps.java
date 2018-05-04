@@ -15,7 +15,7 @@ public class ScheduleOps {
         this.userCourseList = user.getUserCourseList();
         this.vertices = userCourseList.size();
         this.user = user;
-        this.fullPlan = new FullPlan(user.getNumSemesters());
+        this.fullPlan = new FullPlan(user);
         setStrToCourse();
         setAllMaxDepths();
         setSortedList();
@@ -210,6 +210,7 @@ public class ScheduleOps {
         for (Semester sem : fullPlan.getSemList()) {
             if (sem.getTotalHours() < 12) {
                 sem.add(new Course("FILL", 3, 1, new ArrayList<>(), new ArrayList<>()));
+                fullPlan.incremenetFillers();
             }
         }
         for (Semester sem : fullPlan.getSemList()) {

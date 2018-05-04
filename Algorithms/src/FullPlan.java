@@ -4,12 +4,20 @@ import java.util.List;
 public class FullPlan {
 
     private List<Semester> semList;
+    private User user;
+    private int numFillers = 0;
 
-    public FullPlan(int numSemester) {
+    public FullPlan(User user) {
+        this.user = user;
+        int numSemester = user.getNumSemesters();
         semList = new ArrayList<>();
         for(int i = 0; i < numSemester; i++) {
             semList.add(new Semester(this));
         }
+    }
+
+    public User getUser() {
+        return user;
     }
 
     public Semester getSem(int i) {
@@ -48,5 +56,17 @@ public class FullPlan {
         }
 
         return maxDiff - minDiff;
+    }
+
+    public void incremenetFillers() {
+        this.numFillers++;
+    }
+
+    public int getNumFillers() {
+        return numFillers;
+    }
+
+    public int getNumFillerHours() {
+        return numFillers * 3;
     }
 }
