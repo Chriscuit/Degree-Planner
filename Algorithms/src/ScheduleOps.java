@@ -2,9 +2,6 @@ import java.util.*;
 
 public class ScheduleOps {
 
-    // TODO: implement depthBFS on reverse Graph to get max depth for each course. Do it for each leaf node (root in reverse) and set course depth to frontier level
-    // TODO: handle coreqs and post-co-reqs
-
     private final int vertices;
     private CourseList fullCourseList;
     private CourseList userCourseList;
@@ -91,7 +88,6 @@ public class ScheduleOps {
         }
     }
 
-    // TODO: write notify functon for when I assign courses to semsters
     private void initFullPlan() {
 
         int lastSem = fullPlan.getSize() - 1;
