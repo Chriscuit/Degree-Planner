@@ -1,0 +1,19 @@
+#schedule1 {
+    margin-top: 20px;
+}
+
+.num {
+    background-color: orange;
+    text-align: center;
+    border-radius: 8px;
+    color: white;
+}
+
+.header {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.row {
+    margin-top: 10px;
+}

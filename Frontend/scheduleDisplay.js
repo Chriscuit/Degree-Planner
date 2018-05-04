@@ -12,7 +12,7 @@ $(document).ready(function() {
         //for each schedule
         for (let semester = 1; semester <= 8; semester++) {
             //for each semester in this schedule
-            for (let coursenum = 1; coursenum <= 5; coursenum++) {
+            for (let coursenum = 2; coursenum <= 5; coursenum++) {
                 //we need to put correct text for each course
                 var current_element =
                     "s" + schedule + "sem" + semester + "c" + coursenum;

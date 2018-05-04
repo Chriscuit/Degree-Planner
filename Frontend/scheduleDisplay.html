@@ -12,84 +12,454 @@
     <!-- Bootstrap select -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.0/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="bootstrap-slider.css">
-    <title>Hello, world!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="scheduleDisplay.css">
+    <title>Schedule</title>
 </head>
 
 <body>
-    <table class="table table-bordered" id="schedule1">
-        <thead>
-            <tr>
-                <th scope="col">Fall 2018</th>
-                <th scope="col">Spring 2019</th>
-                <th scope="col">Fall 2019</th>
-                <th scope="col">Spring 2020</th>
-                <th scope="col">Fall 2020</th>
-                <th scope="col">Spring 2021</th>
-                <th scope="col">Fall 2021</th>
-                <th scope="col">Spring 2022</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td id="s1sem1c1" data-toggle="tooltip" title=""></td>
-                <td id="s1sem2c1" data-toggle="tooltip" title=""></td>
-                <td id="s1sem3c1" data-toggle="tooltip" title=""></td>
-                <td id="s1sem4c1" data-toggle="tooltip" title=""></td>
-                <td id="s1sem5c1" data-toggle="tooltip" title=""></td>
-                <td id="s1sem6c1" data-toggle="tooltip" title=""></td>
-                <td id="s1sem7c1" data-toggle="tooltip" title=""></td>
-                <td id="s1sem8c1" data-toggle="tooltip" title=""></td>
-            </tr>
-            <tr>
-                <td id="s1sem1c2" data-toggle="tooltip" title=""></td>
-                <td id="s1sem2c2" data-toggle="tooltip" title=""></td>
-                <td id="s1sem3c2" data-toggle="tooltip" title=""></td>
-                <td id="s1sem4c2" data-toggle="tooltip" title=""></td>
-                <td id="s1sem5c2" data-toggle="tooltip" title=""></td>
-                <td id="s1sem6c2" data-toggle="tooltip" title=""></td>
-                <td id="s1sem7c2" data-toggle="tooltip" title=""></td>
-                <td id="s1sem8c2" data-toggle="tooltip" title=""></td>
-            </tr>
-            <tr>
-                <td id="s1sem1c3" data-toggle="tooltip" title=""></td>
-                <td id="s1sem2c3" data-toggle="tooltip" title=""></td>
-                <td id="s1sem3c3" data-toggle="tooltip" title=""></td>
-                <td id="s1sem4c3" data-toggle="tooltip" title=""></td>
-                <td id="s1sem5c3" data-toggle="tooltip" title=""></td>
-                <td id="s1sem6c3" data-toggle="tooltip" title=""></td>
-                <td id="s1sem7c3" data-toggle="tooltip" title=""></td>
-                <td id="s1sem8c3" data-toggle="tooltip" title=""></td>
-            </tr>
-            <tr>
-                <td id="s1sem1c4" data-toggle="tooltip" title=""></td>
-                <td id="s1sem2c4" data-toggle="tooltip" title=""></td>
-                <td id="s1sem3c4" data-toggle="tooltip" title=""></td>
-                <td id="s1sem4c4" data-toggle="tooltip" title=""></td>
-                <td id="s1sem5c4" data-toggle="tooltip" title=""></td>
-                <td id="s1sem6c4" data-toggle="tooltip" title=""></td>
-                <td id="s1sem7c4" data-toggle="tooltip" title=""></td>
-                <td id="s1sem8c4" data-toggle="tooltip" title=""></td>
-            </tr>
-            <tr>
-                <td id="s1sem1c5" data-toggle="tooltip" title=""></td>
-                <td id="s1sem2c5" data-toggle="tooltip" title=""></td>
-                <td id="s1sem3c5" data-toggle="tooltip" title=""></td>
-                <td id="s1sem4c5" data-toggle="tooltip" title=""></td>
-                <td id="s1sem5c5" data-toggle="tooltip" title=""></td>
-                <td id="s1sem6c5" data-toggle="tooltip" title=""></td>
-                <td id="s1sem7c5" data-toggle="tooltip" title=""></td>
-                <td id="s1sem8c5" data-toggle="tooltip" title=""></td>
-            </tr>
-        </tbody>
-    </table>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.0/js/bootstrap-select.min.js"></script>
-    <script src="scheduleDisplay.js"></script>
-    <script src="courseDescriptions.js"></script>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="header">
+                    Fall 2018
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="header">
+                    Fall 2018
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="header">
+                    Fall 2018
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="header">
+                    Fall 2018
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="header">
+                    Fall 2018
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="header">
+                    Fall 2018
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="header">
+                    Fall 2018
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="header">
+                    Fall 2018
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-auto num">EE302</div>
+                    <div class=col-sm-auto>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-circle"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="containter">
+            <table class="table table-bordered" id="schedule1">
+                <thead>
+                    <tr>
+                        <th scope="col">Fall 2018</th>
+                        <th scope="col">Spring 2019</th>
+                        <th scope="col">Fall 2019</th>
+                        <th scope="col">Spring 2020</th>
+                        <th scope="col">Fall 2020</th>
+                        <th scope="col">Spring 2021</th>
+                        <th scope="col">Fall 2021</th>
+                        <th scope="col">Spring 2022</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="s1sem1c1" data-toggle="tooltip" title="">
+                        </td>
+                        <td id="s1sem2c1" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem3c1" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem4c1" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem5c1" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem6c1" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem7c1" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem8c1" data-toggle="tooltip" title=""></td>
+                    </tr>
+                    <tr>
+                        <td id="s1sem1c2" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem2c2" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem3c2" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem4c2" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem5c2" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem6c2" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem7c2" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem8c2" data-toggle="tooltip" title=""></td>
+                    </tr>
+                    <tr>
+                        <td id="s1sem1c3" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem2c3" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem3c3" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem4c3" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem5c3" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem6c3" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem7c3" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem8c3" data-toggle="tooltip" title=""></td>
+                    </tr>
+                    <tr>
+                        <td id="s1sem1c4" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem2c4" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem3c4" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem4c4" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem5c4" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem6c4" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem7c4" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem8c4" data-toggle="tooltip" title=""></td>
+                    </tr>
+                    <tr>
+                        <td id="s1sem1c5" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem2c5" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem3c5" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem4c5" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem5c5" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem6c5" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem7c5" data-toggle="tooltip" title=""></td>
+                        <td id="s1sem8c5" data-toggle="tooltip" title=""></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.0/js/bootstrap-select.min.js"></script>
+        <script src="scheduleDisplay.js"></script>
+        <script src="courseDescriptions.js"></script>
 </body>
 
 </html>
