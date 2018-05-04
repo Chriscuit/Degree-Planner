@@ -23,7 +23,7 @@ body {
 
 #myBackground {
     margin-top: 20%;
-    background-color: rgba(54, 71, 196, 0.8);
+    background-color: rgba(54, 71, 196, 0.85);
     z-index: 1;
     opacity: 1;
     text-align: center;
