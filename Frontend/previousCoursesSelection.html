@@ -43,10 +43,14 @@
                         <option data-tokens="government">Government</option>
                     </select>
                 </div>
-                <!-- <div id="test">
-    <select id="coursePicker" multiple class="selectpicker" data-live-search="true" data-selected-text-format="count"></select>
-</div> -->
-                <input type="text" class="form-control" id="searchBox" name="searchBox" placeholder="Search for courses">
+                <!--                 <input type="text" class="form-control" id="searchBox" name="searchBox" placeholder="Search for courses">
+ -->
+                <div class="input-group mb-3" id="searchForm">
+                    <input type="text" class="form-control" id="searchBox" placeholder="Search for courses">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="clear">Clear</button>
+                    </div>
+                </div>
                 <div id="searchTable" style="overflow: scroll; height:80vh;">
                 </div>
                 <!-- <div>

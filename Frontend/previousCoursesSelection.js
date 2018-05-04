@@ -206,6 +206,8 @@ $(document).ready(function() {
     }
 
 
+
+
     // Placeholder for function that sends data to backend
     $("#displayTimeDifficulty").on("click", function() {
         var toSend = {};
@@ -221,4 +223,11 @@ $(document).ready(function() {
         //toSend.difficulty = difficultySlider.getValue();
         console.log(toSend);
     }); //end of add button on click function
+
+    $('#clear').on('click', function() {
+        $("#searchBox").val("");
+        console.log('cleared')
+        filterDept()
+    })
+
 }); //end of ready function
