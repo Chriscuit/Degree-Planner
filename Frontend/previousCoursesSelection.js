@@ -11,82 +11,121 @@ var courses = {};
 $(document).ready(function() {
     console.log(JSON.parse(sessionStorage.getItem("pCourses")))
     console.log(sessionStorage.sCourses)
-    for (i in M_courses) {
-        var select = $("#coursePicker");
-        course = M_courses[i];
-        course_num = course.split(":")[0];
-        courses[course_num] = { title: course, selected: false }
-        opt = new Option(course, course_num);
-        opt.setAttribute("data-tokens", course);
-        select.append(opt);
+    addCourses(M_courses, "m")
+    addCourses(EE_courses, "ee")
 
-        var searchTable = $("#searchTable")
-        var row = $("<div>", { "class": "row", style: "cursor:pointer;" });
-        var num = $("<div>", { "class": "col-sm-2 num" });
-        num.append(course_num)
-        var title = $("<div>", { "class": "col-sm-auto title" });
-        title.append(course)
-        var checkmark = $("<i>", { "class": "fa fa-check checkmark pull-right" }).hide();
-        row.append(num)
-        row.append(title)
-        row.append(checkmark)
-        searchTable.append(row)
-    }
-    for (i in EE_courses) {
-        var select = $("#coursePicker");
-        course = EE_courses[i];
-        course_num = course.split(":")[0];
-        courses[course_num] = { title: course, selected: false }
-        opt = new Option(course, course_num);
-        opt.setAttribute("data-tokens", course);
-        select.append(opt);
+    addCourses(PHY_courses, "phy")
+    addCourses(GOV_courses, "gov")
 
-        var searchTable = $("#searchTable")
-        var row = $("<div>", { "class": "row", style: "cursor:pointer;" });
-        var num = $("<div>", { "class": "col-sm-2 num" });
-        num.append(course_num)
-        var title = $("<div>", { "class": "col-sm-auto title" });
-        title.append(course)
-        var checkmark = $("<i>", { "class": "fa fa-check checkmark pull-right" }).hide();
-        row.append(num)
-        row.append(title)
-        row.append(checkmark)
-        searchTable.append(row)
-    }
-    for (i in PHY_courses) {
-        var select = $("#coursePicker");
-        course = PHY_courses[i];
-        course_num = course.split(":")[0];
-        courses[course_num] = { title: course, selected: false }
-        opt = new Option(course, course_num);
-        opt.setAttribute("data-tokens", course);
-        select.append(opt);
+    // for (i in M_courses) {
+    //     var select = $("#coursePicker");
+    //     course = M_courses[i];
+    //     course_num = course.split(":")[0];
+    //     courses[course_num] = { title: course, selected: false }
+    //     opt = new Option(course, course_num);
+    //     opt.setAttribute("data-tokens", course);
+    //     select.append(opt);
 
-        var searchTable = $("#searchTable")
-        var row = $("<div>", { "class": "row", style: "cursor:pointer;" });
-        var num = $("<div>", { "class": "col-sm-2 num" });
-        num.append(course_num)
-        var title = $("<div>", { "class": "col-sm-auto title" });
-        title.append(course)
-        var checkmark = $("<i>", { "class": "fa fa-check checkmark pull-right" }).hide();
-        row.append(num)
-        row.append(title)
-        row.append(checkmark)
-        searchTable.append(row)
-    }
-    $("#coursePicker")
-        .children("option")
-        .hide();
-    $("#coursePicker option").each(function() {
-        if (
-            $(this)
-            .val()
-            .startsWith("EE")
-        ) {
-            $(this).show();
+    //     var searchTable = $("#searchTable")
+    //     var row = $("<div>", { "class": "row", style: "cursor:pointer;" });
+    //     var num = $("<div>", { "class": "col-sm-2 num " + "m" });
+    //     num.append(course_num)
+    //     var title = $("<div>", { "class": "col-sm-auto title" });
+    //     title.append(course.split(":")[1])
+    //     var checkmark = $("<i>", { "class": "fa fa-check checkmark pull-right" }).hide();
+    //     row.append(num)
+    //     row.append(title)
+    //     row.append(checkmark)
+    //     searchTable.append(row)
+    // }
+    // for (i in EE_courses) {
+    //     var select = $("#coursePicker");
+    //     course = EE_courses[i];
+    //     course_num = course.split(":")[0];
+    //     courses[course_num] = { title: course, selected: false }
+    //     opt = new Option(course, course_num);
+    //     opt.setAttribute("data-tokens", course);
+    //     select.append(opt);
+
+    //     var searchTable = $("#searchTable")
+    //     var row = $("<div>", { "class": "row", style: "cursor:pointer;" });
+    //     var num = $("<div>", { "class": "col-sm-2 num " + "ee" });
+    //     num.append(course_num)
+    //     var title = $("<div>", { "class": "col-sm-auto title" });
+    //     title.append(course.split(":")[1])
+    //     var checkmark = $("<i>", { "class": "fa fa-check checkmark pull-right" }).hide();
+    //     row.append(num)
+    //     row.append(title)
+    //     row.append(checkmark)
+    //     searchTable.append(row)
+    // }
+    // for (i in PHY_courses) {
+    //     var select = $("#coursePicker");
+    //     course = PHY_courses[i];
+    //     course_num = course.split(":")[0];
+    //     courses[course_num] = { title: course, selected: false }
+    //     opt = new Option(course, course_num);
+    //     opt.setAttribute("data-tokens", course);
+    //     select.append(opt);
+
+    //     var searchTable = $("#searchTable")
+    //     var row = $("<div>", { "class": "row", style: "cursor:pointer;" });
+    //     var num = $("<div>", { "class": "col-sm-2 num " + "phy" });
+    //     num.append(course_num)
+    //     var title = $("<div>", { "class": "col-sm-auto title" });
+    //     title.append(course.split(":")[1])
+    //     var checkmark = $("<i>", { "class": "fa fa-check checkmark pull-right" }).hide();
+    //     row.append(num)
+    //     row.append(title)
+    //     row.append(checkmark)
+    //     searchTable.append(row)
+    // }
+    // for (i in M_courses) {
+    //     var select = $("#coursePicker");
+    //     course = M_courses[i];
+    //     course_num = course.split(":")[0];
+    //     courses[course_num] = { title: course, selected: false }
+    //     opt = new Option(course, course_num);
+    //     opt.setAttribute("data-tokens", course);
+    //     select.append(opt);
+
+    //     var searchTable = $("#searchTable")
+    //     var row = $("<div>", { "class": "row", style: "cursor:pointer;" });
+    //     var num = $("<div>", { "class": "col-sm-2 num " + "m" });
+    //     num.append(course_num)
+    //     var title = $("<div>", { "class": "col-sm-auto title" });
+    //     title.append(course.split(":")[1])
+    //     var checkmark = $("<i>", { "class": "fa fa-check checkmark pull-right" }).hide();
+    //     row.append(num)
+    //     row.append(title)
+    //     row.append(checkmark)
+    //     searchTable.append(row)
+    // }
+
+    function addCourses(current_courses, dept) {
+        for (i in current_courses) {
+            var select = $("#coursePicker");
+            course = current_courses[i];
+            course_num = course.split(":")[0];
+            courses[course_num] = { title: course, selected: false }
+            opt = new Option(course, course_num);
+            opt.setAttribute("data-tokens", course);
+            select.append(opt);
+
+            var searchTable = $("#searchTable")
+            var row = $("<div>", { "class": "row", style: "cursor:pointer;" });
+            var num = $("<div>", { "class": "col-sm-2 num " + dept });
+            num.append(course_num)
+            var title = $("<div>", { "class": "col-sm-auto title" });
+            title.append(course.split(":")[1])
+            var checkmark = $("<i>", { "class": "fa fa-check checkmark pull-right" }).hide();
+            row.append(num)
+            row.append(title)
+            row.append(checkmark)
+            searchTable.append(row)
         }
-    });
-    $("#coursePicker").selectpicker("refresh");
+    }
+
     filterDept()
 
     $("#departmentPicker").change(function() {
@@ -115,23 +154,12 @@ $(document).ready(function() {
         }
         Object.keys(courses).filter((course_num) => (courses[course_num].selected)).forEach((course_num) => {
             selectedCourses.push(course_num);
-            var num = $("<div>", { "class": "col-sm-auto display" });
+            var num = $("<div>", { "class": "col-sm-auto display " + getDept(course_num) });
             num.append(course_num)
             $("#selectedCourses").append(num);
         })
     });
 
-    $("#coursePicker").change(function() {
-        selectedCourses = [];
-        document.getElementById("selectedCourses").innerHTML = "";
-
-        $.each($("#searchTable .row:selected"), function() {
-            selectedCourses.push($(this).val());
-            var num = $("<div>", { "class": "col-sm-2 num" });
-            num.append($(this).val())
-            $("#selectedCourses").append(num);
-        });
-    });
 
     Array.prototype.diff = function(a) {
         return this.filter(function(i) { return a.indexOf(i) < 0; });
@@ -145,6 +173,9 @@ $(document).ready(function() {
         }
         if (dept === "Physics") {
             searchDept = "PHY"
+        }
+        if (dept == "Government") {
+            searchDept = "GOV"
         }
         $("#searchTable .row").each(function() {
             console.log($(this).children(".num").text())
@@ -168,6 +199,15 @@ $(document).ready(function() {
         // console.log($("#searchBox").val())
         filterDept()
     });
+
+    function getDept(course_num) {
+        var matches = course_num.match(/([a-zA-Z]*)([0-9\.]+)/);
+        var dept = ""
+        if (matches) {
+            dept = matches[1].toLowerCase()
+        }
+        return dept
+    }
 
 
     // Placeholder for function that sends data to backend

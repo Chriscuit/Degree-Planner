@@ -79,6 +79,11 @@ var PHY_courses = [
     "PHY103N: Lab for Physics 303L"
 ];
 
+var GOV_courses = [
+    "GOV310L: Texas Government",
+    "GOV312L: American Government"
+]
+
 var required_courses = [
     "EE302",
     "EE306",

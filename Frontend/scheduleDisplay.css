@@ -3,10 +3,10 @@
 }
 
 .num {
-    background-color: orange;
     text-align: center;
     border-radius: 8px;
     color: white;
+    background-color: green;
 }
 
 .header {
@@ -16,4 +16,24 @@
 
 .row {
     margin-top: 10px;
+}
+
+.m {
+    background-color: blue;
+}
+
+.ee {
+    background-color: orange;
+}
+
+.phy {
+    background-color: red;
+}
+
+.gov {
+    background-color: purple;
+}
+
+.fa-circle {
+    margin-right: 2px;
 }

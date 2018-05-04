@@ -15,14 +15,19 @@ $(document).ready(function() {
     for (var i = 0; i < test_plan.numSemesters; i++) {
         var current = test_plan.JsonSemester[i]
         for (j in current.courses) {
-            var num = $("<div>", { "class": "col-sm-auto num" })
+            var matches = current.courses[j].match(/([a-zA-Z]*)([0-9\.]+)/);
+            var dept = ""
+            console.log(matches)
+            if (matches) {
+                dept = matches[1].toLowerCase()
+            }
+            var num = $("<div>", { "class": ("col-sm num " + dept) })
             num.append(current.courses[j])
-            var difficulty = $("<div>", { "class": "col-sm-auto" });
+            var difficulty = $("<div>", { "class": "col-sm" });
 
             var found = course_info.courses.find(function(element) {
                 return element.title === current.courses[j];
             });
-            console.log(found)
             var difficulty_rating = 1
             if (found) {
                 difficulty_rating = found.difficulty

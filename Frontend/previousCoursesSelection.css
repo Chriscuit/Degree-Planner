@@ -20,7 +20,7 @@
 }
 
 .display {
-    background-color: orange;
+    background-color: green;
     text-align: center;
     border-radius: 8px;
     color: white;
@@ -29,4 +29,20 @@
 
 #searchBox {
     /* Add a search icon to input */
+}
+
+.m {
+    background-color: blue;
+}
+
+.ee {
+    background-color: orange;
+}
+
+.phy {
+    background-color: red;
+}
+
+.gov {
+    background-color: purple;
 }
