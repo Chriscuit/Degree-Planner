@@ -71,7 +71,6 @@ $(document).ready(function() {
             col.append(row_hide)
         }
 
-
     }
     //placeholder JSON object
     // var sem =
