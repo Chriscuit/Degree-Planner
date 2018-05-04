@@ -36,6 +36,8 @@ public class Semester {
         return totalHours;
     }
 
+    public int getScore() { return totalDifficulty+totalHours; }
+
     public List<Course> getList() {
         return this.list;
     }

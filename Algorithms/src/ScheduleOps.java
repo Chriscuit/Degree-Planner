@@ -154,7 +154,8 @@ public class ScheduleOps {
         while (!sortedList.isEmpty() && sortedList.get(0).getMaxDepth() != 0) {
             scheduleCourse();
         }
-        sortedList.sort(Comparator.comparingInt(Course::getrPrereqsSize));
+        sortedList.sort(Comparator.comparingInt(Course::getDifficulty));
+        Collections.reverse(sortedList);
         while (!sortedList.isEmpty()) {
             scheduleCourse();
         }
@@ -182,7 +183,7 @@ public class ScheduleOps {
             possibleSems.add(fullPlan.getSem(i));
         }
 
-        possibleSems.sort(Comparator.comparingInt(Semester::getTotalDifficulty));
+        possibleSems.sort(Comparator.comparingInt(Semester::getScore));
 
         int optDiff = possibleSems.get(0).getTotalDifficulty();
 
