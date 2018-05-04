@@ -104,16 +104,12 @@ $(document).ready(function() {
 
     function addCourses(current_courses, dept) {
         for (i in current_courses) {
-            var select = $("#coursePicker");
             course = current_courses[i];
             course_num = course.split(":")[0];
             courses[course_num] = { title: course, selected: false }
-            opt = new Option(course, course_num);
-            opt.setAttribute("data-tokens", course);
-            select.append(opt);
 
             var searchTable = $("#searchTable")
-            var row = $("<div>", { "class": "row", style: "cursor:pointer;" });
+            var row = $("<div>", { "class": "row course", style: "cursor:pointer;" });
             var num = $("<div>", { "class": "col-sm-2 num " + dept });
             num.append(course_num)
             var title = $("<div>", { "class": "col-sm-auto title" });

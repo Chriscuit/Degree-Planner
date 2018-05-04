@@ -33,14 +33,16 @@
     </nav>
     <div class="container" style="height: 100%">
         <div class="row">
-            <div class="col-lg-8">
-                <h4>Department</h4>
-                <select class="selectpicker" data-live-search="true" id="departmentPicker">
-                    <option data-tokens="M">Mathematics</option>
-                    <option data-tokens="EE" selected="selected">Electrical Engineering</option>
-                    <option data-tokens="PHY">Physics</option>
-                    <option data-tokens="government">Government</option>
-                </select>
+            <div class="col-lg" id="coursePicker">
+                <div class="row" id="dept">
+                    <h4 style="margin-right:10px;">Department</h4>
+                    <select class="selectpicker" data-live-search="true" id="departmentPicker">
+                        <option data-tokens="M">Mathematics</option>
+                        <option data-tokens="EE" selected="selected">Electrical Engineering</option>
+                        <option data-tokens="PHY">Physics</option>
+                        <option data-tokens="government">Government</option>
+                    </select>
+                </div>
                 <!-- <div id="test">
     <select id="coursePicker" multiple class="selectpicker" data-live-search="true" data-selected-text-format="count"></select>
 </div> -->
@@ -53,8 +55,8 @@
     <input id="difficultySlider" type="text" data-slider-ticks="[1, 2, 3, 4, 5]" data-slider-ticks-labels='["easy", "", "medium", "", "difficult"]' data-slider-min="1" data-slider-max="5" data-slider-step="1" data-slider-value="3" data-slider-tooltip="show" />
 </div> -->
             </div>
-            <div class="col-lg-4">
-                <h4 id="selection">Courses Selected: </h4>
+            <div class="col-lg" id="courses">
+                <h4 id="selection">Courses Selected </h4>
                 <div id="selectedCourses" class="col-lg-4"></div>
                 <button id="displayTimeDifficulty" class="btn btn-outline-secondary">Next</button>
             </div>
@@ -64,7 +66,8 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.0/js/bootstrap-select.min.js"></script>

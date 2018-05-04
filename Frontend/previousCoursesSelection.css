@@ -7,7 +7,7 @@
 }
 
 .row {
-    padding-top: 10px;
+    margin-top: 10px;
 }
 
 .checkmark {
@@ -30,6 +30,15 @@
 
 #searchBox {
     /* Add a search icon to input */
+    width: 80%;
+}
+
+#coursePicker {
+    margin-right: 30px;
+}
+
+#dept {
+    padding-left: 14px;
 }
 
 .m {
