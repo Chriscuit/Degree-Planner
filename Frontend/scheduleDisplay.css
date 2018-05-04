@@ -51,3 +51,8 @@
 .sem {
     margin-left: 10px;
 }
+
+.tooltip-inner {
+    max-width: 300px;
+    background-color: rgba(0, 0, 0, 0.85);
+}

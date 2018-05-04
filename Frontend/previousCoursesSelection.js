@@ -208,7 +208,6 @@ $(document).ready(function() {
 
     $(document).on('click', '.display', function() {
         selectedCourses = [];
-        document.getElementById("selectedCourses").innerHTML = "";
         var elem = courses[$(this).text()]
         elem.selected = !elem.selected
         var row = $('#searchTable .row:contains("' + $(this).text() + '")')
