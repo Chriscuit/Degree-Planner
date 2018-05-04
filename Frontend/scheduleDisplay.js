@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    $('[data-toggle="tooltip"]').tooltip();
 
     var num_cols = Math.ceil(test_plan.numSemesters / 2)
     for (var i = 0; i < num_cols; i++) {
@@ -25,12 +24,16 @@ $(document).ready(function() {
         for (j in current.courses) {
             var matches = current.courses[j].match(/([a-zA-Z]*)([0-9\.]+)/);
             var dept = ""
-            console.log(matches)
             if (matches) {
                 dept = matches[1].toLowerCase()
             }
             var num = $("<div>", { "class": ("col-sm num " + dept) })
             num.append(current.courses[j])
+            var title = courseDescriptions[current.courses[j]]
+            console.log(title)
+            num.attr('data-toggle', 'tooltip');
+            num.attr('title', title);
+            num.tooltip({})
             var difficulty = $("<div>", { "class": "col-sm" });
 
             var found = course_info.courses.find(function(element) {

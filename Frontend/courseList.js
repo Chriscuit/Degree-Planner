@@ -80,8 +80,8 @@ var PHY_courses = [
 ];
 
 var GOV_courses = [
-    "GOV310L: Texas Government",
-    "GOV312L: American Government"
+    "GOV310L: American Government",
+    "GOV312L: Issues and Policies in American Government"
 ]
 
 var required_courses = [
