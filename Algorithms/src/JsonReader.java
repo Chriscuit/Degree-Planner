@@ -48,11 +48,11 @@ public class JsonReader {
 
     }
 
-    public User readInUserInput() throws IOException {
+    public User readInUserInput(String path) throws IOException {
 
         ObjectMapper objectMapper = new ObjectMapper();
 
-        JsonUserData jsonUserData = objectMapper.readValue(new File("TEST5_Power_Comm_SomeCredit_7sem.json"), JsonUserData.class);
+        JsonUserData jsonUserData = objectMapper.readValue(new File(path), JsonUserData.class);
 
         User user = new User(jsonUserData, fullCourseList);
 

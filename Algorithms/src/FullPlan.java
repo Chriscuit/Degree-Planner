@@ -23,4 +23,15 @@ public class FullPlan {
     public List<Semester> getSemList() {
         return semList;
     }
+
+    public int getTotalHours() {
+
+        int total = 0;
+
+        for (Semester sem : semList) {
+            total += sem.getTotalHours();
+        }
+
+        return total;
+    }
 }
