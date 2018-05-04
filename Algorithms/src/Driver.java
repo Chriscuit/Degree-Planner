@@ -1,13 +1,20 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.json.simple.parser.ParseException;
 
 import java.io.File;
+import java.io.IOException;
 
 public class Driver {
     public static void main(String[] args) throws Exception {
 
 //        String inputPath = args[0];
 
-        String inputPath = "TEST5_Power_Comm_SomeCredit_7sem.json";
+        String inputPath = "TEST1_Software_Comm_NoCredit_8sem.json";
+
+        run(inputPath);
+    }
+
+    public static void run(String inputPath) throws ParseException, CourseList.InvalidCoursesJsonException, IOException {
 
         JsonReader jsonReader = new JsonReader();
 
