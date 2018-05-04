@@ -37,3 +37,17 @@
 .fa-circle {
     margin-right: 2px;
 }
+
+.yearly {
+    border-radius: 4px;
+    background-color: rgba(232, 227, 222, 0.9);
+    margin-right: 8px;
+}
+
+.hide {
+    opacity: 0
+}
+
+.sem {
+    margin-left: 10px;
+}

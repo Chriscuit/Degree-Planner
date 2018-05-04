@@ -1,18 +1,26 @@
 $(document).ready(function() {
     $('[data-toggle="tooltip"]').tooltip();
 
+    var num_cols = Math.ceil(test_plan.numSemesters / 2)
+    for (var i = 0; i < num_cols; i++) {
+        var row_id = i * 2
+        var col = $("<div>", { "class": "col yearly", id: "year" + i })
+        var row1 = $("<div>", { "class": "row", id: "row" + row_id })
+        var row2 = $("<div>", { "class": "row", id: "row" + (row_id + 1) })
+
+        col.append(row1)
+        col.append(row2)
+        $("#scheduleRow").append(col)
+
+    }
+
     for (var i = 0; i < test_plan.numSemesters; i++) {
-        var col = $("<div>", { "class": "col", id: "sem" + i })
+        var col = $("<div>", { "class": "col sem", id: "sem" + i })
         var header = $("<div>", { "class": "header" })
         header.append("Semester " + (i + 1))
         col.append(header)
-        if (i % 2 == 0) {
-            $("#row1").append(col)
-        } else {
-            $("#row2").append(col)
-        }
-    }
-    for (var i = 0; i < test_plan.numSemesters; i++) {
+        $("#row" + i).append(col)
+
         var current = test_plan.JsonSemester[i]
         for (j in current.courses) {
             var matches = current.courses[j].match(/([a-zA-Z]*)([0-9\.]+)/);
@@ -38,6 +46,7 @@ $(document).ready(function() {
 
                 difficulty.append(dot)
             }
+
             var col = $("#sem" + i)
             var row = $("<div>", { "class": "row" })
             row.append(num)
@@ -45,6 +54,20 @@ $(document).ready(function() {
             col.append(row)
 
         }
+
+        for (var num = current.courses.length; num < 6; num++) {
+            var row_hide = $("<div>", { "class": "row hide" })
+            var num_hide = $("<div>", { "class": ("col-sm num ") })
+            num_hide.append("EE302")
+            var difficulty_hide = $("<div>", { "class": "col-sm" });
+
+            difficulty_hide.append($("<i>", { "class": "fa fa-circle" }))
+
+            row_hide.append(num_hide)
+            row_hide.append(difficulty_hide)
+            col.append(row_hide)
+        }
+
 
     }
     //placeholder JSON object
