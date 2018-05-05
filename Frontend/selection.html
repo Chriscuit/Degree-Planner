@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Selection Page</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Bootstrap select -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="bootstrap-slider.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+    <script src="bootstrap-slider.js"></script>
+    <style>
+    #technicalCoreTable,
+    #primaryCoreChoicesTable,
+    #secondaryCoreChoicesTable {
+        width: 50%;
+        margin: 0 auto;
+        margin-top: 30px;
+        /*border: 1px solid black;*/
+    }
+    /*these are the tech core dropdowns */
+
+    #primaryCore {
+        margin-bottom: 20px;
+    }
+
+    #coursesTable {
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+        /*border: 1px solid black;*/
+        margin-top: 20px;
+    }
+
+    th,
+    tr {
+        text-align: center;
+        /*border: 1px solid red;*/
+    }
+
+    #coursesTable th,
+    tr {
+        width: 50%;
+    }
+
+    #primaryElectives {
+        height: 175px;
+    }
+
+    #nextButton {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    </style>
+</head>
+
+<body>
+    <!--This table allows the user to choose their technical cores. Next step: the options within the primary
+	core required courses -->
+    <table id="technicalCoreTable">
+        <tr>
+            <td>
+                <h3>Choose your Technical Cores</h3></td>
+        </tr>
+        <tr>
+            <td style="padding-bottom: 5px">Choose Primary Technical Core</td>
+        </tr>
+        <tr>
+            <td>
+                <select class="form-control" id="primaryCore">
+                    <option value="CommNets">Communications, Signal Processing, Networks and Systems</option>
+                    <option value="IC">Electronics and Integrated Circuits</option>
+                    <option value="Energy">Energy Systems and Renewable Energy</option>
+                    <option value="Fields">Fields, Waves and Electromagnetic Systems</option>
+                    <option value="Nano">Nanoelectronics and Nanotechnology</option>
+                    <option value="CompArch">Computer Architecture and Embedded Systems</option>
+                    <option value="Software">Software Engineering and Design</option>
+                    <option value="DataScience">Data Science and Information Processing</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-bottom: 5px">Choose Secondary Technical Core</td>
+        </tr>
+        <tr>
+            <td>
+                <select class="form-control" id="secondaryCore">
+                    <option value="CommNets">Communications, Signal Processing, Networks and Systems</option>
+                    <option value="IC">Electronics and Integrated Circuits</option>
+                    <option value="Energy">Energy Systems and Renewable Energy</option>
+                    <option value="Fields">Fields, Waves and Electromagnetic Systems</option>
+                    <option value="Nano">Nanoelectronics and Nanotechnology</option>
+                    <option value="CompArch">Computer Architecture and Embedded Systems</option>
+                    <option value="Software">Software Engineering and Design</option>
+                    <option value="DataScience">Data Science and Information Processing</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" class="btn" id="primaryCoreRequirementsButton">Next</button>
+            </td>
+        </tr>
+    </table>
+    <!--This table allows the user to make choices within the options for their primary core required courses.
+	Ex: EE 325 vs EE 351M for CommNets. Next step: the electives for the primary core.
+	Max number of such choices is 3-->
+    <table id="primaryCoreChoicesTable">
+        <tr>
+            <td>
+                <h3 id="primaryChoicePrompt"></h3></td>
+        </tr>
+        <tr>
+            <td>
+                <select class="form-control" id="primaryChoiceSelect1"></select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <select class="form-control" id="primaryChoiceSelect2"></select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <select class="form-control" id="primaryChoiceSelect3"></select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" class="btn" id="displayElectivesButton">Next</button>
+            </td>
+        </tr>
+    </table>
+    <table class="table-bordered" id="coursesTable">
+        <tr>
+            <th>Primary Electives</th>
+            <!-- <th>Secondary</th> -->
+        </tr>
+        <tr>
+            <td> <p id="maxChoicesPrompt"></p>
+        </td>
+        </tr>
+        <tr>
+            <td>
+                <select class="form-control" id="primaryElectives" multiple></select>
+            </td>
+            <!-- <td><select class="form-control" id="secondaryCourses" multiple></select></td> -->
+            <tr>
+                <td>
+                    <button type="button" class="btn" id="secondaryCoreRequirementsButton">Next</button>
+                </td>
+            </tr>
+        </tr>
+    </table>
+    <table id="secondaryCoreChoicesTable">
+        <tr>
+            <td>
+                <h3 id="secondaryChoicePrompt"></h3></td>
+        </tr>
+        <tr>
+            <td>
+                <select class="form-control" id="secondaryChoiceSelect1"></select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <select class="form-control" id="secondaryChoiceSelect2"></select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <select class="form-control" id="secondaryChoiceSelect3"></select>
+            </td>
+        </tr>
+        <!-- <tr>
+            <td>
+                <button type="button" class="btn" id="nextButton">Next</button>
+            </td>
+        </tr> -->
+    </table>
+    <form action="https://g4plusplus.herokuapp.com/credits" method="post">
+      <div style="text-align:center">
+          <button type="button" class="btn" id="nextButton">Next</button>
+      </div>
+    </form>
+    <!--script type="text/javascript" src="techCoreSelection.js"></script-->
+    <script>
+    $(document).ready(function() {
+      var CommNetsCourses = [
+          "EE 325: Electromagnetic Engineering",
+          "EE 325K: Antennas and Wireless Propagation",
+          "EE 445S: Real-Time Digital Signal Processing Laboratory",
+          "EE 351M: Digital Signal Processing",
+          "EE 360C: Algorithms",
+          "EE 360K: Introduction to Digital Communications",
+          "EE 461P: Introduction to Data Mining/Data Science Principles",
+          "EE 362K: Introduction to Automatic Control",
+          "EE 363M: Microwave and Radio Frequency Engineering",
+          "EE 471C: Wireless Communications Laboratory",
+          "EE 371R: Digital Image and Video Processing",
+          "EE 460J: Data Science Laboratory"
+      ];
+
+      var CommNetsDefaults = [
+          "EE 351M: Digital Signal Processing",
+          "EE 362K: Introduction to Automatic Control",
+          "EE 445S: Real-Time Digital Signal Processing Laboratory"
+      ];
+
+      var CommNetsMandatory = [
+          "M 427L: Advanced Calculus for Applications II"
+      ];
+
+      var ICCourses = [
+          "EE 438K: Analog Electronics",
+          "EE 338L: Analog Integrated Circuit Design",
+          "EE 440: Microelectronics Fabrication Techniques Laboratory",
+          "EE 445L: Embedded Systems Design Laboratory",
+          "EE 445S: Real-Time Digital Signal Processing Laboratory",
+          "EE 460M: Digital Systems Design Using HDL",
+          "EE 460N: Computer Architecture",
+          "EE 460R: Introduction to VLSI Design",
+          "EE 361R: Radio Frequency Circuit Design",
+          "EE 363M: Microwave & Radio Frequency Engineering",
+          "EE 374K: Biomedical Electronic Instrument Design",
+          "EE 374L: Applications of Biomedical Engineering"
+      ];
+
+      var ICMandatory = [
+          "M 427L: Advanced Calculus for Applications II",
+          "EE 325: Electromagnetic Engineering",
+          "EE 339: Solid-State Electronic Devices",
+          "EE 438 :Fundamentals of Electronic Circuits I Laboratory",
+          "EE 316: Digital Logic Design"
+      ];
+
+      var EnergyCourses = [
+          "EE 339: Solid-State Electronic Devices",
+          "EE 339S: Solar Energy Conversion Devices",
+          "EE 341: Electric Drives and Machines",
+          "EE 362Q: Power Quality and Harmonics",
+          "EE 362R: Renewal Energy and Power Systems",
+          "EE 362S: Development of a Solar-powered Vehicle",
+          "EE 368L: Power Systems Apparatus and Laboratory",
+          "EE 369: Power Systems Engineering",
+          "EE 362G: Smart Grids",
+          "ME 337C: Intro to Nuclear Power Systems"
+      ];
+
+      var EnergyDefaults = [
+          "EE 368L"
+      ];
+
+      var EnergyMandatory = [
+          "M 427L: Advanced Calculus for Applications II",
+          "EE 325: Electromagnetic Engineering",
+          "EE 462L: Power Electronics Laboratory",
+          "EE 362K: Introduction to Automatic Control"
+      ];
+
+      var FieldsCourses = [
+          "EE 325K: Antennas and Wireless Propagation",
+          "EE 334K: Quantum Theory of Engineering Materials",
+          "EE 341: Electric Drives and Machines",
+          "EE 347: Modern Optics",
+          "EE 348: Laser and Optical Engineering",
+          "EE 361R: Radio Frequency Circuit Design",
+          "EE 363M: Microwave and Radio Frequency Engineering",
+          "EE 363N: Engineering Acoustics",
+          "EE 369: Power Systems Engineering",
+          "EE 374K: Biomedical Electronic Instrument Design",
+          "EE 374L: Applications of Biomedical Engineering"
+      ]
+
+      var FieldsDefaults = [
+          "EE 438",
+          "EE 325K"
+      ];
+
+      var FieldsMandatory = [
+          "M 427L: Advanced Calculus for Applications II",
+          "EE 325: Electromagnetic Engineering",
+          "EE 339: Solid-State Electronic Devices",
+      ];
+      var NanoCourses = [
+          "EE 334K: Quantum Theory of Engineering Materials",
+          "EE 438 :Fundamentals of Electronic Circuits I Laboratory",
+          "EE 338L: Analog Integrated Circuit Design",
+          "EE 339S: Solar Energy Conversion Devices",
+          "EE 347: Modern Optics",
+          "EE 348: Laser and Optical Engineering",
+          "EE 460R: Introduction to VLSI Design",
+          "EE 340P: High-Throughput Nanopatterning"
+      ];
+
+      var NanoMandatory = [
+          "M 427L: Advanced Calculus for Applications II",
+          "EE 325: Electromagnetic Engineering",
+          "EE 339: Solid-State Electronic Devices",
+          "EE 440: Integrated Circuit Nanomanufacturing Techniques"
+      ];
+
+      var CompArchCourses = [
+          "EE 422C: Software Design & Implementation II",
+          "EE 445M: Embedded and Real-Time Systems Laboratory",
+          "EE 445S: Real-Time Digital Signal Processing Laboratory",
+          "EE 460M: Digital Systems Design Using HDL",
+          "EE 360P: Concurrent and Distributed Systems",
+          "EE 460R: Introduction to VLSI Design",
+          "EE 361C: Multicore Computing",
+          "EE 461S: Operating Systems",
+          "EE 362K: Introduction to Automatic Control",
+          "EE 379K: Information Security & Privacy"
+      ];
+
+      var CompArchMandatory = [
+          "M 325K: Discrete Math",
+          "EE 460N: Computer Architecture",
+          "EE 316: Digital Logic Design",
+          "EE 445L: Embedded Systems Design Laboratory",
+          "EE 360C: Algorithms"
+      ];
+
+      var SoftwareCourses = [
+          "EE 316: Digital Logic Design",
+          "EE 445L: Embedded Systems Design Laboratory",
+          "EE 445M: Embedded and Real-Time Systems Laboratory",
+          "EE 360F: Intro to Software Engineering",
+          "EE 460N: Computer Architecture",
+          "EE 360P: Concurrent and Distributed Systems",
+          "EE 360T: Software Testing",
+          "EE 361C: Multicore Computing",
+          "EE 461P: Data Science Principles",
+          "EE 361Q: Requirements Engineering",
+          "EE 461S: Operating Systems",
+          "EE 460J: Data Science Laboratory",
+          "EE 379K: Information Security & Privacy"
+      ];
+
+      var SoftwareMandatory = [
+          "EE 360C: Algorithms",
+          "M 325K: Discrete Math",
+          "EE 461L: Software Engineering and Design Laboratory",
+          "EE 422C: Software Design & Implementation II"
+      ];
+
+      var DataScienceCourses = [
+          "EE 422C: Software Design & Implementation II",
+          "EE 445S: Real-Time Digital Signal Processing Laboratory",
+          "EE 360P: Concurrent and Distributed Systems",
+          "EE 361C: Multicore Computing",
+          "EE 461L: Software Engineering and Design Laboratory",
+          "EE 362K: Introduction to Automatic Control",
+          "EE 471C: Wireless Communications Laboratory",
+          "EE 371R: Digital Image and Video Processing",
+          "EE 379K: Architecture for Big Data Science"
+      ]
+
+      var DataScienceMandatory = [
+          "EE 360C: Algorithms",
+          "M 325K: Discrete Math",
+          "EE 461P: Data Science Principles",
+          "EE 460J: Data Science Laboratory",
+          "EE 351M: Digital Signal Processing"
+      ];
+        /*clears the selector's options */
+        function removeOptions(selectbox) {
+            var i;
+            for (i = selectbox.options.length - 1; i >= 0; i--) { selectbox.remove(i); }
+        }
+
+        function hideEverything() {
+            $("#coursesTable").hide()
+            $("#primaryCoreChoicesTable").hide()
+            $("#displayElectivesButton").hide()
+            $("#secondaryCoreChoicesTable").hide()
+            $("#secondaryCoreRequirementsButton").hide()
+            $("#nextButton").hide()
+        }
+
+        hideEverything()
+
+        /*first argument is either "primary" or "secondary", second argument is the name of the button
+        to be displayed.
+
+        Displays the choices a student has within the courses required for the particular core*/
+        function displayElectivesWithinRequirements(primaryOrSecondary, buttonToDisplay) {
+            $("#" + primaryOrSecondary + "ChoicePrompt").empty()
+            $("#" + primaryOrSecondary + "ChoiceSelect1").empty()
+            $("#" + primaryOrSecondary + "ChoiceSelect2").empty()
+            $("#" + primaryOrSecondary + "ChoiceSelect3").empty()
+            var promptText = "You have some options for your " + primaryOrSecondary + " core requirements"
+
+            var Core = $("#" + primaryOrSecondary + "Core").val();
+
+            if (Core === "CommNets") {
+
+                $("#" + primaryOrSecondary + "ChoicePrompt").html(promptText)
+                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 325: Electromagnetic Engineering", "EE 325: Electromagnetic Engineering"))
+                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 351M: Digital Signal Processing", "EE 351M: Digital Signal Processing"))
+
+                $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("EE 362K: Introduction to Automatic Control", "EE 362K: Introduction to Automatic Control"))
+                $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("EE 371R: Digital Image and Video Processing", "EE 371R: Digital Image and Video Processing"))
+                $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("EE 360K: Introduction to Digital Communication", "EE 360K: Introduction to Digital Communication"))
+                $("#" + primaryOrSecondary + "ChoiceSelect3").append(new Option("EE 445S: Real-Time Digital Signal Processing Laboratory", "EE 445S: Real-Time Digital Signal Processing Laboratory"))
+                $("#" + primaryOrSecondary + "ChoiceSelect3").append(new Option("EE 471C: Wireless Communications Laboratory", "EE 471C: Wireless Communications Laboratory"))
+
+                $("#" + primaryOrSecondary + "ChoicePrompt").show()
+                $("#" + primaryOrSecondary + "ChoiceSelect1").show()
+                $("#" + primaryOrSecondary + "ChoiceSelect2").show()
+                $("#" + primaryOrSecondary + "ChoiceSelect3").show()
+            }
+
+            if (Core === "IC" || Core === "Nano" || Core === "CompArch" || Core === "Software" || Core === "DataScience") {
+
+                $("#" + primaryOrSecondary + "ChoicePrompt").hide()
+                $("#" + primaryOrSecondary + "ChoiceSelect1").hide()
+                $("#" + primaryOrSecondary + "ChoiceSelect2").hide()
+                $("#" + primaryOrSecondary + "ChoiceSelect3").hide()
+                //if no options, don 't display button and jump straight to electives
+                displayElectives()
+
+                return
+            }
+
+            if (Core === "Energy") {
+
+                $("#" + primaryOrSecondary + "ChoicePrompt").html(promptText)
+                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 368L: Power Systems Apparatus and Laboratory", "EE 368L: Power Systems Apparatus and Laboratory"))
+                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 369: Power Systems Engineering", "EE 369: Power Systems Engineering"))
+
+                $("#" + primaryOrSecondary + "ChoicePrompt").show()
+                $("#" + primaryOrSecondary + "ChoiceSelect1").show()
+                $("#" + primaryOrSecondary + "ChoiceSelect2").hide()
+                $("#" + primaryOrSecondary + "ChoiceSelect3").hide()
+            }
+            if (Core === "Fields") {
+                $("#" + primaryOrSecondary + "ChoicePrompt").html(promptText)
+                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 438: Electronic Circuits I", "EE 438: Electronic Circuits I"))
+                $("#" + primaryOrSecondary + "ChoiceSelect1").append(new Option("EE 462L: Power Electronics Laboratory", "EE 462L: Power Electronics Laboratory"))
+
+                $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("EE 363M: Microwave and Radio Frequency Engineering", "EE 363M: Microwave and Radio Frequency Engineering"))
+                $("#" + primaryOrSecondary + "ChoiceSelect2").append(new Option("EE 325K: Antennas and Wireless Propagation", "EE 325K: Antennas and Wireless Propagation"))
+
+                $("#" + primaryOrSecondary + "ChoicePrompt").show()
+                $("#" + primaryOrSecondary + "ChoiceSelect1").show()
+                $("#" + primaryOrSecondary + "ChoiceSelect2").show()
+                $("#" + primaryOrSecondary + "ChoiceSelect3").hide()
+            }
+
+            $("#" + primaryOrSecondary + "CoreChoicesTable").show()
+            $("#" + buttonToDisplay).show()
+            // }
+        }
+
+        $("#primaryCoreRequirementsButton").on('click', function() {
+            displayElectivesWithinRequirements("primary", "displayElectivesButton")
+        })
+
+        function parseCourseName(course) {
+            a = course.toString().split(" ")
+            return a[0] + a[1].slice(0, -1)
+        }
+        function calcMaxChoices() {
+            var pCore = $('#primaryCore').val();
+            var maxChoices = 0;
+            if (pCore === "CommNets" || pCore === "Nano" || pCore === "Software") {
+                maxChoices = 4
+            } else {
+                maxChoices = 3;
+            }
+            return maxChoices
+        }
+
+        function displayElectives() {
+
+            removeOptions(document.getElementById("primaryElectives"));
+            /*Get the tech cores choices and populated the CoursesTable with the proper courses */
+            var pCore = $('#primaryCore').val();
+            var sCore = $('#secondaryCore').val();
+            var select = $("#primaryElectives");
+
+            var pChoice1 = $("#primaryChoiceSelect1").val();
+            var pChoice2 = $("#primaryChoiceSelect2").val();
+            var pChoice3 = $("#primaryChoiceSelect3").val();
+            if (pCore === "CommNets") {
+                for (i in CommNetsCourses) {
+                    course = CommNetsCourses[i]
+                    if (course!=pChoice1 && course != pChoice2 && course != pChoice3) {
+                        opt = new Option(course, course);
+                        select.append(opt);
+                    }
+                }
+            } else if (pCore === "IC") {
+                for (i in ICCourses) {
+                    course = ICCourses[i]
+                    if (course!=pChoice1 && course != pChoice2 && course != pChoice3) {
+                        opt = new Option(course, course);
+                        select.append(opt);
+                    }
+                }
+            } else if (pCore === "Energy") {
+                for (i in EnergyCourses) {
+                    course = EnergyCourses[i]
+                    if (course!=pChoice1 && course != pChoice2 && course != pChoice3) {
+                        opt = new Option(course, course);
+                        select.append(opt);
+                    }
+                }
+            } else if (pCore === "Fields") {
+                for (i in FieldsCourses) {
+                    course = FieldsCourses[i]
+                    if (course!=pChoice1 && course != pChoice2 && course != pChoice3) {
+                        opt = new Option(course, course);
+                        select.append(opt);
+                    }
+                }
+            } else if (pCore === "Nano") {
+                for (i in NanoCourses) {
+                    course = NanoCourses[i]
+                    if (course!=pChoice1 && course != pChoice2 && course != pChoice3) {
+                        opt = new Option(course, course);
+                        select.append(opt);
+                    }
+                }
+            } else if (pCore === "CompArch") {
+                for (i in CompArchCourses) {
+                    course = CompArchCourses[i]
+                    if (course!=pChoice1 && course != pChoice2 && course != pChoice3) {
+                        opt = new Option(course, course);
+                        select.append(opt);
+                    }
+                }
+            } else if (pCore === "Software") {
+                for (i in SoftwareCourses) {
+                    course = SoftwareCourses[i]
+                    if (course!=pChoice1 && course != pChoice2 && course != pChoice3) {
+                        opt = new Option(course, course);
+                        select.append(opt);
+                    }
+                }
+            } else if (pCore === "DataScience") {
+                for (i in CommNetsCourses) {
+                    course = DataScienceCourses[i]
+                    if (course!=pChoice1 && course != pChoice2 && course != pChoice3) {
+                        opt = new Option(course, course);
+                        select.append(opt);
+                    }
+                }
+            }
+
+            /*changing the title of the coursesTable to let user know max number of courses they can pick */
+            var maxChoices = calcMaxChoices();
+            $("#maxChoicesPrompt").html("Please select up to " + maxChoices + " courses from this table")
+
+            $("#coursesTable").show();
+            if (sCore === "IC" || sCore === "Nano" || sCore === "CompArch" || sCore === "Software" || sCore === "DataScience") {
+                $("#nextButton").show()
+
+            } else {
+                $("#secondaryCoreRequirementsButton").show()
+            }
+        }
+
+        /*This should take in the technical core choices of the user,
+        set coursesTable to visible, and populate coursesTable with the electives for the chosen cores */
+        $("#displayElectivesButton").on('click', function() {
+            displayElectives()
+        });
+
+        $("#secondaryCoreRequirementsButton").on('click', function() {
+            var values = $("#primaryElectives").val()
+            maxChoices = calcMaxChoices();
+            if (values.length > maxChoices) {
+                alert("You selected more than " + maxChoices + " courses. Please deselect " + (values.length - maxChoices) + " course(s)");
+            } else {
+                displayElectivesWithinRequirements("secondary", "nextButton");
+            }
+        });
+
+        function sendInfo() {
+            var toSend = {};
+            var pCore = $('#primaryCore').val();
+            var sCore = $('#secondaryCore').val();
+            var primarySelects = 0;
+            var secondarySelects = 0;
+
+            /*figuring out how many selects we need to get the value of */
+            if (pCore === "CommNets") {
+                primarySelects = 3;
+            } else if (pCore === "Fields") {
+                primarySelects = 2;
+            } else if (pCore === "Energy") {
+                primarySelects = 1
+            } else {
+                primarySelects = 0
+            }
+
+            if (sCore === "CommNets") {
+                secondarySelects = 3;
+            } else if (sCore === "Fields") {
+                secondarySelects = 2;
+            } else if (sCore === "Energy") {
+                secondarySelects = 1
+            } else {
+                secondarySelects = 0
+            }
+
+            /*getting the value of the user's selections of the choices within the core requirements.
+            For both primary and secondary core.
+            If user has selected no preference for any of the selections, we select a default value */
+            var pCourses = []
+            for (let i = 1; i <= primarySelects; i++) {
+                var selection = $("#primaryChoiceSelect" + i).val()
+                pCourses.push(selection);
+            }
+
+            if (pCore === "CommNets") {
+                pCourses = pCourses.concat(CommNetsMandatory)
+            } else if (pCore === "IC") {
+                pCourses = pCourses.concat(ICMandatory)
+            } else if (pCore === "Energy") {
+                pCourses = pCourses.concat(EnergyMandatory)
+            } else if (pCore === "Fields") {
+                pCourses = pCourses.concat(FieldsMandatory)
+            } else if (pCore === "Nano") {
+                pCourses = pCourses.concat(NanoMandatory)
+            } else if (pCore === "CompArch") {
+                pCourses = pCourses.concat(CompArchMandatory)
+            } else if (pCore === "Software") {
+                pCourses = pCourses.concat(SoftwareMandatory)
+            } else if (pCore === "DataScience") {
+                pCourses = pCourses.concat(DataScienceMandatory)
+            }
+
+            var chosenElectives = $("#primaryElectives").val()
+            pCourses = pCourses.concat(chosenElectives)
+
+            var sCourses = []
+            if (secondarySelects != 0) {
+                for (let i = 1; i <= secondarySelects; i++) {
+                    var selection = $("#secondaryChoiceSelect" + i).val()
+                    sCourses.push(selection);
+                }
+            }
+
+            if (sCore === "CommNets") {
+                sCourses = sCourses.concat(CommNetsMandatory)
+            } else if (sCore === "IC") {
+                sCourses = sCourses.concat(ICMandatory)
+                sCourses.pop()
+            } else if (sCore === "Energy") {
+                sCourses = sCourses.concat(EnergyMandatory)
+                sCourses.pop()
+            } else if (sCore === "Fields") { //TODO: pop the additional elective (325K or 363M)
+                sCourses = sCourses.concat(FieldsMandatory)
+            } else if (sCore === "Nano") {
+                sCourses = sCourses.concat(NanoMandatory)
+            } else if (sCore === "CompArch") {
+                sCourses = sCourses.concat(CompArchMandatory)
+                sCourses.pop()
+            } else if (sCore === "Software") {
+                sCourses = sCourses.concat(SoftwareMandatory)
+            } else if (sCore === "DataScience") {
+                sCourses = sCourses.concat(DataScienceMandatory)
+                sCourses.pop()
+            }
+
+            /*if user has selected fewer than the required number of electives, we randomly fill the remaining
+            empty slots with courses from that tech core's approved course list
+            The courses over which we can randomize =
+            AllTechCoreClasses - RequiredClassesWithNoChoices - RequiredClassesWithChoices - ChosenElectives */
+            Array.prototype.diff = function(a) {
+                return this.filter(function(i) { return a.indexOf(i) < 0; });
+            };
+
+
+            var coursesLeftOver = []
+            if (pCore === "CommNets") {
+                coursesLeftOver = CommNetsCourses.diff(CommNetsMandatory); //take out mandatory courses
+            } else if (pCore === "IC") {
+                coursesLeftOver = ICCourses.diff(ICMandatory);
+            } else if (pCore === "Energy") {
+                coursesLeftOver = EnergyCourses.diff(EnergyMandatory);
+            } else if (pCore === "Fields") {
+                coursesLeftOver = FieldsCourses.diff(FieldsMandatory);
+            } else if (pCore === "Nano") {
+                coursesLeftOver = NanoCourses.diff(NanoMandatory);
+            } else if (pCore === "CompArch") {
+                coursesLeftOver = CompArchCourses.diff(CompArchMandatory);
+            } else if (pCore === "Software") {
+                coursesLeftOver = SoftwareCourses.diff(SoftwareMandatory);
+            } else if (pCore === "DataScience") {
+                coursesLeftOver = DataScienceCourses.diff(DataScienceMandatory);
+            }
+            coursesLeftOver = coursesLeftOver.diff(pCourses); //take out choices within requirements
+            coursesLeftOver = coursesLeftOver.diff(chosenElectives); //take out chosen electives
+
+            /*Now figuring out how many electives I have to randomly choose. This changes per tech core */
+            var numToRandomize = 0;
+            if (pCore === "CommNets" || pCore === "Nano" || pCore === "Software") {
+                numToRandomize = 4 - chosenElectives.length;
+            } else {
+                numToRandomize = 3 - chosenElectives.length;
+            }
+
+            for (let i = 0; i < numToRandomize; i++) {
+                var randIndex = Math.floor(Math.random() * coursesLeftOver.length);
+                pCourses.push(coursesLeftOver[randIndex]);
+                coursesLeftOver.splice(randIndex, 1);
+            }
+
+            toSend.pCore = pCore;
+            toSend.sCore = sCore;
+            for (i in pCourses) {
+                console.log(pCourses[i])
+                pCourses[i] = parseCourseName(pCourses[i])
+            }
+            for (i in sCourses) {
+                sCourses[i] = parseCourseName(sCourses[i])
+            }
+            toSend.pCourses = pCourses;
+            toSend.sCourses = sCourses;
+            sessionStorage.setItem("pCourses", JSON.stringify(pCourses));
+            sessionStorage.setItem("sCourses", JSON.stringify(sCourses));
+
+            console.log(toSend);
+            window.location.href = "credits";
+        }
+
+        $("#nextButton").on('click', function() {
+            var values = $("#primaryElectives").val()
+            maxChoices = calcMaxChoices();
+            if (values.length > maxChoices) {
+                alert("You selected more than " + maxChoices + " courses. Please deselect " + (values.length - maxChoices) + " course(s)");
+            } else {
+                sendInfo();
+            }
+        })
+
+    });
+    </script>
+</body>
+
+</html>
