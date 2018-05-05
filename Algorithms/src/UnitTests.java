@@ -36,13 +36,17 @@ public class UnitTests {
     }
 
     @Test
-    public void testCourseListAdd() throws ParseException, CourseList.InvalidCoursesJsonException, IOException {
+    public void testCourseListAddAndDiffAndHours() throws ParseException, CourseList.InvalidCoursesJsonException, IOException {
 
         FullPlan fp = driver.run(basePath + test1Path);
+        int prevHours  = fp.getUser().getUserCourseList().getTotalHours();
+        int prevDiff  = fp.getUser().getUserCourseList().getTotalDifficulty();
 
         CourseList courseList = fp.getUser().getUserCourseList();
         courseList.add(new Course("test", 1, 1, null, null));
         assertTrue(courseList.contains("test"));
+        assertEquals(courseList.getTotalHours(), prevHours + 1);
+        assertEquals(courseList.getTotalDifficulty(), prevDiff + 1);
     }
 
     @Test
