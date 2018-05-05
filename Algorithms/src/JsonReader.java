@@ -37,10 +37,6 @@ public class JsonReader {
         TypeReference<List<JsonCourseData>> mapType = new TypeReference<List<JsonCourseData>>() {};
         List<JsonCourseData> jsonToJSONCourseList = objectMapper.readValue(String.valueOf(courses), mapType);
 
-
-        /*
-         * Now this is where this class begins to act as the driver program
-         */
         for (JsonCourseData jcourse : jsonToJSONCourseList) {
             fullCourseList.add(new Course(jcourse));
         }

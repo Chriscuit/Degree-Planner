@@ -36,6 +36,9 @@ public class CourseList {
         return this.list;
     }
 
+    public void addPassCourse(Course course) {
+        this.list.add(course);
+    }
 
     public void calculateReversePreCo() {
 

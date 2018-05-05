@@ -10,13 +10,12 @@ public class Semester {
     private int totalDifficulty;
     private int totalHours;
 
-//    Semester() {
-//        list = new ArrayList<>();
-//        name = numSemesters;
-//        totalDifficulty = 0;
-//        totalHours = 0;
-//        numSemesters++;
-//    }
+    Semester(int name) {
+        this.list = new ArrayList<>();
+        this.name = name;
+        this.totalDifficulty = 0;
+        this.totalHours = 0;
+    }
 
     Semester(FullPlan fp) {
         list = new ArrayList<>();
@@ -51,5 +50,12 @@ public class Semester {
 
     public int getName() {
         return name;
+    }
+
+    public Boolean contains(String name) {
+        for (Course c : list) {
+            if (c.getName().equals(name)) return true;
+        }
+        return false;
     }
 }

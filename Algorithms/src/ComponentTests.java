@@ -9,10 +9,14 @@ import java.util.List;
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
 
-public class FullPlanTest {
+public class ComponentTests {
 
     Driver driver;
     int varianceBound = 5;
+
+    /*
+    * between the 6 developed tests, we are covering every conditional in the code
+    */
 
     String basePath = "/Users/christophergill/Downloads/Degree-Planner/";
     String test1Path = "TEST1_Software_Comm_NoCredit_8sem.json";
