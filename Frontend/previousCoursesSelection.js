@@ -17,91 +17,6 @@ $(document).ready(function() {
     addCourses(PHY_courses, "phy")
     addCourses(GOV_courses, "gov")
 
-    // for (i in M_courses) {
-    //     var select = $("#coursePicker");
-    //     course = M_courses[i];
-    //     course_num = course.split(":")[0];
-    //     courses[course_num] = { title: course, selected: false }
-    //     opt = new Option(course, course_num);
-    //     opt.setAttribute("data-tokens", course);
-    //     select.append(opt);
-
-    //     var searchTable = $("#searchTable")
-    //     var row = $("<div>", { "class": "row", style: "cursor:pointer;" });
-    //     var num = $("<div>", { "class": "col-sm-2 num " + "m" });
-    //     num.append(course_num)
-    //     var title = $("<div>", { "class": "col-sm-auto title" });
-    //     title.append(course.split(":")[1])
-    //     var checkmark = $("<i>", { "class": "fa fa-check checkmark pull-right" }).hide();
-    //     row.append(num)
-    //     row.append(title)
-    //     row.append(checkmark)
-    //     searchTable.append(row)
-    // }
-    // for (i in EE_courses) {
-    //     var select = $("#coursePicker");
-    //     course = EE_courses[i];
-    //     course_num = course.split(":")[0];
-    //     courses[course_num] = { title: course, selected: false }
-    //     opt = new Option(course, course_num);
-    //     opt.setAttribute("data-tokens", course);
-    //     select.append(opt);
-
-    //     var searchTable = $("#searchTable")
-    //     var row = $("<div>", { "class": "row", style: "cursor:pointer;" });
-    //     var num = $("<div>", { "class": "col-sm-2 num " + "ee" });
-    //     num.append(course_num)
-    //     var title = $("<div>", { "class": "col-sm-auto title" });
-    //     title.append(course.split(":")[1])
-    //     var checkmark = $("<i>", { "class": "fa fa-check checkmark pull-right" }).hide();
-    //     row.append(num)
-    //     row.append(title)
-    //     row.append(checkmark)
-    //     searchTable.append(row)
-    // }
-    // for (i in PHY_courses) {
-    //     var select = $("#coursePicker");
-    //     course = PHY_courses[i];
-    //     course_num = course.split(":")[0];
-    //     courses[course_num] = { title: course, selected: false }
-    //     opt = new Option(course, course_num);
-    //     opt.setAttribute("data-tokens", course);
-    //     select.append(opt);
-
-    //     var searchTable = $("#searchTable")
-    //     var row = $("<div>", { "class": "row", style: "cursor:pointer;" });
-    //     var num = $("<div>", { "class": "col-sm-2 num " + "phy" });
-    //     num.append(course_num)
-    //     var title = $("<div>", { "class": "col-sm-auto title" });
-    //     title.append(course.split(":")[1])
-    //     var checkmark = $("<i>", { "class": "fa fa-check checkmark pull-right" }).hide();
-    //     row.append(num)
-    //     row.append(title)
-    //     row.append(checkmark)
-    //     searchTable.append(row)
-    // }
-    // for (i in M_courses) {
-    //     var select = $("#coursePicker");
-    //     course = M_courses[i];
-    //     course_num = course.split(":")[0];
-    //     courses[course_num] = { title: course, selected: false }
-    //     opt = new Option(course, course_num);
-    //     opt.setAttribute("data-tokens", course);
-    //     select.append(opt);
-
-    //     var searchTable = $("#searchTable")
-    //     var row = $("<div>", { "class": "row", style: "cursor:pointer;" });
-    //     var num = $("<div>", { "class": "col-sm-2 num " + "m" });
-    //     num.append(course_num)
-    //     var title = $("<div>", { "class": "col-sm-auto title" });
-    //     title.append(course.split(":")[1])
-    //     var checkmark = $("<i>", { "class": "fa fa-check checkmark pull-right" }).hide();
-    //     row.append(num)
-    //     row.append(title)
-    //     row.append(checkmark)
-    //     searchTable.append(row)
-    // }
-
     function addCourses(current_courses, dept) {
         for (i in current_courses) {
             course = current_courses[i];
@@ -109,7 +24,7 @@ $(document).ready(function() {
             courses[course_num] = { title: course, selected: false }
 
             var searchTable = $("#searchTable")
-            var row = $("<div>", { "class": "row course", style: "cursor:pointer;" });
+            var row = $("<div>", { "class": "row course", style: "cursor:pointer; border-radius:8px;" });
             var num = $("<div>", { "class": "col-sm-2 num " + dept });
             num.append(course_num)
             var title = $("<div>", { "class": "col-sm-auto title" });
