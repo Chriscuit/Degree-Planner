@@ -16,6 +16,7 @@
 
 .checkmark {
     color: green;
+    margin-top: 3px;
 }
 
 .display {
@@ -39,6 +40,15 @@
 
 #coursePicker {
     margin-right: 30px;
+}
+
+.course {
+    border-radius: 8px;
+}
+
+.course:hover {
+    background-color: rgba(240, 241, 252, 0.8);
+    border-radius: 8px;
 }
 
 #dept {
