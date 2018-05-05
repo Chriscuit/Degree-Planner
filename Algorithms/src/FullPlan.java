@@ -16,6 +16,15 @@ public class FullPlan {
         }
     }
 
+    public FullPlan(int numSem) {
+        this.user = null;
+        int numSemester = numSem;
+        semList = new ArrayList<>();
+        for(int i = 0; i < numSem; i++) {
+            semList.add(new Semester(this));
+        }
+    }
+
     public User getUser() {
         return user;
     }
@@ -27,8 +36,6 @@ public class FullPlan {
     public int getSize() {
         return semList.size();
     }
-
-    public int getNumSem() { return semList.size()-1; }
 
     public List<Semester> getSemList() {
         return semList;
@@ -68,5 +75,16 @@ public class FullPlan {
 
     public int getNumFillerHours() {
         return numFillers * 3;
+    }
+
+    public int getTotalDifficulty() {
+
+        int total = 0;
+
+        for (Semester sem : semList) {
+            total += sem.getTotalDifficulty();
+        }
+
+        return total;
     }
 }

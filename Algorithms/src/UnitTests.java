@@ -103,7 +103,54 @@ public class UnitTests {
      * Tests various methods of FullPlan
      */
 
+    @Test
+    public void testFullPlanGetNumSem() throws ParseException, CourseList.InvalidCoursesJsonException, IOException {
 
+        FullPlan fp = driver.run(basePath + test1Path);
+
+        assertEquals(fp.getSize(), 8);
+    }
+
+    @Test
+    public void testFullPlanConstructor() throws ParseException, CourseList.InvalidCoursesJsonException, IOException {
+
+        FullPlan fp = new FullPlan(4);
+
+        assertEquals(fp.getSize(), 4);
+    }
+
+    @Test
+    public void testFullPlanGetHours() throws ParseException, CourseList.InvalidCoursesJsonException, IOException {
+
+        FullPlan fp = new FullPlan(2);
+
+        Course test = new Course("test", 1, 11, new ArrayList<String>(), new ArrayList<String>());
+        Course test2 = new Course("test2", 3, 5, new ArrayList<String>(), new ArrayList<String>());
+
+
+        fp.getSem(0).add(test);
+        fp.getSem(0).add(test2);
+
+
+        assertEquals(fp.getTotalHours(), 4);
+    }
+
+
+    @Test
+    public void testFullPlanGetDiff() throws ParseException, CourseList.InvalidCoursesJsonException, IOException {
+
+        FullPlan fp = new FullPlan(2);
+
+        Course test = new Course("test", 1, 11, new ArrayList<String>(), new ArrayList<String>());
+        Course test2 = new Course("test2", 3, 5, new ArrayList<String>(), new ArrayList<String>());
+
+
+        fp.getSem(0).add(test);
+        fp.getSem(0).add(test2);
+
+
+        assertEquals(fp.getTotalDifficulty(), 16);
+    }
 
     private HashMap<String, Course> setStrToCourseMap(List<Course> cL) {
         HashMap<String, Course> strToCourse = new HashMap<>();
